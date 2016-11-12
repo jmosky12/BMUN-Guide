@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "BMUN": {
+      "applicationId": "INbyDC9BcrJRZiBzuPT2p2oquTMZq9tuTiAqRNOf"
+    },
+    "_default": {
+      "link": "BMUN"
+    }
+  }
+}
