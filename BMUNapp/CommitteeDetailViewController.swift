@@ -10,6 +10,7 @@ import UIKit
 
 class CommitteeDetailViewController: UIViewController {
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var headChairLabel: UILabel!
     @IBOutlet weak var viceChairsLabel: UILabel!
     @IBOutlet weak var topicsLabel: UILabel!
@@ -70,6 +71,10 @@ class CommitteeDetailViewController: UIViewController {
         self.topicsLabel.sizeToFit()
         self.viceChairsLabel.sizeToFit()
         self.headChairLabel.sizeToFit()
+        
+        self.backgroundImageView.image = UIImage(named: "background")
+        self.backgroundImageView.contentMode = .scaleAspectFill
+        self.backgroundImageView.alpha = 0.85
       
       
     }

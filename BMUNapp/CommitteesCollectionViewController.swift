@@ -47,6 +47,12 @@ class CommitteesCollectionViewController: UICollectionViewController {
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
         self.collectionView?.allowsSelection = true
         self.collectionView?.allowsMultipleSelection = false
+        
+        /*self.collectionView?.backgroundView = UIImageView(frame: (self.collectionView?.frame)!)
+        let imageView = self.collectionView?.backgroundView as! UIImageView
+        imageView.image = UIImage(named: "blah")
+        imageView.contentMode = .scaleAspectFill
+        imageView.alpha = 0.85*/
     }
 
 

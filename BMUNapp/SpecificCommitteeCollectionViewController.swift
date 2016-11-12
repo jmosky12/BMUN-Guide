@@ -50,8 +50,15 @@ class SpecificCommitteeCollectionViewController: UICollectionViewController {
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
         self.collectionView?.allowsSelection = true
         self.collectionView?.allowsMultipleSelection = false
+        self.view.clipsToBounds = true
         
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        /*self.collectionView?.backgroundView = UIImageView(frame: (self.collectionView?.frame)!)
+        let imageView = self.collectionView?.backgroundView as! UIImageView
+        imageView.image = UIImage(named: "sky")
+        imageView.contentMode = .scaleAspectFill
+        imageView.alpha = 0.85*/
 
     }
     
@@ -112,5 +119,13 @@ class SpecificCommitteeCollectionViewController: UICollectionViewController {
         let vc = CommitteeDetailViewController(section: self.section!, row: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    /*override func viewWillDisappear(_ animated: Bool) {
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.alpha = 1.0
+    }*/
     
 }

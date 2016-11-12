@@ -143,7 +143,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Sets characteristics for the tab bar at the bottom
         UITabBar.appearance().tintColor = UIColor.white
         UITabBar.appearance().barTintColor = UIColor.black
-        UITabBar.appearance().tintColor = UIColor.blue
         UITabBar.appearance().isTranslucent = false
         
         return true

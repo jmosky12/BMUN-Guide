@@ -16,9 +16,10 @@ protocol QuestionsViewControllerDelegate: MFMailComposeViewControllerDelegate {
 
 class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, QuestionsViewControllerDelegate {
     
-    @IBOutlet weak var detailHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var topicTextField: UITextField!
     @IBOutlet weak var detailTextView: UITextView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     init() {
         super.init(nibName: "QuestionsViewController", bundle: nil)
@@ -47,17 +48,21 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
         
         self.detailTextView.layer.cornerRadius = 5.0
         self.detailTextView.isEditable = false
-        
         self.topicTextField.delegate = self
+        self.descriptionLabel.sizeToFit()
         
         // Adds gesture recognizer that will open TextViewController.swift when the text view is tapped
         let textViewTapped = UITapGestureRecognizer(target: self, action: #selector(QuestionsViewController.textTapped))
         self.detailTextView.addGestureRecognizer(textViewTapped)
         
+        self.backgroundImageView.image = UIImage(named: "questionBackground")
+        self.backgroundImageView.contentMode = .scaleAspectFill
+        self.backgroundImageView.alpha = 0.7
+        
     }
     
     // Resizes the text view's height if the screen height is less than 480p
-    override func viewDidLayoutSubviews() {
+   /* override func viewDidLayoutSubviews() {
         var sysInfo = utsname()
         uname(&sysInfo)
         let machine = Mirror(reflecting: sysInfo.machine)
@@ -82,7 +87,7 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
             return true
         }
         return false
-    }
+    }*/
     
     // These two functions below prevent landscape mode
     override var shouldAutorotate : Bool {
@@ -91,14 +96,6 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
     
     override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
         return [UIInterfaceOrientationMask.portrait]
-    }
-
-    // Makes sure email entered in emailTextField follows standard email convention
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-        
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: email)
     }
     
     // Releases keyboard if return is pressed while typing in a text field
@@ -116,19 +113,21 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
     
     // Calls the BmunCloudCode main.js file that formats the info in the text view and text fields into an email and uses Parse & Mailgun to send it to feeback@bmun.org
     func didPressSend() {
-        let alert = UIAlertController(title: "Missing Information", message: "Please fill out all fields.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        let incomplete = UIAlertController(title: "Missing Information", message: "Please fill out all fields.", preferredStyle: .alert)
+        incomplete.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        let error = UIAlertController(title: "Error", message: "Your email can't be sent. Please try again.", preferredStyle: .alert)
+        error.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         if topicTextField.text != "" && detailTextView.text != "" {
             let mailComposeViewController = configuredMailComposeViewController()
             if MFMailComposeViewController.canSendMail() {
                 self.present(mailComposeViewController, animated: true, completion: nil)
             } else {
-                self.present(alert, animated: true, completion: nil)
+                self.present(error, animated: true, completion: nil)
             }
             topicTextField.text = ""
             detailTextView.text = ""
         } else {
-            self.present(alert, animated: true, completion: nil)
+            self.present(incomplete, animated: true, completion: nil)
         }
         
     }
@@ -144,9 +143,16 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
-        let finishedSending = UIAlertController(title: "Email Sent", message: "Your email has successfully been sent to our staff.", preferredStyle: .alert)
-        finishedSending.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(finishedSending, animated: true, completion: nil)
+        print(result)
+        if result == MFMailComposeResult.sent {
+            let finishedSending = UIAlertController(title: "Email Sent", message: "Your email has successfully been sent to our staff.", preferredStyle: .alert)
+            finishedSending.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(finishedSending, animated: true, completion: nil)
+        } else if result == MFMailComposeResult.failed {
+            let failedSending = UIAlertController(title: "Error", message: "Your email failed to send. Please try again.", preferredStyle: .alert)
+            failedSending.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(failedSending, animated: true, completion: nil)
+        }
         topicTextField.text = ""
         detailTextView.text = ""
     }

@@ -14,6 +14,7 @@ class SpecificCommitteeCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 5
+        self.committeeImageView.alpha = 0.9
     }
 
 }
