@@ -84,15 +84,15 @@ class TimelineTableViewController: UITableViewController {
         case 0:
             timelineEvent = Storage.dayOneTimeline?[String(indexPath.row)] as! [String : Any]?
             event?.text = timelineEvent?["title"] as? String
-            time?.text = timelineEvent?["time"] as? String
+            time?.text = " \(timelineEvent?["time"] as? String)"
         case 1:
             timelineEvent = Storage.dayTwoTimeline?[String(indexPath.row)] as! [String : Any]?
             event?.text = timelineEvent?["title"] as? String
-            time?.text = timelineEvent?["time"] as? String
+            time?.text = " \(timelineEvent?["time"] as? String)"
         case 2:
             timelineEvent = Storage.dayThreeTimeline?[String(indexPath.row)] as! [String : Any]?
             event?.text = timelineEvent?["title"] as? String
-            time?.text = timelineEvent?["time"] as? String
+            time?.text = " \(timelineEvent?["time"] as? String)"
         default:
             event?.text = "Default"
             time?.text = "Default"

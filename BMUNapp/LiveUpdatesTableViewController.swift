@@ -99,8 +99,6 @@ class LiveUpdatesTableViewController: UIViewController, UITableViewDataSource {
         
         cell.tweetText.text = tweet.text
         let date = NSDate(string: tweet.strDate!, formatString: "EEE MMM d HH:mm:ss Z y")
-        print(Mirror.init(reflecting: date).subjectType)
-        print(date)
         cell.date.text = String(describing: date!.shortTimeAgoSinceNow)
         cell.screenName.text = "@\(tweet.screenName!)"
         cell.userName.text = tweet.username

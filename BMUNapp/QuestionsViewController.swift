@@ -135,7 +135,7 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
-        mailComposerVC.setToRecipients(["jmoskowitz12@berkeley.edu"])
+        mailComposerVC.setToRecipients(["info@bmun.org"])
         mailComposerVC.setSubject(topicTextField.text!)
         mailComposerVC.setMessageBody(detailTextView.text, isHTML: false)
         return mailComposerVC
