@@ -35,7 +35,7 @@ class CommitteeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         edgesForExtendedLayout = UIRectEdge()
-        navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
         
         // Sets the labels' info based on the committee info in storage

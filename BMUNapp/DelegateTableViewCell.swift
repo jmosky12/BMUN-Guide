@@ -23,7 +23,7 @@ class DelegateTableViewCell: UITableViewCell {
         self.preservesSuperviewLayoutMargins = false
         self.layoutMargins = UIEdgeInsets.zero
         
-        backgroundImage.clipsToBounds = true
+        self.backgroundImage.clipsToBounds = true
         
         self.backgroundColor = UIColor.clear
         self.selectionStyle = .none
@@ -32,8 +32,8 @@ class DelegateTableViewCell: UITableViewCell {
     // Sets the properties of the cell depending on the enum specified in the cellForRowAtIndexPath method in DelegateTableViewController.swift
     func bindData(_ type: DelegateGuideTableViewController.DelegateCellType) {
         self.type = type
-        backgroundImage.image = type.backgroundImage()
-        cellLabel.text = type.rawValue
+        self.backgroundImage.image = type.backgroundImage()
+        self.cellLabel.text = type.rawValue
     }
     
 }

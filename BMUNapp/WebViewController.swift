@@ -17,7 +17,7 @@ class WebViewController: UIViewController {
     
     init(file: String) {
         super.init(nibName: nil, bundle: nil)
-        fileName = file
+        self.fileName = file
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -32,8 +32,8 @@ class WebViewController: UIViewController {
         let path: String = Bundle.main.path(forResource: fileName, ofType: "pdf")!
         let targetURL: URL = URL(fileURLWithPath: path)
         let request: URLRequest = URLRequest(url: targetURL)
-        webView.loadRequest(request)
-        webView.scalesPageToFit = true
+        self.webView.loadRequest(request)
+        self.webView.scalesPageToFit = true
         view.addSubview(webView)
         
         let textColor = UIColor.white

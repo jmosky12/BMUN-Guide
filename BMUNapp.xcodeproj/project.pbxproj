@@ -27,6 +27,14 @@
 		DF7A5EC11BCB99B900BDC91F /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A5EBF1BCB99B900BDC91F /* TimelineTableViewCell.swift */; };
 		DF7A5EC21BCB99B900BDC91F /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF7A5EC01BCB99B900BDC91F /* TimelineTableViewCell.xib */; };
 		DF9A92E21BC8FDFE00BA3AE4 /* CommitteesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A92E11BC8FDFE00BA3AE4 /* CommitteesTableViewController.swift */; };
+		DFD814211DD7165B00CA027E /* CommitteesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD8141F1DD7165B00CA027E /* CommitteesCollectionViewController.swift */; };
+		DFD814221DD7165B00CA027E /* CommitteesCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD814201DD7165B00CA027E /* CommitteesCollectionViewController.xib */; };
+		DFD814251DD7167700CA027E /* CommitteesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD814231DD7167700CA027E /* CommitteesCollectionViewCell.swift */; };
+		DFD814261DD7167700CA027E /* CommitteesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD814241DD7167700CA027E /* CommitteesCollectionViewCell.xib */; };
+		DFD8142D1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD8142B1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.swift */; };
+		DFD8142E1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD8142C1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.xib */; };
+		DFD814311DD739C500CA027E /* SpecificCommitteeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD8142F1DD739C500CA027E /* SpecificCommitteeCollectionViewController.swift */; };
+		DFD814321DD739C500CA027E /* SpecificCommitteeCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD814301DD739C500CA027E /* SpecificCommitteeCollectionViewController.xib */; };
 		DFDC32661BE565D100729449 /* LiveUpdatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC32641BE565D100729449 /* LiveUpdatesTableViewCell.swift */; };
 		DFDC32691BE56CA400729449 /* LiveUpdatesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDC32681BE56CA400729449 /* LiveUpdatesTableViewController.xib */; };
 		DFDCCDE21DAAEAAE00269E9E /* StoreCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCCDE01DAAEAAE00269E9E /* StoreCollectionViewController.swift */; };
@@ -82,6 +90,14 @@
 		DF7A5EBF1BCB99B900BDC91F /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		DF7A5EC01BCB99B900BDC91F /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
 		DF9A92E11BC8FDFE00BA3AE4 /* CommitteesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteesTableViewController.swift; sourceTree = "<group>"; };
+		DFD8141F1DD7165B00CA027E /* CommitteesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteesCollectionViewController.swift; sourceTree = "<group>"; };
+		DFD814201DD7165B00CA027E /* CommitteesCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitteesCollectionViewController.xib; sourceTree = "<group>"; };
+		DFD814231DD7167700CA027E /* CommitteesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteesCollectionViewCell.swift; sourceTree = "<group>"; };
+		DFD814241DD7167700CA027E /* CommitteesCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitteesCollectionViewCell.xib; sourceTree = "<group>"; };
+		DFD8142B1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificCommitteeCollectionViewCell.swift; sourceTree = "<group>"; };
+		DFD8142C1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificCommitteeCollectionViewCell.xib; sourceTree = "<group>"; };
+		DFD8142F1DD739C500CA027E /* SpecificCommitteeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificCommitteeCollectionViewController.swift; sourceTree = "<group>"; };
+		DFD814301DD739C500CA027E /* SpecificCommitteeCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificCommitteeCollectionViewController.xib; sourceTree = "<group>"; };
 		DFDC32641BE565D100729449 /* LiveUpdatesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUpdatesTableViewCell.swift; sourceTree = "<group>"; };
 		DFDC32681BE56CA400729449 /* LiveUpdatesTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveUpdatesTableViewController.xib; sourceTree = "<group>"; };
 		DFDCCDE01DAAEAAE00269E9E /* StoreCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +165,14 @@
 				DF9A92E11BC8FDFE00BA3AE4 /* CommitteesTableViewController.swift */,
 				DFF613751C180186003C810C /* CommitteeTableViewCell.swift */,
 				DFF613761C180186003C810C /* CommitteeTableViewCell.xib */,
+				DFD8141F1DD7165B00CA027E /* CommitteesCollectionViewController.swift */,
+				DFD814201DD7165B00CA027E /* CommitteesCollectionViewController.xib */,
+				DFD814231DD7167700CA027E /* CommitteesCollectionViewCell.swift */,
+				DFD814241DD7167700CA027E /* CommitteesCollectionViewCell.xib */,
+				DFD8142F1DD739C500CA027E /* SpecificCommitteeCollectionViewController.swift */,
+				DFD814301DD739C500CA027E /* SpecificCommitteeCollectionViewController.xib */,
+				DFD8142B1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.swift */,
+				DFD8142C1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.xib */,
 				DFF613791C1801A2003C810C /* CommitteeDetailViewController.swift */,
 				DFF6137A1C1801A2003C810C /* CommitteeDetailViewController.xib */,
 			);
@@ -350,12 +374,16 @@
 				DF6071CF1BC8B62F007B35CC /* LaunchScreen.storyboard in Resources */,
 				DF6071DB1BC8C871007B35CC /* Assets.xcassets in Resources */,
 				DFDCCE0C1DAAF38900269E9E /* map.pdf in Resources */,
+				DFD814321DD739C500CA027E /* SpecificCommitteeCollectionViewController.xib in Resources */,
+				DFD814221DD7165B00CA027E /* CommitteesCollectionViewController.xib in Resources */,
 				DFF33C191BE9D1A500D7228D /* LiveUpdatesTableViewCell.xib in Resources */,
 				DFDCCDE31DAAEAAE00269E9E /* StoreCollectionViewController.xib in Resources */,
 				DF2702A51C14D8A200A4889D /* QuestionsViewController.xib in Resources */,
 				DFDCCE0B1DAAF38900269E9E /* CommitteeStructure.pdf in Resources */,
+				DFD814261DD7167700CA027E /* CommitteesCollectionViewCell.xib in Resources */,
 				DFDCCE121DAAF38900269E9E /* SpeechPreparation.pdf in Resources */,
 				D7370FE91DB33E6B008A4AF3 /* GoogleService-Info.plist in Resources */,
+				DFD8142E1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.xib in Resources */,
 				DFDCCDE71DAAEAC400269E9E /* StoreCollectionViewCell.xib in Resources */,
 				DFDCCE111DAAF38900269E9E /* SpeechDelivery.pdf in Resources */,
 				DFDCCE0E1DAAF38900269E9E /* PositionPaper.pdf in Resources */,
@@ -430,16 +458,20 @@
 				DF6071CA1BC8B62F007B35CC /* BMUNapp.xcdatamodeld in Sources */,
 				DFDCCDE61DAAEAC400269E9E /* StoreCollectionViewCell.swift in Sources */,
 				DFDC32661BE565D100729449 /* LiveUpdatesTableViewCell.swift in Sources */,
+				DFD8142D1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.swift in Sources */,
 				DFDCCDE21DAAEAAE00269E9E /* StoreCollectionViewController.swift in Sources */,
+				DFD814251DD7167700CA027E /* CommitteesCollectionViewCell.swift in Sources */,
 				DFF6137B1C1801A2003C810C /* CommitteeDetailViewController.swift in Sources */,
 				DF20B1B81BCAE34A007705BA /* DelegateGuideTableViewController.swift in Sources */,
 				DFDF6EA81BE5530C009244FE /* Tweet.swift in Sources */,
+				DFD814211DD7165B00CA027E /* CommitteesCollectionViewController.swift in Sources */,
 				DF1C80F11DC1C83B004AE050 /* Storage.swift in Sources */,
 				DF20B1BB1BCAE380007705BA /* DelegateTableViewCell.swift in Sources */,
 				DFDF6EAA1BE55760009244FE /* DateFormatterManager.swift in Sources */,
 				DF6071C21BC8B62F007B35CC /* AppDelegate.swift in Sources */,
 				DF20B1B21BC9B513007705BA /* TimelineTableViewController.swift in Sources */,
 				DFE372AA1BCB0DC500490A34 /* WebViewController.swift in Sources */,
+				DFD814311DD739C500CA027E /* SpecificCommitteeCollectionViewController.swift in Sources */,
 				DF2702A41C14D8A200A4889D /* QuestionsViewController.swift in Sources */,
 				DFDF6EA61BE544CD009244FE /* TwitterManager.swift in Sources */,
 				DF64FDC31C2894480072C463 /* TextViewController.swift in Sources */,

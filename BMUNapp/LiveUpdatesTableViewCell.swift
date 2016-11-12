@@ -19,10 +19,10 @@ class LiveUpdatesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        tweetText.layer.cornerRadius = 7.0
-        tweetText.clipsToBounds = true
-        avatar.layer.cornerRadius = 3.0
-        avatar.clipsToBounds = true
+        self.tweetText.layer.cornerRadius = 7.0
+        self.tweetText.clipsToBounds = true
+        self.avatar.layer.cornerRadius = 3.0
+        self.avatar.clipsToBounds = true
         
         // Ensures table cell separators are set up correctly
         self.separatorInset = UIEdgeInsets.zero

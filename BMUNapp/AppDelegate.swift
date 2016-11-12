@@ -15,11 +15,12 @@ import Foundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private let apiURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/BMUN?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
+    private let apiCommitteesURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/BMUN?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
+    private let apiTimelineURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/Timeline?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        Storage.getRequest(url: NSURL(string: apiURL)!) {
+        Storage.getRequest(url: NSURL(string: apiCommitteesURL)!) {
             (data, response, error) in
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
@@ -34,6 +35,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         Storage.specializedCommittees = committees?[key] as? [String: Any]
                     } else {
                         Storage.crisisCommittees = committees?[key] as? [String: Any]
+                    }
+                }
+            } catch let error {
+                print("error: \(error)")
+            }
+        }
+        
+        Storage.getRequest(url: NSURL(string: apiTimelineURL)!) {
+            (data, response, error) in
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
+                let dict = json?[0] as? [String: Any]
+                let timeline = dict?["Timeline"] as? [String: Any]
+                for (key, _) in timeline! {
+                    if key == "0" {
+                        Storage.dayOneTimeline = timeline?[key] as? [String: Any]
+                    } else if key == "1" {
+                        Storage.dayTwoTimeline = timeline?[key] as? [String: Any]
+                    } else {
+                        Storage.dayThreeTimeline = timeline?[key] as? [String: Any]
                     }
                 }
             } catch let error {
@@ -61,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         delegateGuideNC.navigationBar.isTranslucent = false
         delegateGuideNC.navigationBar.topItem?.title = "Delegate Guide"
         
-        let committees = CommitteesTableViewController()
+        let committees = CommitteesCollectionViewController()
         let committeesNC = UINavigationController(rootViewController: committees)
         let item2 = UITabBarItem(title: "Committees", image: nil, tag: 2)
         item2.setTitleTextAttributes(titleTextAttributes, for: UIControlState())

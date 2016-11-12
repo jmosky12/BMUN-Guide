@@ -10,7 +10,10 @@ import UIKit
 
 class CommitteesTableViewController: UITableViewController {
     
-    init() {
+    var section: Int?
+    
+    init(section: Int) {
+        self.section = section
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -25,8 +28,9 @@ class CommitteesTableViewController: UITableViewController {
         let nib: UINib = UINib(nibName: "CommitteeTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "committeeCell")
         
-        tableView.estimatedRowHeight = 127
-        tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 127
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
         // Sets characteristics for top bar text
         let textColor = UIColor.white
@@ -51,41 +55,23 @@ class CommitteesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
-    }
-    
-    // Gives section titles to the different groupings of committees
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let title: String!
-        switch(section) {
-            case 0:
-                title = "Bloc A"
-            case 1:
-                title = "Bloc B"
-            case 2:
-                title = "Specialized"
-            case 3:
-                title = "Crisis"
-            default:
-                title = "Something's wrong"
-        }
-        return title
+        return 1
     }
 
     // Specifies the number of committee cells needed under each section specified above
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let num: Int!
-        switch(section) {
-            case 0:
-                num = Storage.blocACommittees?.count
-            case 1:
-                num = Storage.blocBCommittees?.count
-            case 2:
-                num = Storage.specializedCommittees?.count
-            case 3:
-                num = Storage.crisisCommittees?.count
-            default:
-                num = 0
+        switch(self.section!) {
+        case 0:
+            num = Storage.blocACommittees?.count
+        case 1:
+            num = Storage.blocBCommittees?.count
+        case 2:
+            num = Storage.specializedCommittees?.count
+        case 3:
+            num = Storage.crisisCommittees?.count
+        default:
+            num = 0
         }
         return num
     }
@@ -95,9 +81,9 @@ class CommitteesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "committeeCell", for: indexPath) as! CommitteeTableViewCell
         let label = cell.viewWithTag(1) as? UILabel
         var committee: [String: Any]?
-        
         var text: String?
-        switch(indexPath.section) {
+        
+        switch(self.section!) {
         case 0:
             committee = Storage.blocACommittees?[String(indexPath.row)] as! [String : Any]?
             text = committee?["name"] as? String
@@ -125,12 +111,12 @@ class CommitteesTableViewController: UITableViewController {
     
     // Detects when a cell has been selected, and opens a CommitteeDetailViewController with the section and row info that tells it which committee to load
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = CommitteeDetailViewController(section: indexPath.section, row: indexPath.row)
+        let vc = CommitteeDetailViewController(section: self.section!, row: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // Designs the section header
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    /*override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: UIView = UIView()
         headerView.frame = CGRect(x: 0, y: 0, width: 320, height: 30)
         headerView.backgroundColor = UIColor.black
@@ -152,5 +138,5 @@ class CommitteesTableViewController: UITableViewController {
         }
         headerView.addSubview(titleLabel)
         return headerView
-    }
+    }*/
 }
