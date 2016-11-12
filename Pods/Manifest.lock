@@ -1,0 +1,38 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - DateTools (1.7.0)
+  - Moltin (1.1.5):
+    - AFNetworking
+  - STTwitter (0.2.5)
+  - SwiftyJSON (3.1.1)
+
+DEPENDENCIES:
+  - DateTools
+  - Moltin
+  - STTwitter
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  Moltin: 80fe95499216cf783c183bc56352b6b92a3e4836
+  STTwitter: 5c157e8dcb4f0e4cf5b4374393021b7d7b7fd497
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+
+PODFILE CHECKSUM: 5eada3f9e5f4083701fe7c31769f675a6d53ee7b
+
+COCOAPODS: 1.0.1

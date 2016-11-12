@@ -1,0 +1,148 @@
+{
+    "Committee" : {
+        "0" : {
+            "0" : {
+                "name" : "First Disarmament and International Security Committee",
+                "Head Chair" : "Jessie Mao",
+                "Vice Chairs" : "Himaja Jangle, Sita McGuire",
+                "Topics" : "Congo: Resources in Conflict, Modern Warfare: Privatization of War"
+            },
+            "1" : {
+                "name" : "UN Special,  Political And Decolonization Committee",
+                "Head Chair" : "Trevor Dowds",
+                "Vice Chairs" : "Lucia Zhang, Sarah Yue",
+                "Topics" : "A Review of UN Peacekeeping Operations, Situation in Sudan and South Sudan"
+            },
+            "2" : {
+                "name" : "UN 6th Legal Committee",
+                "Head Chair" : "Benjy Malings",
+                "Vice Chairs" : "Sherry Guo, Emma Lautanen",
+                "Topics" : "Reform of the ICC/ICJ System, Reconsidering the Responsibility to Protect (R2P)"
+            },
+            "name" : "Bloc A"
+        },
+        "1" : {
+            "0" : {
+                "name" : "UN Human Rights Council",
+                "Head Chair" : "Amanda Lee",
+                "Vice Chairs" : "Jessica Zhao",
+                "Topics" : "Palestinian Women's Rights, Capital Punishment and the Rights of Prisoners"
+            },
+            "1" : {
+                "name" : "UN Educational, Scientific, And Cultural Organization",
+                "Head Chair" : "Adam Umemoto",
+                "Vice Chairs" : "Emily Yan, Jacob Hands",
+                "Topics" : "Child Soldiers: The Rights of Children in Armed Conflict, Reconsidering the 2030 Education Agenda"
+            },
+            "2" : {
+                "name" : "UN Economic And Social Council",
+                "Head Chair" : "Alex Feibleman",
+                "Vice Chairs" : "Octavio Garcia Farfan, Liam Campbell",
+                "Topics" : "Strengthening Resilience to Climate Related Disasters, Commercial Bribery in Multinational Organizations"
+            },
+            "3" : {
+                "name" : "World Health Organization",
+                "Head Chair" : "Mekhala Hoskote",
+                "Vice Chairs" : "Brandon Doan, Ashley Njoroge",
+                "Topics" : "Sustainable Vaccine Practices and Financing, Improving Slum Health"
+            },
+            "4" : {
+                "name" : "International Criminal Police Organization",
+                "Head Chair" : "Natasha Cougoule",
+                "Vice Chairs" : "Chelsea Evans, Jacky Tian",
+                "Topics" : "Controlling the Black Market Trade of Civil War Antiques, Protection of Journalists in Conflict Zones"
+            },
+            "name" : "Bloc B"
+        },
+        "2" : {
+            "0" : {
+                "name" : "UN Security Council",
+                "Head Chair" : "Kim Nguyen, TJ Ford",
+                "Vice Chairs" : "Mischa Fritz",
+                "Topics" : "South China Sea, Open Agenda"
+            },
+            "1" : {
+                "name" : "Historical UN Security Council",
+                "Head Chair" : "Pranay Patil",
+                "Vice Chairs" : "Michael Pollack",
+                "Topics" : "Gulf War, Khmer Rouge"
+            },
+            "2" : {
+                "name" : "North Atlantic Treaty Organization",
+                "Head Chair" : "Gloria Cheung",
+                "Vice Chairs" : "Trent Gomberg",
+                "Topics" : "Post-Intervention Stability in Libya, Unrest in the East: Security in the Black Sea and Baltic Region"
+            },
+            "3" : {
+                "name" : "African Union",
+                "Head Chair" : "Itago Kangashi",
+                "Vice Chairs" : "Zoe Brouns",
+                "Topics" : "Volatile Political Systems: The Role of the AU in Establishing Democracies, The State of Agriculture and Food Security"
+            },
+            "4" : {
+                "name" : "Organization Of American States",
+                "Head Chair" : "Adrian Hernandez",
+                "Vice Chairs" : "Jane Kim",
+                "Topics" : "Drugs and Development in Latin America, Migration Movements in Latin America"
+            },
+            "5" : {
+                "name" : "Chinese State Council",
+                "Head Chair" : "Rita Hu",
+                "Vice Chairs" : "Haochen Zhou",
+                "Topics" : "Review on the Loosening of the One-Child Policy, One Belt, One Road"
+            },
+            "6" : {
+                "name" : "United States Senate",
+                "Head Chair" : "Jonas Majewski",
+                "Vice Chairs" : "Eric Cherwin",
+                "Topics" : "Immigration Reform and a Pathway to Citizenship, Trade Agreements and the American Economy"
+            },
+            "7" : {
+                "name" : "UNEP Division Of Environmental Laws And Conventions",
+                "Head Chair" : "Nate Parke",
+                "Vice Chairs" : "Kendra Singh",
+                "Topics" : "Compensatory Mitigation in a Global Context, Common but Differentiated Environmental Responsibility"
+            },
+            "8" : {
+                "name" : "UN Framework Convention On Climate Change  - Conference Of The Parties 22.5",
+                "Head Chair" : "Katie Lee",
+                "Vice Chairs" : "Se Yeon Kim",
+                "Topics" : "Building Adaptation Capacity for Vulnerable Communities, Governance of Geoengineering"
+            },
+            "9" : {
+                "name" : "European Court Of Human Rights",
+                "Head Chair" : "Jake Moskowitz",
+                "Vice Chairs" : "Patty Midy",
+                "Topics" : "Cyprus v. Turkey"
+            },
+            "10" : {
+                "name" : "Press Corps",
+                "Head Chair" : "Sarah Bauer",
+                "Vice Chairs" : "Hyunwook Kim, Stacey Dojiri",
+                "Topics" : "Open Agenda"
+            },
+            "name" : "Specialized"
+        },
+        "3" : {
+            "0" : {
+                "name" : "Joint Cabinet Crisis",
+                "Head Chair" : "Michael Eliot",
+                "Vice Chairs" : "Andy Luo, Michael McDonald, Tushita Saraf",
+                "Topics" : "Trade Wars: Anglo-Dutch East India Companies"
+            },
+            "1" : {
+                "name" : "Committee For Sustainable Development",
+                "Head Chair" : "Rob Purviance",
+                "Vice Chairs" : "Daksh Bhatia",
+                "Topics" : "Rebuilding a Nation: Infrastructure Development in Myanmar"
+            },
+            "2" : {
+                "name" : "Historical Crisis",
+                "Head Chair" : "Arjun Banerjee",
+                "Vice Chairs" : "Alex Wilfert",
+                "Topics" : "Unification of Germany"
+            },
+            "name" : "Crisis"
+        }
+    }
+}
