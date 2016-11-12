@@ -18,7 +18,6 @@ class LiveUpdatesTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.tweetText.layer.cornerRadius = 7.0
         self.tweetText.clipsToBounds = true
         self.avatar.layer.cornerRadius = 3.0

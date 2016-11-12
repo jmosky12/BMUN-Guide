@@ -46,6 +46,7 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
         navigationItem.rightBarButtonItem = sendButton
         navigationController?.navigationBar.tintColor = UIColor.white
         
+
         self.detailTextView.layer.cornerRadius = 5.0
         self.detailTextView.isEditable = false
         self.topicTextField.delegate = self

@@ -76,7 +76,6 @@ class CommitteeDetailViewController: UIViewController {
         self.backgroundImageView.contentMode = .scaleAspectFill
         self.backgroundImageView.alpha = 0.85
       
-      
     }
     
     // These two functions below prevent landscape mode

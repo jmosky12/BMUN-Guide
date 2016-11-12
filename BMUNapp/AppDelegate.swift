@@ -132,7 +132,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         storeNC.navigationBar.isTranslucent = false
         storeNC.navigationBar.topItem?.title = "Store"
         
-        let controllers = [delegateGuideNC, committeesNC, liveUpdatesNC, questionsNC, timelineNC, storeNC]
+        let insta = InstaCollectionViewController()
+        let instaNC = UINavigationController(rootViewController: insta)
+        let item7 = UITabBarItem(title: "Insta", image: nil, tag: 7)
+        item7.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        item7.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
+        instaNC.tabBarItem = item7
+        instaNC.navigationBar.barTintColor = UIColor.black
+        instaNC.navigationBar.isTranslucent = false
+        instaNC.navigationBar.topItem?.title = "Insta"
+        
+        let controllers = [delegateGuideNC, committeesNC, liveUpdatesNC, questionsNC, timelineNC, storeNC, instaNC]
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = controllers
