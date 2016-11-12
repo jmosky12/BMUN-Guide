@@ -60,16 +60,18 @@ class TimelineTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let num: Int!
         switch(section) {
         case 0:
-            return 7
+            num = Storage.dayOneTimeline?.count
         case 1:
-            return 6
+            num = Storage.dayTwoTimeline?.count
         case 2:
-            return 3
+            num = Storage.dayThreeTimeline?.count
         default:
-            return 1
+            num = 0
         }
+        return num
     }
 
     // Sets corresponding info for each cell that represents a specific event of that day
@@ -77,78 +79,24 @@ class TimelineTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as! TimelineTableViewCell
         let event = cell.eventTitle
         let time = cell.eventTime
+        var timelineEvent: [String: Any]?
         switch((indexPath as NSIndexPath).section) {
         case 0:
-            switch((indexPath as NSIndexPath).row) {
-            case 0:
-                event?.text = "Registration (Kerr Lobby)"
-                time?.text = " 12:00pm-4:00pm"
-            case 1:
-                event?.text = "International Students Reception (315 Wheeler)"
-                time?.text = " 2:30pm-4:30pm"
-            case 2:
-                event?.text = "Procedure Workshops (2060 VLSB)"
-                time?.text = " 3:00pm-4:00pm"
-            case 3:
-                event?.text = "Line Up For Opening Ceremonies (Sproul Plaza)"
-                time?.text = " 4:00pm-5:00pm"
-            case 4:
-                event?.text = "Opening Ceremonies (Paulley Ballroom)"
-                time?.text = " 5:30pm-6:30pm"
-            case 5:
-                event?.text = "Committee Meet Up (Lower Sproul)"
-                time?.text = " 6:30pm-7:00pm"
-            case 6:
-                event?.text = "First Committee Session"
-                time?.text = " 7:00pm-9:45pm"
-            default:
-                event?.text = "Uh Oh"
-                time?.text = "Default"
-            }
+            timelineEvent = Storage.dayOneTimeline?[String(indexPath.row)] as! [String : Any]?
+            event?.text = timelineEvent?["title"] as? String
+            time?.text = " \(timelineEvent?["time"] as? String)"
         case 1:
-            switch((indexPath as NSIndexPath).row) {
-            case 0:
-                event?.text = "Second Committee Session"
-                time?.text = " 9:00am-12:45pm"
-            case 1:
-                event?.text = "Advisors Meeting (Stephens Lounge)"
-                time?.text = " 10:00am-11:30am"
-            case 2:
-                event?.text = "Lunch Break"
-                time?.text = " 12:45pm-1:45pm"
-            case 3:
-                event?.text = "Third Committee Session"
-                time?.text = " 1:45pm-4:45pm"
-            case 4:
-                event?.text = "Head Delegate Meeting (170 Barrows)"
-                time?.text = " 5:00pm-6:00pm"
-            case 5:
-                event?.text = "Delegate Dance (Paulley Ballroom)"
-                time?.text = " 7:30pm-10:30pm"
-            default:
-                event?.text = "Uh Oh"
-                time?.text = "Default"
-            }
+            timelineEvent = Storage.dayTwoTimeline?[String(indexPath.row)] as! [String : Any]?
+            event?.text = timelineEvent?["title"] as? String
+            time?.text = " \(timelineEvent?["time"] as? String)"
         case 2:
-            switch((indexPath as NSIndexPath).row) {
-            case 0:
-                event?.text = "Fourth Committee Session"
-                time?.text = " 9:30am-12:30pm"
-            case 1:
-                event?.text = "Lunch Break"
-                time?.text = " 12:30pm-2:00pm"
-            case 2:
-                event?.text = "Closing Ceremonies (Paulley Ballroom)"
-                time?.text = " 2:00pm-3:30pm"
-            default:
-                event?.text = "Uh Oh"
-                time?.text = "Default"
-            }
+            timelineEvent = Storage.dayThreeTimeline?[String(indexPath.row)] as! [String : Any]?
+            event?.text = timelineEvent?["title"] as? String
+            time?.text = " \(timelineEvent?["time"] as? String)"
         default:
-            event?.text = "Uh Oh"
+            event?.text = "Default"
             time?.text = "Default"
         }
-        
         return cell
     }
     
@@ -156,11 +104,11 @@ class TimelineTableViewController: UITableViewController {
         let title: String!
         switch(section) {
         case 0:
-            title = "Friday, March 4"
+            title = Storage.dayOneTimeline?["date"] as! String
         case 1:
-            title = "Saturday, March 5"
+            title = Storage.dayTwoTimeline?["date"] as! String
         case 2:
-            title = "Sunday, March 6"
+            title = Storage.dayThreeTimeline?["date"] as! String
         default:
             title = "Something's wrong"
         }
@@ -178,11 +126,11 @@ class TimelineTableViewController: UITableViewController {
         titleLabel.textColor = UIColor.white
         switch(section) {
         case 0:
-            titleLabel.text = "Friday, March 4"
+            titleLabel.text = Storage.dayOneTimeline?["date"] as? String
         case 1:
-            titleLabel.text = "Saturday, March 5"
+            titleLabel.text = Storage.dayTwoTimeline?["date"] as? String
         case 2:
-            titleLabel.text = "Sunday, March 6"
+            titleLabel.text = Storage.dayThreeTimeline?["date"] as? String
         default:
             titleLabel.text = "No"
         }

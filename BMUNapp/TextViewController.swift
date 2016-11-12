@@ -25,18 +25,18 @@ class TextViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         edgesForExtendedLayout = UIRectEdge()
-        textView.layer.cornerRadius = 0.0
-        textView.becomeFirstResponder()
-        textView.text = delegate?.sendOverText()
+        self.textView.layer.cornerRadius = 0.0
+        self.textView.becomeFirstResponder()
+        self.textView.text = delegate?.sendOverText()
         
         // Adds a gesture recognizer that will either bring up or release the keyboard
         let textViewTapped = UITapGestureRecognizer(target: self, action: #selector(TextViewController.textTap))
-        textView.addGestureRecognizer(textViewTapped)
+        self.textView.addGestureRecognizer(textViewTapped)
     }
     
     // Uses the delegate methods in QuestionsViewController to take text in the text view and populate the QuestionViewController.swift detailTextView once this view controller closes
     override func viewWillDisappear(_ animated: Bool) {
-        delegate?.textViewFill(textView.text)
+        self.delegate?.textViewFill(textView.text)
     }
     
     // These two functions below prevent landscape mode
@@ -51,12 +51,11 @@ class TextViewController: UIViewController {
     // Detects whether or not to bring up or release the keyboard
     func textTap() {
         if keyboard == true {
-            textView.resignFirstResponder()
-            keyboard = false
+            self.textView.resignFirstResponder()
+            self.keyboard = false
         } else {
-            textView.becomeFirstResponder()
-            keyboard = true
-        }
+            self.textView.becomeFirstResponder()
+            self.keyboard = true        }
     }
 
 }

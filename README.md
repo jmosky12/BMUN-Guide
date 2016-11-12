@@ -14,4 +14,3 @@ BMUNapp is an app specifically designed to prepare and enhance the experience of
 * Form for delegates to email BMUN staff questions or feedback, in which BMUN will email you back
 
 
-

@@ -15,12 +15,14 @@ class Tweet: NSObject {
     let createdAt: Date?
     let profileImageURL: URL?
     let screenName: String!
+    var strDate: String?
     
     // Using the dictionary of tweets and their details from TwitterManager.swift, this selects the important characteristics and assigns them to the constants above
     init?(dict: NSDictionary) {
         if let user = dict["user"] as? NSDictionary, let txt = dict["text"] as? String, let crt = dict["created_at"] as? String {
             text = txt
             createdAt = DateFormatterManager.sharedInstance.format(crt)
+            strDate = crt
             if let name = user["name"] as? String, let imageURL = user["profile_image_url"] as? String, let sn = user["screen_name"] as? String {
                 username = name
                 screenName = sn
@@ -29,6 +31,7 @@ class Tweet: NSObject {
                 username = nil
                 screenName = nil
                 profileImageURL = nil
+                strDate = nil
             }
         } else {
             text = nil
@@ -36,6 +39,7 @@ class Tweet: NSObject {
             screenName = nil
             createdAt = nil
             profileImageURL = nil
+            strDate = nil
         }
         
         super.init()

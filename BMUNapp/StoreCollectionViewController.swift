@@ -36,16 +36,11 @@ class StoreCollectionViewController: UICollectionViewController {
         flowLayout.itemSize = CGSize(width: 250, height: 250)
         flowLayout.scrollDirection = .vertical
         self.collectionView?.collectionViewLayout = flowLayout
-        
-        
-        
-        
         //Moltin stuff
         Moltin.sharedInstance().setPublicId("lT03XQXXnjSKcqWTR77B7oBc6ZTHXvCW6Qh9TfVdlT")
         Moltin.sharedInstance().product.listing(withParameters: ["limit": 100], success: { (response) -> Void in
             // products is an array of all of the products that match the parameters...
             self.products = response?["result"] as! [AnyObject]
-            print("Got products: \(self.products)")
             
             self.collectionView?.reloadData()
             
@@ -55,7 +50,7 @@ class StoreCollectionViewController: UICollectionViewController {
         })
     
     }
-    
+
     func viewCartTapped() {
         let vc = CartTableViewController()
         self.navigationController?.pushViewController(vc, animated: true)
@@ -65,7 +60,6 @@ class StoreCollectionViewController: UICollectionViewController {
         let vc = StoreDetailViewController(object: products[indexPath.row])
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
 
     // MARK: UICollectionViewDataSource
 

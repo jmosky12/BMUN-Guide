@@ -11,12 +11,11 @@ import UIKit
 class StoreCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var backgroundImage: UIImageView!
 
+
     @IBOutlet weak var storeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
- 
 
 }
