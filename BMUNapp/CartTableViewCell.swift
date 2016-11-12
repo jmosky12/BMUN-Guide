@@ -11,7 +11,7 @@ import UIKit
 class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var itemLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,11 +20,7 @@ class CartTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        self.separatorInset = UIEdgeInsets.zero
-        self.preservesSuperviewLayoutMargins = false
-        self.layoutMargins = UIEdgeInsets.zero
-        
-        self.selectionStyle = .none
+        // Configure the view for the selected state
     }
     
 }

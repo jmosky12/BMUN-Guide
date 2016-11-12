@@ -9,6 +9,7 @@
 import UIKit
 import Moltin
 
+
 class CartTableViewController: UITableViewController {
     
     var nameList = [String]()
@@ -24,13 +25,16 @@ class CartTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 24.0/255.0, green: 70.0/255.0, blue: 148.0/255.0, alpha: 1.0)
+        
+        view.backgroundColor = UIColor.black
         edgesForExtendedLayout = UIRectEdge()
         let nib: UINib = UINib(nibName: "CartTableViewCell", bundle: nil)
-        self.tableView.register(nib, forCellReuseIdentifier: "cartCell")
+        self.tableView.register(nib, forCellReuseIdentifier: "CartTableViewCell")
         
-        tableView.estimatedRowHeight = 127
-        tableView.rowHeight = UITableViewAutomaticDimension
+        // Ensures table cell separators are set up correctly
+        tableView.separatorInset = UIEdgeInsets.zero
+        tableView.preservesSuperviewLayoutMargins = false
+        tableView.layoutMargins = UIEdgeInsets.zero
         
         // Sets characteristics for top bar text
         let textColor = UIColor.white
@@ -39,8 +43,8 @@ class CartTableViewController: UITableViewController {
             NSFontAttributeName: textFont!,
             NSForegroundColorAttributeName: textColor,
             ]
+        
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
-
         
         Moltin.sharedInstance().cart.getContentsWithsuccess({ (response) -> Void in
             let cartData = (response! as! [String: AnyObject])
@@ -59,7 +63,7 @@ class CartTableViewController: UITableViewController {
                 print(isItPricing)
                 print(isItRaw)
                 print(isitTax)
-//                self.priceList.append(cartPrice!)
+                self.priceList.append(String(describing: isitTax!))
             }
             
             
@@ -69,7 +73,7 @@ class CartTableViewController: UITableViewController {
             self.priceList.append(cartPrice!)
             self.nameList.append("Total")
             print("Total cart price: \(cartPrice)")
-            
+            self.tableView?.reloadData()
             }, failure: { (response, error) -> Void in
                 print("Something went wrong...")
                 print(error)
@@ -86,7 +90,7 @@ class CartTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? CartTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as? CartTableViewCell
         cell?.priceLabel.text = priceList[indexPath.row]
         cell?.itemLabel.text = nameList[indexPath.row]
         return cell!
