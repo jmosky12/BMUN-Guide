@@ -26,7 +26,6 @@
 		DF64FDC41C2894480072C463 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF64FDC21C2894480072C463 /* TextViewController.xib */; };
 		DF7A5EC11BCB99B900BDC91F /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7A5EBF1BCB99B900BDC91F /* TimelineTableViewCell.swift */; };
 		DF7A5EC21BCB99B900BDC91F /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF7A5EC01BCB99B900BDC91F /* TimelineTableViewCell.xib */; };
-		DF9A92E21BC8FDFE00BA3AE4 /* CommitteesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9A92E11BC8FDFE00BA3AE4 /* CommitteesTableViewController.swift */; };
 		DFD814211DD7165B00CA027E /* CommitteesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD8141F1DD7165B00CA027E /* CommitteesCollectionViewController.swift */; };
 		DFD814221DD7165B00CA027E /* CommitteesCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD814201DD7165B00CA027E /* CommitteesCollectionViewController.xib */; };
 		DFD814251DD7167700CA027E /* CommitteesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD814231DD7167700CA027E /* CommitteesCollectionViewCell.swift */; };
@@ -58,8 +57,6 @@
 		DFE372AA1BCB0DC500490A34 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE372A81BCB0DC500490A34 /* WebViewController.swift */; };
 		DFE372AB1BCB0DC500490A34 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE372A91BCB0DC500490A34 /* WebViewController.xib */; };
 		DFF33C191BE9D1A500D7228D /* LiveUpdatesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF33C171BE9D1A500D7228D /* LiveUpdatesTableViewCell.xib */; };
-		DFF613771C180186003C810C /* CommitteeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF613751C180186003C810C /* CommitteeTableViewCell.swift */; };
-		DFF613781C180186003C810C /* CommitteeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF613761C180186003C810C /* CommitteeTableViewCell.xib */; };
 		DFF6137B1C1801A2003C810C /* CommitteeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF613791C1801A2003C810C /* CommitteeDetailViewController.swift */; };
 		DFF6137C1C1801A2003C810C /* CommitteeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF6137A1C1801A2003C810C /* CommitteeDetailViewController.xib */; };
 /* End PBXBuildFile section */
@@ -89,7 +86,6 @@
 		DF64FDC21C2894480072C463 /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
 		DF7A5EBF1BCB99B900BDC91F /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		DF7A5EC01BCB99B900BDC91F /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
-		DF9A92E11BC8FDFE00BA3AE4 /* CommitteesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteesTableViewController.swift; sourceTree = "<group>"; };
 		DFD8141F1DD7165B00CA027E /* CommitteesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteesCollectionViewController.swift; sourceTree = "<group>"; };
 		DFD814201DD7165B00CA027E /* CommitteesCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitteesCollectionViewController.xib; sourceTree = "<group>"; };
 		DFD814231DD7167700CA027E /* CommitteesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -121,8 +117,6 @@
 		DFE372A81BCB0DC500490A34 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		DFE372A91BCB0DC500490A34 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		DFF33C171BE9D1A500D7228D /* LiveUpdatesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveUpdatesTableViewCell.xib; sourceTree = "<group>"; };
-		DFF613751C180186003C810C /* CommitteeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteeTableViewCell.swift; sourceTree = "<group>"; };
-		DFF613761C180186003C810C /* CommitteeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitteeTableViewCell.xib; sourceTree = "<group>"; };
 		DFF613791C1801A2003C810C /* CommitteeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteeDetailViewController.swift; sourceTree = "<group>"; };
 		DFF6137A1C1801A2003C810C /* CommitteeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitteeDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,9 +156,6 @@
 		DF20B1A81BC9B464007705BA /* Committees */ = {
 			isa = PBXGroup;
 			children = (
-				DF9A92E11BC8FDFE00BA3AE4 /* CommitteesTableViewController.swift */,
-				DFF613751C180186003C810C /* CommitteeTableViewCell.swift */,
-				DFF613761C180186003C810C /* CommitteeTableViewCell.xib */,
 				DFD8141F1DD7165B00CA027E /* CommitteesCollectionViewController.swift */,
 				DFD814201DD7165B00CA027E /* CommitteesCollectionViewController.xib */,
 				DFD814231DD7167700CA027E /* CommitteesCollectionViewCell.swift */,
@@ -366,7 +357,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFF613781C180186003C810C /* CommitteeTableViewCell.xib in Resources */,
 				DFDCCE0A1DAAF38900269E9E /* CommitteeFundamentals.pdf in Resources */,
 				DFDCCE131DAAF38900269E9E /* twitterAvatar.png in Resources */,
 				DFDCCE0D1DAAF38900269E9E /* Packing.pdf in Resources */,
@@ -454,7 +444,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF7A5EC11BCB99B900BDC91F /* TimelineTableViewCell.swift in Sources */,
-				DFF613771C180186003C810C /* CommitteeTableViewCell.swift in Sources */,
 				DF6071CA1BC8B62F007B35CC /* BMUNapp.xcdatamodeld in Sources */,
 				DFDCCDE61DAAEAC400269E9E /* StoreCollectionViewCell.swift in Sources */,
 				DFDC32661BE565D100729449 /* LiveUpdatesTableViewCell.swift in Sources */,
@@ -475,7 +464,6 @@
 				DF2702A41C14D8A200A4889D /* QuestionsViewController.swift in Sources */,
 				DFDF6EA61BE544CD009244FE /* TwitterManager.swift in Sources */,
 				DF64FDC31C2894480072C463 /* TextViewController.swift in Sources */,
-				DF9A92E21BC8FDFE00BA3AE4 /* CommitteesTableViewController.swift in Sources */,
 				DF0DB57A1BCC66C400F7E96F /* LiveUpdatesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
