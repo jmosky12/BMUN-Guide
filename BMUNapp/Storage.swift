@@ -36,5 +36,12 @@ struct Storage {
     
     static var dayThreeTimeline: [String: Any]?
     
+    static var stringList: [InstagramInfo]!
+    
     //static var committees: Array<AnyObject>?
+}
+
+struct InstagramInfo {
+    var urlString: String
+    var description: String
 }

@@ -55,8 +55,7 @@ class TextViewController: UIViewController {
             self.keyboard = false
         } else {
             self.textView.becomeFirstResponder()
-            self.keyboard = true
-        }
+            self.keyboard = true        }
     }
 
 }

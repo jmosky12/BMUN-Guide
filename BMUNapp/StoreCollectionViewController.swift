@@ -24,6 +24,7 @@ class StoreCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "View Cart >", style: .plain, target: self,action: #selector(viewCartTapped))
 
         // Register cell classes
         self.collectionView!.register(StoreCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -32,16 +33,14 @@ class StoreCollectionViewController: UICollectionViewController {
         self.collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
     
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 200, height: 200)
-        flowLayout.scrollDirection = .horizontal
+        flowLayout.itemSize = CGSize(width: 250, height: 250)
+        flowLayout.scrollDirection = .vertical
         self.collectionView?.collectionViewLayout = flowLayout
-        
         //Moltin stuff
         Moltin.sharedInstance().setPublicId("lT03XQXXnjSKcqWTR77B7oBc6ZTHXvCW6Qh9TfVdlT")
         Moltin.sharedInstance().product.listing(withParameters: ["limit": 100], success: { (response) -> Void in
             // products is an array of all of the products that match the parameters...
             self.products = response?["result"] as! [AnyObject]
-            //print("Got products: \(self.products)")
             
             self.collectionView?.reloadData()
             
@@ -52,6 +51,15 @@ class StoreCollectionViewController: UICollectionViewController {
     
     }
 
+    func viewCartTapped() {
+        let vc = CartTableViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath:IndexPath) {
+        let vc = StoreDetailViewController(object: products[indexPath.row])
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
     // MARK: UICollectionViewDataSource
 

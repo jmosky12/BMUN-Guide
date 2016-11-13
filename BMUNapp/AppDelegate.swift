@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import SwiftyJSON
 import Foundation
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -59,6 +60,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             } catch let error {
                 print("error: \(error)")
+            }
+        }
+        
+        Storage.stringList = []
+        
+        Alamofire.request("https://api.instagram.com/v1/users/self/media/recent/?access_token=191003028.24fe27c.f110d6acfe85455ca11ef9394ef9e691").responseJSON { response in
+            if let JSON = response.result.value as? [String: AnyObject] {
+                let mediaData = (JSON["data"] as! [AnyObject])
+                for pic in mediaData {
+                    let post = pic as! [String: Any]
+                    let pictureData = post["images"] as! [String: Any]
+                    let descriptionData = post["caption"] as! [String: Any]
+                    let standardPic = pictureData["standard_resolution"] as! [String: Any]
+                    let urlString = standardPic["url"] as! String
+                    let description = descriptionData["text"] as! String
+                    Storage.stringList.append(InstagramInfo(urlString: urlString, description: description))
+                }
             }
         }
         
@@ -112,7 +130,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         questionsNC.navigationBar.isTranslucent = false
         questionsNC.navigationBar.topItem?.title = "Questions"
         
-        let timeline = TimelineTableViewController()
+        let timeline = TimelineCollectionViewController()
         let timelineNC = UINavigationController(rootViewController: timeline)
         let item5 = UITabBarItem(title: "Timeline", image: nil, tag: 5)
         item5.setTitleTextAttributes(titleTextAttributes, for: UIControlState())
@@ -132,10 +150,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         storeNC.navigationBar.isTranslucent = false
         storeNC.navigationBar.topItem?.title = "Store"
         
-        let controllers = [delegateGuideNC, committeesNC, liveUpdatesNC, questionsNC, timelineNC, storeNC]
+        let insta = InstaTableViewController()
+        let instaNC = UINavigationController(rootViewController: insta)
+        let item7 = UITabBarItem(title: "Insta", image: nil, tag: 7)
+        item7.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        item7.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
+        instaNC.tabBarItem = item7
+        instaNC.navigationBar.barTintColor = UIColor.black
+        instaNC.navigationBar.isTranslucent = false
+        instaNC.navigationBar.topItem?.title = "Insta"
+        
+        let controllers = [delegateGuideNC, committeesNC, liveUpdatesNC, questionsNC, timelineNC, storeNC, instaNC]
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = controllers
+        tabBarController.moreNavigationController.navigationBar.barTintColor = UIColor.black
+        tabBarController.moreNavigationController.navigationBar.isTranslucent = false
+        
         self.window?.addSubview(tabBarController.view)
         window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()

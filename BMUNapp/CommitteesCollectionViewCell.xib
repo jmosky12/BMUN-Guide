@@ -30,13 +30,13 @@
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="GgP-Hr-h0k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="H2H-cP-1PP"/>
+                <constraint firstItem="GgP-Hr-h0k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="H2H-cP-1PP"/>
                 <constraint firstAttribute="bottom" secondItem="GgP-Hr-h0k" secondAttribute="bottom" id="XaD-8D-PFj"/>
                 <constraint firstItem="GgP-Hr-h0k" firstAttribute="top" secondItem="m1f-P1-O7q" secondAttribute="bottom" id="cTz-Me-NXf"/>
                 <constraint firstItem="m1f-P1-O7q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fdL-P6-A40"/>
                 <constraint firstItem="GgP-Hr-h0k" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.2" id="iTS-Ly-ks0"/>
                 <constraint firstItem="m1f-P1-O7q" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="nQa-yD-U7l"/>
-                <constraint firstAttribute="trailing" secondItem="GgP-Hr-h0k" secondAttribute="trailing" id="nSL-yN-hgX"/>
+                <constraint firstAttribute="trailing" secondItem="GgP-Hr-h0k" secondAttribute="trailing" constant="5" id="nSL-yN-hgX"/>
             </constraints>
             <size key="customSize" width="120" height="120"/>
             <connections>
