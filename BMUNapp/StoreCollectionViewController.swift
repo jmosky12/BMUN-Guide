@@ -27,7 +27,6 @@ class StoreCollectionViewController: UICollectionViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "View Cart >", style: .plain, target: self,action: #selector(viewCartTapped))
 
         // Register cell classes
-        self.collectionView!.register(StoreCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         let nib: UINib = UINib(nibName: "StoreCollectionViewCell", bundle: nil)
         self.collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)

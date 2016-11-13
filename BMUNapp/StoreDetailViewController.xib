@@ -10,6 +10,7 @@
             <connections>
                 <outlet property="descriptionLabel" destination="pkk-lD-K89" id="HCd-Cd-6eA"/>
                 <outlet property="priceLabel" destination="hER-T0-F6U" id="w8e-Dv-pS2"/>
+                <outlet property="quantityLabel" destination="j7O-QD-372" id="6TK-LV-Ugv"/>
                 <outlet property="titleLabel" destination="vHb-sq-Ynf" id="Kx2-Tb-rlw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -45,16 +46,32 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMW-GW-2CZ">
-                            <state key="normal" title="Add to Cart"/>
-                            <connections>
-                                <action selector="AddToCartTapped:" destination="-1" eventType="touchUpInside" id="CNt-fD-8Tr"/>
-                            </connections>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SQx-Vh-MFY">
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1p-7I-0oX">
+                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                    <state key="normal" title="-"/>
+                                    <connections>
+                                        <action selector="subtractOneItem:" destination="-1" eventType="touchUpInside" id="pFr-Bc-dEe"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7O-QD-372">
+                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdH-Ug-g22">
+                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                    <state key="normal" title="+"/>
+                                    <connections>
+                                        <action selector="addOneItem:" destination="-1" eventType="touchUpInside" id="XF0-vV-S4k"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <constraints>
                         <constraint firstItem="vHb-sq-Ynf" firstAttribute="leading" secondItem="YtB-9q-H6Z" secondAttribute="leading" constant="28" id="92u-jo-tRZ"/>
-                        <constraint firstItem="uMW-GW-2CZ" firstAttribute="leading" secondItem="YtB-9q-H6Z" secondAttribute="leading" constant="5" id="Hon-KA-8aT"/>
                         <constraint firstItem="pkk-lD-K89" firstAttribute="leading" secondItem="YtB-9q-H6Z" secondAttribute="leading" id="THm-WC-bFh"/>
                         <constraint firstItem="hER-T0-F6U" firstAttribute="leading" secondItem="YtB-9q-H6Z" secondAttribute="leading" constant="25" id="pcE-iB-j7m"/>
                     </constraints>

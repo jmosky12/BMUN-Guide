@@ -158,7 +158,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         instaNC.tabBarItem = item7
         instaNC.navigationBar.barTintColor = UIColor.black
         instaNC.navigationBar.isTranslucent = false
-        instaNC.navigationBar.topItem?.title = "Insta"
+        instaNC.navigationBar.topItem?.title = "Instagram"
         
         let controllers = [delegateGuideNC, committeesNC, liveUpdatesNC, questionsNC, timelineNC, storeNC, instaNC]
         
@@ -166,6 +166,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.viewControllers = controllers
         tabBarController.moreNavigationController.navigationBar.barTintColor = UIColor.black
         tabBarController.moreNavigationController.navigationBar.isTranslucent = false
+        tabBarController.moreNavigationController.navigationBar.tintColor = UIColor.white
         
         self.window?.addSubview(tabBarController.view)
         window?.rootViewController = tabBarController
