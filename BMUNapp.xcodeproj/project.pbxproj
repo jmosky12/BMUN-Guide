@@ -15,10 +15,12 @@
 		D715089B1DD73F600026773F /* StoreDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71508991DD73F600026773F /* StoreDetailViewController.xib */; };
 		D715089E1DD755530026773F /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D715089C1DD755530026773F /* CartTableViewController.swift */; };
 		D715089F1DD755530026773F /* CartTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D715089D1DD755530026773F /* CartTableViewController.xib */; };
-		D71508A31DD76F950026773F /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71508A11DD76F950026773F /* CartTableViewCell.swift */; };
-		D71508A41DD76F950026773F /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71508A21DD76F950026773F /* CartTableViewCell.xib */; };
 		D71508A61DD793400026773F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71508A51DD793400026773F /* SwiftyJSON.framework */; };
 		D71508A81DD793C70026773F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71508A71DD793C70026773F /* Storage.swift */; };
+		D71508AB1DD7AAAF0026773F /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71508A91DD7AAAF0026773F /* CartTableViewCell.swift */; };
+		D71508AC1DD7AAAF0026773F /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71508AA1DD7AAAF0026773F /* CartTableViewCell.xib */; };
+		D71508AF1DD803D40026773F /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71508AD1DD803D40026773F /* CheckoutViewController.swift */; };
+		D71508B01DD803D40026773F /* CheckoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71508AE1DD803D40026773F /* CheckoutViewController.xib */; };
 		D7370FE91DB33E6B008A4AF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7370FE81DB33E6B008A4AF3 /* GoogleService-Info.plist */; };
 		DF0DB57A1BCC66C400F7E96F /* LiveUpdatesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0DB5791BCC66C400F7E96F /* LiveUpdatesTableViewController.swift */; };
 		DF20B1B21BC9B513007705BA /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF20B1B11BC9B513007705BA /* TimelineTableViewController.swift */; };
@@ -96,10 +98,12 @@
 		D71508991DD73F600026773F /* StoreDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreDetailViewController.xib; sourceTree = "<group>"; };
 		D715089C1DD755530026773F /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
 		D715089D1DD755530026773F /* CartTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartTableViewController.xib; sourceTree = "<group>"; };
-		D71508A11DD76F950026773F /* CartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
-		D71508A21DD76F950026773F /* CartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
 		D71508A51DD793400026773F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../Library/Developer/Xcode/DerivedData/BMUNapp-epobmyjipxnwrifvjumgcxazxohk/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		D71508A71DD793C70026773F /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		D71508A91DD7AAAF0026773F /* CartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		D71508AA1DD7AAAF0026773F /* CartTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartTableViewCell.xib; sourceTree = "<group>"; };
+		D71508AD1DD803D40026773F /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		D71508AE1DD803D40026773F /* CheckoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutViewController.xib; sourceTree = "<group>"; };
 		D7370FE81DB33E6B008A4AF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DF0DB5791BCC66C400F7E96F /* LiveUpdatesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUpdatesTableViewController.swift; sourceTree = "<group>"; };
 		DF20B1B11BC9B513007705BA /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
@@ -210,8 +214,10 @@
 			children = (
 				D715089C1DD755530026773F /* CartTableViewController.swift */,
 				D715089D1DD755530026773F /* CartTableViewController.xib */,
-				D71508A11DD76F950026773F /* CartTableViewCell.swift */,
-				D71508A21DD76F950026773F /* CartTableViewCell.xib */,
+				D71508A91DD7AAAF0026773F /* CartTableViewCell.swift */,
+				D71508AA1DD7AAAF0026773F /* CartTableViewCell.xib */,
+				D71508AD1DD803D40026773F /* CheckoutViewController.swift */,
+				D71508AE1DD803D40026773F /* CheckoutViewController.xib */,
 			);
 			name = "Cart and Checkout";
 			sourceTree = "<group>";
@@ -457,16 +463,17 @@
 				DFDCCDE31DAAEAAE00269E9E /* StoreCollectionViewController.xib in Resources */,
 				DF2702A51C14D8A200A4889D /* QuestionsViewController.xib in Resources */,
 				DFDCCE0B1DAAF38900269E9E /* CommitteeStructure.pdf in Resources */,
-				D71508A41DD76F950026773F /* CartTableViewCell.xib in Resources */,
 				DFD814591DD7F76900CA027E /* TimelineCollectionViewCell.xib in Resources */,
 				DFD814261DD7167700CA027E /* CommitteesCollectionViewCell.xib in Resources */,
 				DFDCCE121DAAF38900269E9E /* SpeechPreparation.pdf in Resources */,
+				D71508AC1DD7AAAF0026773F /* CartTableViewCell.xib in Resources */,
 				D7370FE91DB33E6B008A4AF3 /* GoogleService-Info.plist in Resources */,
 				DFD8142E1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.xib in Resources */,
 				DFDCCDE71DAAEAC400269E9E /* StoreCollectionViewCell.xib in Resources */,
 				DFDCCE111DAAF38900269E9E /* SpeechDelivery.pdf in Resources */,
 				DFD814551DD7F74B00CA027E /* TimelineCollectionViewController.xib in Resources */,
 				DFDCCE0E1DAAF38900269E9E /* PositionPaper.pdf in Resources */,
+				D71508B01DD803D40026773F /* CheckoutViewController.xib in Resources */,
 				DF20B1BC1BCAE380007705BA /* DelegateTableViewCell.xib in Resources */,
 				D715089F1DD755530026773F /* CartTableViewController.xib in Resources */,
 				DF64FDC41C2894480072C463 /* TextViewController.xib in Resources */,
@@ -550,6 +557,7 @@
 				DF20B1B81BCAE34A007705BA /* DelegateGuideTableViewController.swift in Sources */,
 				DFDF6EA81BE5530C009244FE /* Tweet.swift in Sources */,
 				DFD814211DD7165B00CA027E /* CommitteesCollectionViewController.swift in Sources */,
+				D71508AB1DD7AAAF0026773F /* CartTableViewCell.swift in Sources */,
 				DF20B1BB1BCAE380007705BA /* DelegateTableViewCell.swift in Sources */,
 				DFDF6EAA1BE55760009244FE /* DateFormatterManager.swift in Sources */,
 				DF6071C21BC8B62F007B35CC /* AppDelegate.swift in Sources */,
@@ -557,10 +565,10 @@
 				DFD814581DD7F76900CA027E /* TimelineCollectionViewCell.swift in Sources */,
 				DF20B1B21BC9B513007705BA /* TimelineTableViewController.swift in Sources */,
 				D715089A1DD73F600026773F /* StoreDetailViewController.swift in Sources */,
-				D71508A31DD76F950026773F /* CartTableViewCell.swift in Sources */,
 				D715088E1DD57C2C0026773F /* InstaCollectionViewCell.swift in Sources */,
 				D71508921DD57C6D0026773F /* InstaCollectionViewController.swift in Sources */,
 				DFD8145C1DD804C800CA027E /* TimelineEventsCollectionViewController.swift in Sources */,
+				D71508AF1DD803D40026773F /* CheckoutViewController.swift in Sources */,
 				D715089E1DD755530026773F /* CartTableViewController.swift in Sources */,
 				DFE372AA1BCB0DC500490A34 /* WebViewController.swift in Sources */,
 				DFD814541DD7F74B00CA027E /* TimelineCollectionViewController.swift in Sources */,
