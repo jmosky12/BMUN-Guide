@@ -25,6 +25,8 @@ class CartTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Place Order >", style: .plain, target: self,action: #selector(placeOrder))
+        
         view.backgroundColor = UIColor.black
         edgesForExtendedLayout = UIRectEdge()
         let nib: UINib = UINib(nibName: "CartTableViewCell", bundle: nil)
@@ -82,15 +84,14 @@ class CartTableViewController: UITableViewController {
                 lastArray.append(""); lastArray.append("")
                 lastArray.append(cartPrice!)
                 self.itemArray.append(lastArray)
-                self.tableView?.reloadData()
             } else {
                 var emptyCartArray = [String]()
                 emptyCartArray.append("No Items in Cart")
                 emptyCartArray.append(""); emptyCartArray.append("")
                 emptyCartArray.append("")
                 self.itemArray.append(emptyCartArray)
-                
             }
+            self.tableView?.reloadData()
                 }, failure: { (response, error) -> Void in
                 print("Something went wrong...")
                 print(error)
@@ -121,6 +122,14 @@ class CartTableViewController: UITableViewController {
         
         return cell!
     }
+    
+    func placeOrder() {
+        let vc = CheckoutViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    
     
     
     /*

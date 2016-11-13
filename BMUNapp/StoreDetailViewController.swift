@@ -65,6 +65,7 @@ class StoreDetailViewController: UIViewController {
         }
     }
 
+    //actually fully removes item from cart
     @IBAction func subtractOneItem(_ sender: AnyObject) {
         let productid = self.object?["id"] as? String
         let productName = object["title"] as? String
@@ -97,21 +98,22 @@ class StoreDetailViewController: UIViewController {
         
     }
 
+    //adds one item to cart
     @IBAction func addOneItem(_ sender: AnyObject) {
         let productid = self.object?["id"] as? String
         let productName = object["title"] as? String
         switch productName! {
         case "Conference Cause":
-            Storage.quantityConferenceCause = Storage.quantityConferenceCause + 1
+            Storage.quantityConferenceCause += 1
             self.quantityLabel.text = String(describing: Storage.quantityConferenceCause)
         case "KeyChain":
-            Storage.quantityKeychain = Storage.quantityKeychain + 1
+            Storage.quantityKeychain += 1
             self.quantityLabel.text = String(describing: Storage.quantityKeychain)
         case "Hat":
-            Storage.quantityHat = Storage.quantityHat + 1
+            Storage.quantityHat += 1
             self.quantityLabel.text = String(describing: Storage.quantityHat)
         default:
-            Storage.quantityTShirt = Storage.quantityTShirt + 1
+            Storage.quantityTShirt += 1
             self.quantityLabel.text = String(describing: Storage.quantityTShirt)
         }
         // add product to cart
