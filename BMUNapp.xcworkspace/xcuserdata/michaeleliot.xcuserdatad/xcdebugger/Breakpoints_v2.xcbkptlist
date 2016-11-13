@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BMUNapp/CartTableViewController.swift"
-            timestampString = "500674119.394809"
+            timestampString = "500692121.662921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -73,14 +73,46 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BMUNapp/CartTableViewController.swift"
-            timestampString = "500674119.394809"
+            filePath = "BMUNapp/StoreDetailViewController.swift"
+            timestampString = "500695131.033874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "subtractOneItem(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BMUNapp.StoreDetailViewController.subtractOneItem (Swift.AnyObject) -&gt; ()"
+                  moduleName = "BMUNapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaeleliot/BMUNapp/BMUNapp/StoreDetailViewController.swift"
+                  timestampString = "500692401.977138"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "1740">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BMUNapp.StoreDetailViewController.(subtractOneItem (Swift.AnyObject) -&gt; ()).(closure #1)"
+                  moduleName = "BMUNapp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaeleliot/BMUNapp/BMUNapp/StoreDetailViewController.swift"
+                  timestampString = "500692401.978528"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

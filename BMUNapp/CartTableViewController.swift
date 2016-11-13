@@ -12,8 +12,7 @@ import Moltin
 
 class CartTableViewController: UITableViewController {
     
-    var nameList = [String]()
-    var priceList = [String]()
+    var itemArray = [[String]]()
     
     init() {
         super.init(nibName: "CartTableViewController", bundle: nil);
@@ -36,6 +35,11 @@ class CartTableViewController: UITableViewController {
         tableView.preservesSuperviewLayoutMargins = false
         tableView.layoutMargins = UIEdgeInsets.zero
         
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.setNeedsLayout()
+        self.tableView.layoutIfNeeded()
+        
         // Sets characteristics for top bar text
         let textColor = UIColor.white
         let textFont = UIFont(name: "Avenir", size: 35.0)
@@ -43,56 +47,78 @@ class CartTableViewController: UITableViewController {
             NSFontAttributeName: textFont!,
             NSForegroundColorAttributeName: textColor,
             ]
-        
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
         
         Moltin.sharedInstance().cart.getContentsWithsuccess({ (response) -> Void in
             let cartData = (response! as! [String: AnyObject])
-            print("Got cart data: \(cartData)")
             
             // Extract the products out of the cart...
-            var cartItems = cartData["result"]?["contents"] as! NSDictionary
-            
-            for item in cartItems {
-                let innerShit = item.value as? NSDictionary
-                let name = innerShit?["name"] as? String
-                self.nameList.append(name!)
-                let isItPricing = innerShit?["pricing"] as? NSDictionary
-                let isItRaw = isItPricing?["raw"] as? NSDictionary
-                let isitTax = isItRaw?["without_tax"] as? NSNumber
-                print(isItPricing)
-                print(isItRaw)
-                print(isitTax)
-                self.priceList.append(String(describing: isitTax!))
+            if let cartItems = cartData["result"]?["contents"] as? NSDictionary {
+                var firstArray = [String]()
+                firstArray.append("Name")
+                firstArray.append("Price Per Unit"); firstArray.append("Quantity")
+                firstArray.append("Price")
+                self.itemArray.append(firstArray)
+                
+                for item in cartItems {
+                    var indivArray = [String]()
+                    let innerShit = item.value as? NSDictionary
+                    let name = innerShit?["name"] as? String
+                    let pricing = innerShit?["pricing"] as? NSDictionary
+                    let quantity = innerShit?["quantity"] as! Float
+                    let raw = pricing?["raw"] as? NSDictionary
+                    let price = raw?["without_tax"] as! Float
+                    indivArray.append(name!)
+                    indivArray.append(String(describing: price))
+                    indivArray.append(String(describing: quantity))
+                    indivArray.append(String(describing: price * quantity))
+                    self.itemArray.append(indivArray)
+                }
+                
+                // Get cart total price
+                let cartPrice = ((((cartData["result"] as? NSDictionary)?["totals"] as? NSDictionary)?["post_discount"] as? NSDictionary)?["formatted"] as? NSDictionary)?["without_tax"] as? String
+                var lastArray = [String]()
+                lastArray.append("Total")
+                lastArray.append(""); lastArray.append("")
+                lastArray.append(cartPrice!)
+                self.itemArray.append(lastArray)
+                self.tableView?.reloadData()
+            } else {
+                var emptyCartArray = [String]()
+                emptyCartArray.append("No Items in Cart")
+                emptyCartArray.append(""); emptyCartArray.append("")
+                emptyCartArray.append("")
+                self.itemArray.append(emptyCartArray)
+                
             }
-            
-            
-            
-            // Get cart total price
-            let cartPrice = ((((cartData["result"] as? NSDictionary)?["totals"] as? NSDictionary)?["post_discount"] as? NSDictionary)?["formatted"] as? NSDictionary)?["without_tax"] as? String
-            self.priceList.append(cartPrice!)
-            self.nameList.append("Total")
-            print("Total cart price: \(cartPrice)")
-            self.tableView?.reloadData()
-            }, failure: { (response, error) -> Void in
+                }, failure: { (response, error) -> Void in
                 print("Something went wrong...")
                 print(error)
-        })
-    }
+            })
+        }
+
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameList.count
+        return itemArray.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as? CartTableViewCell
-        cell?.priceLabel.text = priceList[indexPath.row]
-        cell?.itemLabel.text = nameList[indexPath.row]
+        var curArray = itemArray[indexPath.row]
+        cell!.itemLabel.text = curArray[0]
+        cell!.ppuLabel.text = curArray[1]
+        cell!.quantityLabel.text = curArray[2]
+        if (indexPath.row == 0 || indexPath.row == itemArray.count - 1) {
+            cell!.priceLabel.text = curArray[3]
+        } else {
+            cell!.priceLabel.text = "$" + curArray[3]
+        }
+        
         return cell!
     }
     

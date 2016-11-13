@@ -36,5 +36,13 @@ struct Storage {
     
     static var dayThreeTimeline: [String: Any]?
     
+    static var quantityConferenceCause = 0
+    
+    static var quantityHat = 0
+    
+    static var quantityKeychain = 0
+    
+    static var quantityTShirt = 0
+    
     //static var committees: Array<AnyObject>?
 }
