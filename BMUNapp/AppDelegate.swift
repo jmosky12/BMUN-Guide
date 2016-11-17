@@ -64,8 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         Storage.stringList = []
-        
-        Alamofire.request("https://api.instagram.com/v1/users/self/media/recent/?access_token=191003028.24fe27c.f110d6acfe85455ca11ef9394ef9e691").responseJSON { response in
+//      Michael Eliot' Instagram: 191003028.24fe27c.f110d6acfe85455ca11ef9394ef9e691
+        Alamofire.request("https://api.instagram.com/v1/users/self/media/recent/?access_token=311144164.24fe27c.20ea6e944339468b827b1512c5039a65").responseJSON { response in
             if let JSON = response.result.value as? [String: AnyObject] {
                 let mediaData = (JSON["data"] as! [AnyObject])
                 for pic in mediaData {

@@ -8,9 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoreDetailViewController" customModule="BMUNapp" customModuleProvider="target">
             <connections>
+                <outlet property="addToCartButton" destination="2bh-ni-Ikv" id="8tf-r9-JmE"/>
+                <outlet property="deleteItemButton" destination="T0a-Oe-8mZ" id="AX5-Tn-BRT"/>
                 <outlet property="descriptionLabel" destination="pkk-lD-K89" id="HCd-Cd-6eA"/>
                 <outlet property="priceLabel" destination="hER-T0-F6U" id="w8e-Dv-pS2"/>
-                <outlet property="quantityLabel" destination="j7O-QD-372" id="6TK-LV-Ugv"/>
+                <outlet property="quantityLabel" destination="lIH-UP-qjF" id="vG1-7h-Wzg"/>
                 <outlet property="titleLabel" destination="vHb-sq-Ynf" id="Kx2-Tb-rlw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,43 +22,37 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="YtB-9q-H6Z">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="YtB-9q-H6Z">
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHb-sq-Ynf">
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="ANs-AO-GN5"/>
-                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hER-T0-F6U">
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="zWA-J9-By4"/>
-                            </constraints>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hER-T0-F6U">
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkk-lD-K89">
                             <constraints>
-                                <constraint firstAttribute="height" constant="21" id="bEB-rP-CRF"/>
+                                <constraint firstAttribute="height" constant="70" id="6dN-mx-60H"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SQx-Vh-MFY">
+                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CnP-iv-7Sx">
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1p-7I-0oX">
                                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                     <state key="normal" title="-"/>
                                     <connections>
-                                        <action selector="subtractOneItem:" destination="-1" eventType="touchUpInside" id="pFr-Bc-dEe"/>
+                                        <action selector="subtractOneItem:" destination="-1" eventType="touchUpInside" id="BWR-Ba-Yqt"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7O-QD-372">
-                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIH-UP-qjF">
+                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -64,23 +60,38 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                     <state key="normal" title="+"/>
                                     <connections>
-                                        <action selector="addOneItem:" destination="-1" eventType="touchUpInside" id="XF0-vV-S4k"/>
+                                        <action selector="addOneItem:" destination="-1" eventType="touchUpInside" id="eGO-b8-iCZ"/>
                                     </connections>
                                 </button>
                             </subviews>
                         </stackView>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="vHb-sq-Ynf" firstAttribute="leading" secondItem="YtB-9q-H6Z" secondAttribute="leading" constant="28" id="92u-jo-tRZ"/>
-                        <constraint firstItem="pkk-lD-K89" firstAttribute="leading" secondItem="YtB-9q-H6Z" secondAttribute="leading" id="THm-WC-bFh"/>
-                        <constraint firstItem="hER-T0-F6U" firstAttribute="leading" secondItem="YtB-9q-H6Z" secondAttribute="leading" constant="25" id="pcE-iB-j7m"/>
-                    </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bh-ni-Ikv">
+                    <state key="normal" title="Add to Cart"/>
+                    <connections>
+                        <action selector="addToCart:" destination="-1" eventType="touchUpInside" id="lfp-6l-kJz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0a-Oe-8mZ">
+                    <state key="normal" title="Delete Item From Cart">
+                        <color key="titleColor" red="1" green="0.17749204330000001" blue="0.16128665410000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="deleteFromCart:" destination="-1" eventType="touchUpInside" id="BDq-J5-lPV"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="T0a-Oe-8mZ" firstAttribute="top" secondItem="2bh-ni-Ikv" secondAttribute="bottom" constant="-30" id="FVa-zm-EXr"/>
                 <constraint firstItem="YtB-9q-H6Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="130" id="HJV-zj-AFk"/>
-                <constraint firstAttribute="bottom" secondItem="YtB-9q-H6Z" secondAttribute="bottom" constant="205" id="kdw-EK-wgs"/>
+                <constraint firstItem="T0a-Oe-8mZ" firstAttribute="leading" secondItem="2bh-ni-Ikv" secondAttribute="trailing" constant="-115" id="Xk5-MM-WsP"/>
+                <constraint firstItem="2bh-ni-Ikv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="148" id="jKI-oT-lbx"/>
+                <constraint firstAttribute="bottom" secondItem="YtB-9q-H6Z" secondAttribute="bottom" constant="100" id="kdw-EK-wgs"/>
+                <constraint firstItem="2bh-ni-Ikv" firstAttribute="top" secondItem="YtB-9q-H6Z" secondAttribute="bottom" constant="8" id="lQM-gu-wv1"/>
+                <constraint firstAttribute="trailing" secondItem="2bh-ni-Ikv" secondAttribute="trailing" constant="148" id="luP-Im-trI"/>
+                <constraint firstAttribute="bottom" secondItem="2bh-ni-Ikv" secondAttribute="bottom" constant="62" id="sQp-5U-NkZ"/>
                 <constraint firstItem="YtB-9q-H6Z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="v6q-VX-eAS"/>
                 <constraint firstItem="YtB-9q-H6Z" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="zW2-V7-GNe"/>
             </constraints>
