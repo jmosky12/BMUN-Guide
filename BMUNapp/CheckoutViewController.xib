@@ -16,6 +16,7 @@
                 <outlet property="phoneNumber" destination="p3v-Oc-j3p" id="ibO-jd-MfK"/>
                 <outlet property="postcode" destination="DQ1-5d-dXH" id="Yut-xO-rFe"/>
                 <outlet property="state" destination="rxO-0o-dJf" id="OCX-D7-Pvq"/>
+                <outlet property="totalLabel" destination="jX2-td-bp1" id="xWp-BB-X9Q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

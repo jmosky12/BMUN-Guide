@@ -15,9 +15,12 @@ class StoreDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var quantityLabel: UILabel!
     @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var plusOneButton: UIButton!
+    @IBOutlet weak var minusOneButton: UIButton!
     
     @IBOutlet weak var deleteItemButton: UIButton!
     var object: AnyObject!
+    let defaults = UserDefaults.standard
     
     init(object: AnyObject) {
         self.object = object
@@ -30,25 +33,19 @@ class StoreDetailViewController: UIViewController {
 
 
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         let productName = object["title"] as? String
-        switch productName! {
-        case "Conference Cause":
-            self.quantityLabel.text = String(describing: Storage.quantityConferenceCause)
-        case "KeyChain":
-            self.quantityLabel.text = String(describing: Storage.quantityKeychain)
-        case "hat":
-            self.quantityLabel.text = String(describing: Storage.quantityHat)
-        default:
-            self.quantityLabel.text = String(describing: Storage.quantityTShirt)
-        }
-        if (Int(quantityLabel.text!)! > 0) {
+        self.quantityLabel.text = String(defaults.integer(forKey: productName!))
+        if (defaults.bool(forKey: productName! + "InCart")) {
             deleteItemButton.isHidden = false
             addToCartButton.isHidden = true
+            plusOneButton.isHidden = true
+            minusOneButton.isHidden = true
         } else {
             deleteItemButton.isHidden = true
             addToCartButton.isHidden = false
+            plusOneButton.isHidden = false
+            minusOneButton.isHidden = false
         }
         
         if let detail = self.object {
@@ -73,61 +70,46 @@ class StoreDetailViewController: UIViewController {
     //actually fully removes item from cart
     @IBAction func subtractOneItem(_ sender: AnyObject) {
         let productName = object["title"] as? String
-        switch productName! {
-        case "Conference Cause":
-            Storage.quantityConferenceCause = 0
-            self.quantityLabel.text = String(describing: 0)
-        case "KeyChain":
-            Storage.quantityKeychain = 0
-            self.quantityLabel.text = String(describing: 0)
-        case "Hat":
-            Storage.quantityHat = 0
-            self.quantityLabel.text = String(describing: 0)
-        default:
-            Storage.quantityTShirt = 0
-            self.quantityLabel.text = String(describing: 0)
+        if (defaults.integer(forKey: productName!) > 0) {
+            defaults.set(defaults.integer(forKey: productName!) - 1, forKey: productName!)
+            self.quantityLabel.text = String(defaults.integer(forKey: productName!))
         }
+        sync()
     }
 
     //adds one item to cart
     @IBAction func addOneItem(_ sender: AnyObject) {
         let productName = object["title"] as? String
-        switch productName! {
-        case "Conference Cause":
-            Storage.quantityConferenceCause += 1
-            self.quantityLabel.text = String(describing: Storage.quantityConferenceCause)
-        case "KeyChain":
-            Storage.quantityKeychain += 1
-            self.quantityLabel.text = String(describing: Storage.quantityKeychain)
-        case "Hat":
-            Storage.quantityHat += 1
-            self.quantityLabel.text = String(describing: Storage.quantityHat)
-        default:
-            Storage.quantityTShirt += 1
-            self.quantityLabel.text = String(describing: Storage.quantityTShirt)
-        }
-            }
+        defaults.set(defaults.integer(forKey: productName!) + 1, forKey: productName!)
+        self.quantityLabel.text = String(defaults.integer(forKey: productName!))
+        sync()
+    }
+    
     @IBAction func addToCart(_ sender: AnyObject) {
         // add product to cart
-        let productid = self.object?["id"] as? String
-        Moltin.sharedInstance().cart.insertItem(withId: productid, quantity: Int(quantityLabel.text!)!, andModifiersOrNil: nil, success: {(response) -> Void in
-            //Display message to user
-            let alert = UIAlertController(title: "Added to cart!", message: "Added Item to cart!", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            
+        if (Int(quantityLabel.text!)! > 0) {
+            let productName = object["title"] as? String
+            let productid = self.object?["id"] as? String
+            Moltin.sharedInstance().cart.insertItem(withId: productid, quantity: Int(quantityLabel.text!)!, andModifiersOrNil: nil, success: {(response) -> Void in
+                //Display message to user
+                let alert = UIAlertController(title: "Added to cart!", message: "Added Item to cart!", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }, failure: {(response, error) -> Void in
                 //couldn't add product to cart
                 print("couldn't add item")
         })
-        addToCartButton.isHidden = true
-        deleteItemButton.isHidden = false
-        
-
+            defaults.set(true, forKey: productName! + "InCart")
+            addToCartButton.isHidden = true
+            deleteItemButton.isHidden = false
+            minusOneButton.isHidden = true
+            plusOneButton.isHidden = true
+        }
     }
     
     @IBAction func deleteFromCart(_ sender: AnyObject) {
     // remove product from cart
+        let productName = object["title"] as? String
         let productid = self.object?["id"] as? String
         Moltin.sharedInstance().cart.removeItem(withId: productid, success: {(response) -> Void in
             //Display message to user
@@ -139,8 +121,11 @@ class StoreDetailViewController: UIViewController {
                 //couldn't add product to cart
                 print("couldn't add item")
         })
+        defaults.set(false, forKey: productName! + "InCart")
         deleteItemButton.isHidden = true
         addToCartButton.isHidden = false
+        minusOneButton.isHidden = false
+        plusOneButton.isHidden = false
     }
     
 

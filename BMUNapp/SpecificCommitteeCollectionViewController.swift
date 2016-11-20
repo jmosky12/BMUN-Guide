@@ -109,7 +109,6 @@ class SpecificCommitteeCollectionViewController: UICollectionViewController {
         default:
             imgTitle = "nil"
         }
-        
         imageView?.image = UIImage(named: imgTitle!)
         return cell
     }

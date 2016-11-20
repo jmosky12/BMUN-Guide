@@ -18,8 +18,18 @@ class CheckoutViewController: UIViewController {
     @IBOutlet weak var city: UITextField!
     @IBOutlet weak var state: UITextField!
     @IBOutlet weak var postcode: UITextField!
+    @IBOutlet weak var totalLabel: UILabel!
 
     @IBOutlet weak var email: UITextField!
+    
+    init(total: String) {
+        super.init(nibName: "CheckoutViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -33,6 +43,7 @@ class CheckoutViewController: UIViewController {
         if self.emptyTextField() {
             print("wow no fucking way")
         } else {
+            let id = Moltin.sharedInstance().cart.identifier()
             let orderParameters = [
                 "customer": ["first_name": firstName.text!,
                              "last_name":  lastName.text!,
@@ -56,13 +67,22 @@ class CheckoutViewController: UIViewController {
                 
                 // Extract the Order ID so that it can be used in payment too...
                 let orderID = ((response as! [String: AnyObject])["result"] as! [String: AnyObject])["id"]
-                
+                let alert = UIAlertController(title: "Purchase Processed", message: "Thank you for supporting BMUN! You're purchase was processed, and will be ready at the store!", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
                 
                 print("Order ID: \(orderID)")
                 }, failure: { (response, error) -> Void in
                     // Order failed
                     print("Order error: \(error)")
             })
+            if let bundle = Bundle.main.bundleIdentifier {
+                UserDefaults.standard.removePersistentDomain(forName: bundle)
+            }
+            Moltin.sharedInstance().cart.delete(withId: id, success: { (response) -> Void in
+                }, failure: { (response, error) -> Void in
+                    // Delete Failed
+                    print("Order error: \(error)")})
         }
     }
     

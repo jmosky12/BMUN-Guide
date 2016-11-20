@@ -11,10 +11,12 @@
                 <outlet property="addToCartButton" destination="2bh-ni-Ikv" id="8tf-r9-JmE"/>
                 <outlet property="deleteItemButton" destination="T0a-Oe-8mZ" id="AX5-Tn-BRT"/>
                 <outlet property="descriptionLabel" destination="pkk-lD-K89" id="HCd-Cd-6eA"/>
+                <outlet property="minusOneButton" destination="d1p-7I-0oX" id="pDR-Xa-QFd"/>
+                <outlet property="plusOneButton" destination="DdH-Ug-g22" id="wBw-mP-UbX"/>
                 <outlet property="priceLabel" destination="hER-T0-F6U" id="w8e-Dv-pS2"/>
                 <outlet property="quantityLabel" destination="lIH-UP-qjF" id="vG1-7h-Wzg"/>
                 <outlet property="titleLabel" destination="vHb-sq-Ynf" id="Kx2-Tb-rlw"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="Ejp-c5-9qC"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -84,6 +86,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="T0a-Oe-8mZ" firstAttribute="centerY" secondItem="2bh-ni-Ikv" secondAttribute="centerY" id="7Rm-uJ-X5w"/>
                 <constraint firstItem="T0a-Oe-8mZ" firstAttribute="top" secondItem="2bh-ni-Ikv" secondAttribute="bottom" constant="-30" id="FVa-zm-EXr"/>
                 <constraint firstItem="YtB-9q-H6Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="130" id="HJV-zj-AFk"/>
                 <constraint firstItem="T0a-Oe-8mZ" firstAttribute="leading" secondItem="2bh-ni-Ikv" secondAttribute="trailing" constant="-115" id="Xk5-MM-WsP"/>
