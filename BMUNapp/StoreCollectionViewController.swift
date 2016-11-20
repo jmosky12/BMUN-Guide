@@ -32,7 +32,7 @@ class StoreCollectionViewController: UICollectionViewController {
         self.collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
     
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 250, height: 250)
+        flowLayout.itemSize = CGSize(width: 200, height: 200)
         flowLayout.scrollDirection = .vertical
         self.collectionView?.collectionViewLayout = flowLayout
         //Moltin stuff
@@ -73,10 +73,11 @@ class StoreCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
         let product = products[(indexPath as NSIndexPath).row] as! [String:AnyObject]
         let label = cell.viewWithTag(1) as? UILabel
+        let imageView = cell.viewWithTag(2) as? UIImageView
         label!.text = product["title"] as? String
+        imageView?.image = UIImage(named: "bmun_hat.jpg")
     
         return cell
     }
