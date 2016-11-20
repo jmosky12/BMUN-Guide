@@ -80,9 +80,9 @@ class InstaCollectionViewController: UICollectionViewController {
                     let description = Storage.stringList[indexPath.row].description
                     let url = URL(string: urlPic)
                     let picData = try Data(contentsOf: url!)
-                    let image = UIImage(data: picData)
                     DispatchQueue.main.async(execute: {
                         // UI Updates
+                        let image = UIImage(data: picData)
                         cell?.imageView.image = image
                         cell?.imageView.clipsToBounds = true
                         cell?.imageView.contentMode = .scaleAspectFit

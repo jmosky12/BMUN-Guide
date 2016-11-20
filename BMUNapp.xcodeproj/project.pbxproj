@@ -316,7 +316,6 @@
 		DF6071C01BC8B62F007B35CC /* BMUNapp */ = {
 			isa = PBXGroup;
 			children = (
-				D71508891DD57BF40026773F /* Instagram */,
 				DFDF6EA41BE544B3009244FE /* Models */,
 				DFE372A81BCB0DC500490A34 /* WebViewController.swift */,
 				DFE372A91BCB0DC500490A34 /* WebViewController.xib */,
@@ -326,6 +325,7 @@
 				DF20B1AA1BC9B48F007705BA /* LiveUpdates */,
 				DF20B1A91BC9B47E007705BA /* Timeline */,
 				DFDCCDDF1DAAEA4000269E9E /* Store */,
+				D71508891DD57BF40026773F /* Instagram */,
 				DF27029C1C14D86F00A4889D /* Questions */,
 				D71508A71DD793C70026773F /* Storage.swift */,
 				DF6071CD1BC8B62F007B35CC /* LaunchScreen.storyboard */,
