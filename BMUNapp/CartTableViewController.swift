@@ -13,6 +13,7 @@ import Moltin
 class CartTableViewController: UITableViewController {
     
     var itemArray = [[String]]()
+    var total = "0.00"
     
     init() {
         super.init(nibName: "CartTableViewController", bundle: nil);
@@ -79,6 +80,7 @@ class CartTableViewController: UITableViewController {
                 
                 // Get cart total price
                 let cartPrice = ((((cartData["result"] as? NSDictionary)?["totals"] as? NSDictionary)?["post_discount"] as? NSDictionary)?["formatted"] as? NSDictionary)?["without_tax"] as? String
+                self.total = cartPrice!
                 var lastArray = [String]()
                 lastArray.append("Total")
                 lastArray.append(""); lastArray.append("")
@@ -124,7 +126,7 @@ class CartTableViewController: UITableViewController {
     }
     
     func placeOrder() {
-        let vc = CheckoutViewController()
+        let vc = CheckoutViewController(total: self.total)
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
