@@ -14,8 +14,10 @@ class CommitteeDetailViewController: UIViewController {
     @IBOutlet weak var headChairLabel: UILabel!
     @IBOutlet weak var viceChairsLabel: UILabel!
     @IBOutlet weak var topicsLabel: UILabel!
+    @IBOutlet weak var topicSynopsisButton: UIButton!
     var indexPathRow: Int!
     var indexPathSection: Int!
+    var committee: [String: Any]?
     
     // Intitializes with the tag specified in CommitteeTableViewController.swift's didSelectRowAtIndexPath methof
     init(section: Int, row: Int) {
@@ -36,7 +38,6 @@ class CommitteeDetailViewController: UIViewController {
         
         
         // Sets the labels' info based on the committee info in storage
-        var committee: [String: Any]?
         switch(self.indexPathSection) {
         case 0:
             committee = Storage.blocACommittees?[String(self.indexPathRow)] as! [String : Any]?
@@ -71,6 +72,11 @@ class CommitteeDetailViewController: UIViewController {
         self.backgroundImageView.image = UIImage(named: "background")
         self.backgroundImageView.contentMode = .scaleAspectFill
         self.backgroundImageView.alpha = 0.85
+        
+        self.topicSynopsisButton.clipsToBounds = true
+        self.topicSynopsisButton.layer.cornerRadius = 5
+        self.topicSynopsisButton.layer.borderWidth = 1
+        self.topicSynopsisButton.layer.borderColor = UIColor.white.cgColor
       
     }
     
@@ -83,5 +89,10 @@ class CommitteeDetailViewController: UIViewController {
         return [UIInterfaceOrientationMask.portrait]
     }
 
+    @IBAction func synopsisSelected(_ sender: UIButton) {
+        let stringURL = committee?["Synopsis"] as? String
+        let url = URL(string: stringURL!)
+        UIApplication.shared.openURL(url!)
+    }
 
 }
