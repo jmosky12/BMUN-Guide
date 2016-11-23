@@ -17,6 +17,7 @@ class LiveUpdatesTableViewController: UIViewController, UITableViewDataSource {
     
     var tweets: [Tweet] = []
     var refreshControl: UIRefreshControl!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     init() {
         super.init(nibName: "LiveUpdatesTableViewController", bundle: nil)
@@ -36,6 +37,7 @@ class LiveUpdatesTableViewController: UIViewController, UITableViewDataSource {
         tableView.insertSubview(refreshControl, at: 0)
         refreshControl.addTarget(self, action: #selector(LiveUpdatesTableViewController.getTweets(_:)), for: .valueChanged)
         
+        self.activityIndicator.startAnimating()
         getTweets(nil)
         
         edgesForExtendedLayout = UIRectEdge()
@@ -54,13 +56,8 @@ class LiveUpdatesTableViewController: UIViewController, UITableViewDataSource {
         self.tableView.register(nib, forCellReuseIdentifier: "liveUpdates")
         
         // Sets characteristics for top bar text
-        let textColor = UIColor.white
-        let textFont = UIFont(name: "Avenir", size: 35.0)
-        let titleTextAttributes: [String:NSObject] = [
-            NSFontAttributeName: textFont!,
-            NSForegroundColorAttributeName: textColor,
-        ]
-        self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
     }
     
     // These two functions below prevent landscape mode
@@ -80,6 +77,7 @@ class LiveUpdatesTableViewController: UIViewController, UITableViewDataSource {
         TwitterManager.sharedInstance.getTweets({ [weak self] (tweets: [Tweet]) -> () in
             self?.tweets = tweets
             self?.tableView.reloadData()
+            self?.activityIndicator.stopAnimating()
             self?.refreshControl.endRefreshing()
             }) { [weak self](error: Error?) -> () in
                 self?.refreshControl.endRefreshing()

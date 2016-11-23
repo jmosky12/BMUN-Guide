@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        Storage.stringList = []
+        Storage.instaList = []
 //      Michael Eliot's Instagram: 191003028.24fe27c.f110d6acfe85455ca11ef9394ef9e691
         Alamofire.request("https://api.instagram.com/v1/users/self/media/recent/?access_token=311144164.24fe27c.20ea6e944339468b827b1512c5039a65").responseJSON { response in
             if let JSON = response.result.value as? [String: AnyObject] {
@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let standardPic = pictureData["standard_resolution"] as! [String: Any]
                     let urlString = standardPic["url"] as! String
                     let description = descriptionData["text"] as! String
-                    Storage.stringList.append(InstagramInfo(urlString: urlString, description: description))
+                    Storage.instaList.append(InstagramInfo(urlString: urlString, description: description))
                 }
             }
         }
@@ -110,63 +110,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         committeesNC.navigationBar.isTranslucent = false
         committeesNC.navigationBar.topItem?.title = "Committees"
         
-        let liveUpdates = LiveUpdatesTableViewController()
-        let liveUpdatesNC = UINavigationController(rootViewController: liveUpdates)
-        let item3 = UITabBarItem(title: "Updates", image: nil, tag: 3)
+        let socialMedia = SocialMediaViewController()
+        let socialMediaNC = UINavigationController(rootViewController: socialMedia)
+        let item3 = UITabBarItem(title: "Social Media", image: nil, tag: 3)
         item3.setTitleTextAttributes(titleTextAttributes, for: UIControlState())
         item3.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
-        liveUpdatesNC.tabBarItem = item3
-        liveUpdatesNC.navigationBar.barTintColor = UIColor.black
-        liveUpdatesNC.navigationBar.isTranslucent = false
-        liveUpdatesNC.navigationBar.topItem?.title = "Live Updates"
+        socialMediaNC.tabBarItem = item3
+        socialMediaNC.navigationBar.barTintColor = UIColor.black
+        socialMediaNC.navigationBar.isTranslucent = false
+        socialMediaNC.navigationBar.topItem?.title = "Social Media"
 
-        let questions = QuestionsViewController()
-        let questionsNC = UINavigationController(rootViewController: questions)
-        let item4 = UITabBarItem(title: "Questions", image: nil, tag: 4)
+        let info = InfoViewController()
+        let infoNC = UINavigationController(rootViewController: info)
+        let item4 = UITabBarItem(title: "Information", image: nil, tag: 4)
         item4.setTitleTextAttributes(titleTextAttributes, for: UIControlState())
         item4.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
-        questionsNC.tabBarItem = item4
-        questionsNC.navigationBar.barTintColor = UIColor.black
-        questionsNC.navigationBar.isTranslucent = false
-        questionsNC.navigationBar.topItem?.title = "Questions"
-        
-        let timeline = TimelineCollectionViewController()
-        let timelineNC = UINavigationController(rootViewController: timeline)
-        let item5 = UITabBarItem(title: "Timeline", image: nil, tag: 5)
-        item5.setTitleTextAttributes(titleTextAttributes, for: UIControlState())
-        item5.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
-        timelineNC.tabBarItem = item5
-        timelineNC.navigationBar.barTintColor = UIColor.black
-        timelineNC.navigationBar.isTranslucent = false
-        timelineNC.navigationBar.topItem?.title = "Timeline"
-        
+        infoNC.tabBarItem = item4
+        infoNC.navigationBar.barTintColor = UIColor.black
+        infoNC.navigationBar.isTranslucent = false
+        infoNC.navigationBar.topItem?.title = "Information"
+    
         let store = StoreCollectionViewController()
         let storeNC = UINavigationController(rootViewController: store)
-        let item6 = UITabBarItem(title: "Store", image: nil, tag: 6)
-        item6.setTitleTextAttributes(titleTextAttributes, for: .normal)
-        item6.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
-        storeNC.tabBarItem = item6
+        let item5 = UITabBarItem(title: "Store", image: nil, tag: 5)
+        item5.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        item5.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
+        storeNC.tabBarItem = item5
         storeNC.navigationBar.barTintColor = UIColor.black
         storeNC.navigationBar.isTranslucent = false
         storeNC.navigationBar.topItem?.title = "Store"
         
-        let insta = InstaTableViewController()
-        let instaNC = UINavigationController(rootViewController: insta)
-        let item7 = UITabBarItem(title: "Insta", image: nil, tag: 7)
-        item7.setTitleTextAttributes(titleTextAttributes, for: .normal)
-        item7.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
-        instaNC.tabBarItem = item7
-        instaNC.navigationBar.barTintColor = UIColor.black
-        instaNC.navigationBar.isTranslucent = false
-        instaNC.navigationBar.topItem?.title = "Instagram"
-        
-        let controllers = [delegateGuideNC, committeesNC, liveUpdatesNC, questionsNC, timelineNC, storeNC, instaNC]
+        let controllers = [delegateGuideNC, committeesNC, infoNC, socialMediaNC, storeNC]
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = controllers
-        tabBarController.moreNavigationController.navigationBar.barTintColor = UIColor.black
-        tabBarController.moreNavigationController.navigationBar.isTranslucent = false
-        tabBarController.moreNavigationController.navigationBar.tintColor = UIColor.white
         
         self.window?.addSubview(tabBarController.view)
         window?.rootViewController = tabBarController

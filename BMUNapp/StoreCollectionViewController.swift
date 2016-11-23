@@ -24,7 +24,7 @@ class StoreCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "View Cart >", style: .plain, target: self,action: #selector(viewCartTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "View Cart", style: .plain, target: self,action: #selector(viewCartTapped))
 
         // Register cell classes
         
@@ -45,8 +45,9 @@ class StoreCollectionViewController: UICollectionViewController {
             
             }, failure: { (response, error) -> Void in
                 print("Couldn't get products, something went wrong...")
-                print(error)
         })
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     
     }
 

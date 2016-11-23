@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SocialMediaViewController" customModule="BMUNapp" customModuleProvider="target">
+            <connections>
+                <outlet property="instaIV" destination="W2p-V4-lIT" id="aHr-Or-YY8"/>
+                <outlet property="twitterIV" destination="tzq-ep-rDW" id="Bi0-vV-DNL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JiY-Ud-y3s">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kop-jd-L5N">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="334"/>
+                            <subviews>
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tzq-ep-rDW">
+                                    <rect key="frame" x="35" y="20" width="304" height="304"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="tzq-ep-rDW" secondAttribute="height" multiplier="1:1" id="V7g-Q5-Dak"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="tzq-ep-rDW" secondAttribute="bottom" constant="10" id="jUE-Oe-TOf"/>
+                                <constraint firstItem="tzq-ep-rDW" firstAttribute="top" secondItem="kop-jd-L5N" secondAttribute="top" constant="20" id="nkH-Zj-9yy"/>
+                                <constraint firstItem="tzq-ep-rDW" firstAttribute="centerX" secondItem="kop-jd-L5N" secondAttribute="centerX" id="zEd-2y-Vak"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLN-Yo-iK9">
+                            <rect key="frame" x="0.0" y="334" width="374" height="333.5"/>
+                            <subviews>
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W2p-V4-lIT">
+                                    <rect key="frame" x="35.5" y="10" width="303.5" height="303.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="W2p-V4-lIT" secondAttribute="height" multiplier="1:1" id="3OX-ui-8Gl"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="W2p-V4-lIT" firstAttribute="top" secondItem="fLN-Yo-iK9" secondAttribute="top" constant="10" id="13p-5M-MMh"/>
+                                <constraint firstAttribute="bottom" secondItem="W2p-V4-lIT" secondAttribute="bottom" constant="20" id="BAd-Ud-R3S"/>
+                                <constraint firstItem="W2p-V4-lIT" firstAttribute="centerX" secondItem="fLN-Yo-iK9" secondAttribute="centerX" id="nrt-c8-Gmk"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="kop-jd-L5N" secondAttribute="trailing" id="6cz-04-12W"/>
+                        <constraint firstAttribute="bottom" secondItem="fLN-Yo-iK9" secondAttribute="bottom" id="HGZ-dT-gSf"/>
+                        <constraint firstItem="fLN-Yo-iK9" firstAttribute="leading" secondItem="JiY-Ud-y3s" secondAttribute="leading" id="KGZ-ZY-ckb"/>
+                        <constraint firstItem="fLN-Yo-iK9" firstAttribute="height" secondItem="JiY-Ud-y3s" secondAttribute="height" multiplier="0.5" id="RfX-aq-ZTa"/>
+                        <constraint firstItem="kop-jd-L5N" firstAttribute="leading" secondItem="JiY-Ud-y3s" secondAttribute="leading" id="WVQ-BC-4e8"/>
+                        <constraint firstItem="fLN-Yo-iK9" firstAttribute="top" secondItem="kop-jd-L5N" secondAttribute="bottom" id="hKg-ki-Wzb"/>
+                        <constraint firstItem="fLN-Yo-iK9" firstAttribute="centerX" secondItem="JiY-Ud-y3s" secondAttribute="centerX" id="igW-kV-NER"/>
+                        <constraint firstItem="kop-jd-L5N" firstAttribute="height" secondItem="JiY-Ud-y3s" secondAttribute="height" multiplier="0.5" id="pRL-4a-Jkx"/>
+                        <constraint firstItem="kop-jd-L5N" firstAttribute="top" secondItem="JiY-Ud-y3s" secondAttribute="top" id="qQC-KM-4nl"/>
+                        <constraint firstAttribute="trailing" secondItem="fLN-Yo-iK9" secondAttribute="trailing" id="xsO-Q9-l6W"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="0.01176470588" green="0.14117647059999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="JiY-Ud-y3s" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VcX-Ys-Doh"/>
+                <constraint firstItem="JiY-Ud-y3s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="b73-kb-Lms"/>
+                <constraint firstAttribute="bottom" secondItem="JiY-Ud-y3s" secondAttribute="bottom" id="oGm-nA-Lgc"/>
+                <constraint firstAttribute="trailing" secondItem="JiY-Ud-y3s" secondAttribute="trailing" id="tYK-W7-txz"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Ewn-fL-9Wc">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </scrollView>
+    </objects>
+</document>

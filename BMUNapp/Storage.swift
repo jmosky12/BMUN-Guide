@@ -14,6 +14,8 @@ struct Storage {
         URLSession.shared.dataTask(with: url as URL, completionHandler: onResponse).resume()
     }
     
+    static var bmunBlue = UIColor.init(red: 24/256, green: 73/256, blue: 140/256, alpha: 1)
+    
     static var blocACommittees: [String: Any]?
     
     static var blocBCommittees: [String: Any]?
@@ -36,7 +38,7 @@ struct Storage {
     
     static var dayThreeTimeline: [String: Any]?
     
-    static var stringList: [InstagramInfo]!
+    static var instaList: [InstagramInfo]!
     
     //static var committees: Array<AnyObject>?
 }

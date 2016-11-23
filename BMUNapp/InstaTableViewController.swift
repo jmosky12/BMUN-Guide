@@ -28,10 +28,12 @@ class InstaTableViewController: UITableViewController {
         
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        
-
+        self.tableView.separatorColor = UIColor.clear
         self.tableView.setNeedsLayout()
         self.tableView.layoutIfNeeded()
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
     }
 
 
@@ -43,7 +45,7 @@ class InstaTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2*Storage.stringList.count
+        return 2*Storage.instaList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,7 +57,7 @@ class InstaTableViewController: UITableViewController {
                 () -> Void in
                 do {
                     // Background thread
-                    let urlPic = Storage.stringList[indexPath.row/2].urlString
+                    let urlPic = Storage.instaList[indexPath.row/2].urlString
                     let url = URL(string: urlPic)
                     let picData = try Data(contentsOf: url!)
                     DispatchQueue.main.async(execute: {
@@ -76,7 +78,7 @@ class InstaTableViewController: UITableViewController {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "instaDesc", for: indexPath) as! InstaDescTableViewCell
-            let description = Storage.stringList[indexPath.row/2].description
+            let description = Storage.instaList[indexPath.row/2].description
             cell.titleLabel.text = description
             cell.setNeedsLayout()
             cell.layoutIfNeeded()

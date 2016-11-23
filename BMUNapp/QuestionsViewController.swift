@@ -31,20 +31,13 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Sets characteristics for top bar text
-        let textColor = UIColor.white
-        let textFont = UIFont(name: "Avenir", size: 35.0)
-        let titleTextAttributes: [String:NSObject] = [
-            NSFontAttributeName: textFont!,
-            NSForegroundColorAttributeName: textColor,
-        ]
-        self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
 
         edgesForExtendedLayout = UIRectEdge()
         let sendButton = UIBarButtonItem(title: "Send", style: .plain, target: self, action: #selector(QuestionsViewController.didPressSend))
         navigationItem.rightBarButtonItem = sendButton
-        navigationController?.navigationBar.tintColor = UIColor.white
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
         
 
         self.detailTextView.layer.cornerRadius = 5.0
@@ -97,6 +90,10 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
     
     override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
         return [UIInterfaceOrientationMask.portrait]
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.detailTextView.resignFirstResponder()
     }
     
     // Releases keyboard if return is pressed while typing in a text field

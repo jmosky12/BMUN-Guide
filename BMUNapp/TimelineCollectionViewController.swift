@@ -38,13 +38,9 @@ class TimelineCollectionViewController: UICollectionViewController {
         flowLayout.minimumLineSpacing = 20
         self.collectionView?.collectionViewLayout = flowLayout
         
-        let textColor = UIColor.white
-        let textFont = UIFont(name: "Avenir", size: 35.0)
-        let titleTextAttributes: [String:NSObject] = [
-            NSFontAttributeName: textFont!,
-            NSForegroundColorAttributeName: textColor,
-            ]
-        self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        
         self.collectionView?.allowsSelection = true
         self.collectionView?.allowsMultipleSelection = false
     }

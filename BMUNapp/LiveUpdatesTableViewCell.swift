@@ -28,6 +28,8 @@ class LiveUpdatesTableViewCell: UITableViewCell {
         self.preservesSuperviewLayoutMargins = false
         self.layoutMargins = UIEdgeInsets.zero
         
+        self.date.isHidden = true
+        
         self.selectionStyle = .none
     }
 

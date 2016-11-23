@@ -40,14 +40,6 @@ class SpecificCommitteeCollectionViewController: UICollectionViewController {
         flowLayout.footerReferenceSize = CGSize(width: self.view.bounds.width, height: 20)
         flowLayout.minimumLineSpacing = 20
         self.collectionView?.collectionViewLayout = flowLayout
-        
-        let textColor = UIColor.white
-        let textFont = UIFont(name: "Avenir", size: 35.0)
-        let titleTextAttributes: [String:NSObject] = [
-            NSFontAttributeName: textFont!,
-            NSForegroundColorAttributeName: textColor,
-            ]
-        self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
         self.collectionView?.allowsSelection = true
         self.collectionView?.allowsMultipleSelection = false
         self.view.clipsToBounds = true

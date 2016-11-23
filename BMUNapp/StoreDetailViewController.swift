@@ -65,6 +65,8 @@ class StoreDetailViewController: UIViewController {
             }
 
         }
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
 
     //actually fully removes item from cart
