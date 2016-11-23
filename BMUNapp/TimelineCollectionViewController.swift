@@ -29,13 +29,10 @@ class TimelineCollectionViewController: UICollectionViewController {
         let nib: UINib = UINib(nibName: "CommitteesCollectionViewCell", bundle: nil)
         self.collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
         
-        let flowLayout = UICollectionViewFlowLayout()
-        let height = UIScreen.main.bounds.width - 40
-        flowLayout.itemSize = CGSize(width: height, height: height)
-        flowLayout.scrollDirection = .vertical
-        flowLayout.headerReferenceSize = CGSize(width: self.view.bounds.width, height: 20)
-        flowLayout.footerReferenceSize = CGSize(width: self.view.bounds.width, height: 20)
-        flowLayout.minimumLineSpacing = 20
+        let width = self.view.bounds.width
+        let flowLayout = CollectionViewFlowLayout()
+        flowLayout.headerReferenceSize = CGSize(width: width, height: 20)
+        flowLayout.footerReferenceSize = CGSize(width: width, height: 20)
         self.collectionView?.collectionViewLayout = flowLayout
         
         self.navigationController?.navigationBar.tintColor = UIColor.white

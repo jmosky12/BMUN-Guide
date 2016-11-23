@@ -26,6 +26,7 @@
 		DF2702A51C14D8A200A4889D /* QuestionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2702A31C14D8A200A4889D /* QuestionsViewController.xib */; };
 		DF4CDBAC1DE5371600CDEB09 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4CDBAA1DE5371600CDEB09 /* InfoViewController.swift */; };
 		DF4CDBAD1DE5371600CDEB09 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF4CDBAB1DE5371600CDEB09 /* InfoViewController.xib */; };
+		DF4CDBAF1DE646E500CDEB09 /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4CDBAE1DE646E500CDEB09 /* CollectionViewFlowLayout.swift */; };
 		DF6071C21BC8B62F007B35CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6071C11BC8B62F007B35CC /* AppDelegate.swift */; };
 		DF6071CA1BC8B62F007B35CC /* BMUNapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF6071C81BC8B62F007B35CC /* BMUNapp.xcdatamodeld */; };
 		DF6071CF1BC8B62F007B35CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF6071CD1BC8B62F007B35CC /* LaunchScreen.storyboard */; };
@@ -106,6 +107,7 @@
 		DF2702A31C14D8A200A4889D /* QuestionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionsViewController.xib; sourceTree = "<group>"; };
 		DF4CDBAA1DE5371600CDEB09 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		DF4CDBAB1DE5371600CDEB09 /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
+		DF4CDBAE1DE646E500CDEB09 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		DF6071BE1BC8B62F007B35CC /* BMUNapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BMUNapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF6071C11BC8B62F007B35CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF6071C91BC8B62F007B35CC /* BMUNapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BMUNapp.xcdatamodel; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 				DFDF6EA71BE5530C009244FE /* Tweet.swift */,
 				DFDF6EA91BE55760009244FE /* DateFormatterManager.swift */,
 				D71508A71DD793C70026773F /* Storage.swift */,
+				DF4CDBAE1DE646E500CDEB09 /* CollectionViewFlowLayout.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				DF20B1BB1BCAE380007705BA /* DelegateTableViewCell.swift in Sources */,
 				DFDF6EAA1BE55760009244FE /* DateFormatterManager.swift in Sources */,
 				DF6071C21BC8B62F007B35CC /* AppDelegate.swift in Sources */,
+				DF4CDBAF1DE646E500CDEB09 /* CollectionViewFlowLayout.swift in Sources */,
 				DFD814391DD7B26100CA027E /* InstaTableViewController.swift in Sources */,
 				DFD814581DD7F76900CA027E /* TimelineCollectionViewCell.swift in Sources */,
 				D715089A1DD73F600026773F /* StoreDetailViewController.swift in Sources */,
