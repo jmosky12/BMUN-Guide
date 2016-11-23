@@ -9,7 +9,7 @@
 import UIKit
 import Moltin
 
-class CheckoutViewController: UIViewController {
+class CheckoutViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var country: UITextField!
@@ -34,6 +34,11 @@ class CheckoutViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.tintColor = UIColor.white
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CheckoutViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,6 +108,18 @@ class CheckoutViewController: UIViewController {
             return false
         }
     }
-
+    
+    func returnToStore() {
+        let vc = StoreCollectionViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
 
 }

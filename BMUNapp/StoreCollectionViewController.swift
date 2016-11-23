@@ -32,7 +32,7 @@ class StoreCollectionViewController: UICollectionViewController {
         self.collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
     
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 200, height: 200)
+        flowLayout.itemSize = CGSize(width: 250, height: 250)
         flowLayout.scrollDirection = .vertical
         self.collectionView?.collectionViewLayout = flowLayout
         //Moltin stuff
