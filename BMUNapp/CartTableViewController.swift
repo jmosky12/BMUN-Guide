@@ -28,7 +28,6 @@ class CartTableViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Place Order", style: .plain, target: self,action: #selector(placeOrder))
         
-        view.backgroundColor = UIColor.black
         edgesForExtendedLayout = UIRectEdge()
         let nib: UINib = UINib(nibName: "CartTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "CartTableViewCell")

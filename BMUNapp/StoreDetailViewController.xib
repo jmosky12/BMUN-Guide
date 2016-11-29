@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoreDetailViewController" customModule="BMUNapp" customModuleProvider="target">
             <connections>
-                <outlet property="addToCartButton" destination="2bh-ni-Ikv" id="8tf-r9-JmE"/>
-                <outlet property="deleteItemButton" destination="T0a-Oe-8mZ" id="AX5-Tn-BRT"/>
-                <outlet property="descriptionLabel" destination="pkk-lD-K89" id="HCd-Cd-6eA"/>
-                <outlet property="minusOneButton" destination="d1p-7I-0oX" id="pDR-Xa-QFd"/>
-                <outlet property="plusOneButton" destination="DdH-Ug-g22" id="wBw-mP-UbX"/>
-                <outlet property="priceLabel" destination="hER-T0-F6U" id="w8e-Dv-pS2"/>
-                <outlet property="quantityLabel" destination="lIH-UP-qjF" id="vG1-7h-Wzg"/>
-                <outlet property="titleLabel" destination="vHb-sq-Ynf" id="Kx2-Tb-rlw"/>
+                <outlet property="addToCartButton" destination="hee-2T-9Oe" id="Zh4-ye-bWK"/>
+                <outlet property="descriptionLabel" destination="JKH-ho-bME" id="sf7-nh-n8y"/>
+                <outlet property="minusOneButton" destination="IlU-B9-Zww" id="oTd-IJ-TSh"/>
+                <outlet property="plusOneButton" destination="LuA-Oc-dTt" id="XfJ-QA-uZ3"/>
+                <outlet property="priceLabel" destination="eav-jK-WAr" id="9CL-BM-gGt"/>
+                <outlet property="productImageView" destination="9IF-4p-fI1" id="9tX-AJ-kwY"/>
+                <outlet property="quantityLabel" destination="iAb-8e-0qH" id="kLs-Xh-GAE"/>
+                <outlet property="titleLabel" destination="9db-4T-Us0" id="yqK-C4-OGO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="Ejp-c5-9qC"/>
             </connections>
         </placeholder>
@@ -24,81 +28,113 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="YtB-9q-H6Z">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJH-jC-Kwx">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHb-sq-Ynf">
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hER-T0-F6U">
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkk-lD-K89">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BMUN Shirt" translatesAutoresizingMaskIntoConstraints="NO" id="9IF-4p-fI1">
+                            <rect key="frame" x="15" y="15" width="187.5" height="187.5"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="70" id="6dN-mx-60H"/>
+                                <constraint firstAttribute="width" secondItem="9IF-4p-fI1" secondAttribute="height" multiplier="1:1" id="JM1-Ka-cfg"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9db-4T-Us0">
+                            <rect key="frame" x="212.5" y="95.5" width="152.5" height="26.5"/>
+                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CnP-iv-7Sx">
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1p-7I-0oX">
-                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                    <state key="normal" title="-"/>
-                                    <connections>
-                                        <action selector="subtractOneItem:" destination="-1" eventType="touchUpInside" id="BWR-Ba-Yqt"/>
-                                    </connections>
-                                </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lIH-UP-qjF">
-                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdH-Ug-g22">
-                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                    <state key="normal" title="+"/>
-                                    <connections>
-                                        <action selector="addOneItem:" destination="-1" eventType="touchUpInside" id="eGO-b8-iCZ"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eav-jK-WAr">
+                            <rect key="frame" x="212.5" y="132" width="152.5" height="20"/>
+                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKH-ho-bME">
+                            <rect key="frame" x="15" y="222.5" width="345" height="22.5"/>
+                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAb-8e-0qH">
+                            <rect key="frame" x="178.5" y="275" width="17" height="42"/>
+                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="25"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LuA-Oc-dTt">
+                            <rect key="frame" x="225.5" y="275" width="30" height="42"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <state key="normal" title="+">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="addOneItem:" destination="-1" eventType="touchUpInside" id="fRv-vU-UVn"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlU-B9-Zww">
+                            <rect key="frame" x="118.5" y="275" width="30" height="42"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <state key="normal" title="-">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="subtractOneItem:" destination="-1" eventType="touchUpInside" id="te2-hJ-s2F"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hee-2T-9Oe">
+                            <rect key="frame" x="93.5" y="347" width="187.5" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="74e-6o-bDz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="addToCart:" destination="-1" eventType="touchUpInside" id="rna-dW-b8v"/>
+                            </connections>
+                        </button>
                     </subviews>
-                </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bh-ni-Ikv">
-                    <state key="normal" title="Add to Cart"/>
-                    <connections>
-                        <action selector="addToCart:" destination="-1" eventType="touchUpInside" id="lfp-6l-kJz"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0a-Oe-8mZ">
-                    <state key="normal" title="Delete Item From Cart">
-                        <color key="titleColor" red="1" green="0.17749204330000001" blue="0.16128665410000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="deleteFromCart:" destination="-1" eventType="touchUpInside" id="BDq-J5-lPV"/>
-                    </connections>
-                </button>
+                    <constraints>
+                        <constraint firstItem="LuA-Oc-dTt" firstAttribute="bottom" secondItem="iAb-8e-0qH" secondAttribute="bottom" id="27u-W5-FAf"/>
+                        <constraint firstItem="9db-4T-Us0" firstAttribute="centerY" secondItem="9IF-4p-fI1" secondAttribute="centerY" id="53y-3Q-14d"/>
+                        <constraint firstItem="hee-2T-9Oe" firstAttribute="width" secondItem="hJH-jC-Kwx" secondAttribute="width" multiplier="0.5" id="6Eo-Js-IdH"/>
+                        <constraint firstAttribute="trailing" secondItem="9db-4T-Us0" secondAttribute="trailing" constant="10" id="82J-Ip-FE5"/>
+                        <constraint firstItem="hee-2T-9Oe" firstAttribute="centerX" secondItem="iAb-8e-0qH" secondAttribute="centerX" id="8YK-3Q-YMG"/>
+                        <constraint firstItem="IlU-B9-Zww" firstAttribute="bottom" secondItem="iAb-8e-0qH" secondAttribute="bottom" id="Ged-mm-OYp"/>
+                        <constraint firstItem="eav-jK-WAr" firstAttribute="leading" secondItem="9db-4T-Us0" secondAttribute="leading" id="Ivd-hA-cOb"/>
+                        <constraint firstItem="iAb-8e-0qH" firstAttribute="centerX" secondItem="hJH-jC-Kwx" secondAttribute="centerX" id="M0p-Nx-NRS"/>
+                        <constraint firstAttribute="bottom" secondItem="hee-2T-9Oe" secondAttribute="bottom" constant="330.5" id="OgI-3s-XeS"/>
+                        <constraint firstItem="9db-4T-Us0" firstAttribute="leading" secondItem="9IF-4p-fI1" secondAttribute="trailing" constant="10" id="QvS-oR-Uxd"/>
+                        <constraint firstItem="JKH-ho-bME" firstAttribute="centerX" secondItem="hJH-jC-Kwx" secondAttribute="centerX" id="UQh-DB-YZ4"/>
+                        <constraint firstItem="9IF-4p-fI1" firstAttribute="width" secondItem="hJH-jC-Kwx" secondAttribute="width" multiplier="0.5" id="ich-sX-dxH"/>
+                        <constraint firstItem="iAb-8e-0qH" firstAttribute="top" secondItem="JKH-ho-bME" secondAttribute="bottom" constant="30" id="izV-Ch-NLM"/>
+                        <constraint firstItem="JKH-ho-bME" firstAttribute="top" secondItem="9IF-4p-fI1" secondAttribute="bottom" constant="20" id="jBq-Ks-ARd"/>
+                        <constraint firstItem="eav-jK-WAr" firstAttribute="trailing" secondItem="9db-4T-Us0" secondAttribute="trailing" id="lcQ-cj-YCV"/>
+                        <constraint firstItem="eav-jK-WAr" firstAttribute="top" secondItem="9db-4T-Us0" secondAttribute="bottom" constant="10" id="o3s-LH-jCm"/>
+                        <constraint firstItem="hee-2T-9Oe" firstAttribute="top" secondItem="iAb-8e-0qH" secondAttribute="bottom" constant="30" id="pD7-6G-FGk"/>
+                        <constraint firstAttribute="trailing" secondItem="JKH-ho-bME" secondAttribute="trailing" constant="15" id="qL1-mb-tTw"/>
+                        <constraint firstItem="JKH-ho-bME" firstAttribute="leading" secondItem="hJH-jC-Kwx" secondAttribute="leading" constant="15" id="rjO-Tx-XSq"/>
+                        <constraint firstItem="IlU-B9-Zww" firstAttribute="top" secondItem="iAb-8e-0qH" secondAttribute="top" id="sdC-MR-DmB"/>
+                        <constraint firstItem="iAb-8e-0qH" firstAttribute="leading" secondItem="IlU-B9-Zww" secondAttribute="trailing" constant="30" id="uF9-Nc-nnZ"/>
+                        <constraint firstItem="LuA-Oc-dTt" firstAttribute="leading" secondItem="iAb-8e-0qH" secondAttribute="trailing" constant="30" id="uHC-fq-hv3"/>
+                        <constraint firstItem="LuA-Oc-dTt" firstAttribute="top" secondItem="iAb-8e-0qH" secondAttribute="top" id="wc9-S3-tjf"/>
+                        <constraint firstItem="9IF-4p-fI1" firstAttribute="top" secondItem="hJH-jC-Kwx" secondAttribute="top" constant="15" id="wdC-Pt-ybQ"/>
+                        <constraint firstItem="9IF-4p-fI1" firstAttribute="leading" secondItem="hJH-jC-Kwx" secondAttribute="leading" constant="15" id="xOT-pE-mVf"/>
+                    </constraints>
+                </scrollView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.01176470588" green="0.14117647059999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="T0a-Oe-8mZ" firstAttribute="centerY" secondItem="2bh-ni-Ikv" secondAttribute="centerY" id="7Rm-uJ-X5w"/>
-                <constraint firstItem="T0a-Oe-8mZ" firstAttribute="top" secondItem="2bh-ni-Ikv" secondAttribute="bottom" constant="-30" id="FVa-zm-EXr"/>
-                <constraint firstItem="YtB-9q-H6Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="130" id="HJV-zj-AFk"/>
-                <constraint firstItem="T0a-Oe-8mZ" firstAttribute="leading" secondItem="2bh-ni-Ikv" secondAttribute="trailing" constant="-115" id="Xk5-MM-WsP"/>
-                <constraint firstItem="2bh-ni-Ikv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="148" id="jKI-oT-lbx"/>
-                <constraint firstAttribute="bottom" secondItem="YtB-9q-H6Z" secondAttribute="bottom" constant="100" id="kdw-EK-wgs"/>
-                <constraint firstItem="2bh-ni-Ikv" firstAttribute="top" secondItem="YtB-9q-H6Z" secondAttribute="bottom" constant="8" id="lQM-gu-wv1"/>
-                <constraint firstAttribute="trailing" secondItem="2bh-ni-Ikv" secondAttribute="trailing" constant="148" id="luP-Im-trI"/>
-                <constraint firstAttribute="bottom" secondItem="2bh-ni-Ikv" secondAttribute="bottom" constant="62" id="sQp-5U-NkZ"/>
-                <constraint firstItem="YtB-9q-H6Z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="v6q-VX-eAS"/>
-                <constraint firstItem="YtB-9q-H6Z" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="zW2-V7-GNe"/>
+                <constraint firstAttribute="trailing" secondItem="hJH-jC-Kwx" secondAttribute="trailing" id="3c0-Nx-sQK"/>
+                <constraint firstItem="hJH-jC-Kwx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6l7-t4-aAz"/>
+                <constraint firstItem="hJH-jC-Kwx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BJZ-9Y-sHL"/>
+                <constraint firstAttribute="bottom" secondItem="hJH-jC-Kwx" secondAttribute="bottom" id="YFB-hX-cMo"/>
             </constraints>
             <point key="canvasLocation" x="25.5" y="52.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="BMUN Shirt" width="324" height="324"/>
+    </resources>
 </document>

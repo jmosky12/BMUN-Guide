@@ -30,10 +30,19 @@ class StoreCollectionViewController: UICollectionViewController {
         
         let nib: UINib = UINib(nibName: "StoreCollectionViewCell", bundle: nil)
         self.collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityIndicator.hidesWhenStopped = true
+        self.navigationController?.view.addSubview(activityIndicator)
+        activityIndicator.center = (activityIndicator.superview?.center)!
+        activityIndicator.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin]
+        activityIndicator.startAnimating()
     
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 250, height: 250)
-        flowLayout.scrollDirection = .vertical
+        let width = self.view.bounds.width
+        let flowLayout = CollectionViewFlowLayout()
+        flowLayout.headerReferenceSize = CGSize(width: width, height: 20)
+        flowLayout.footerReferenceSize = CGSize(width: width, height: 20)
+        self.collectionView?.collectionViewLayout = flowLayout
         self.collectionView?.collectionViewLayout = flowLayout
         //Moltin stuff
         Moltin.sharedInstance().setPublicId("lT03XQXXnjSKcqWTR77B7oBc6ZTHXvCW6Qh9TfVdlT")
@@ -42,11 +51,21 @@ class StoreCollectionViewController: UICollectionViewController {
             self.products = response?["result"] as! [AnyObject]
             
             self.collectionView?.reloadData()
+            activityIndicator.stopAnimating()
             
             }, failure: { (response, error) -> Void in
                 print("Couldn't get products, something went wrong...")
         })
         
+        let textColor = UIColor.white
+        let textFont = UIFont(name: "Avenir", size: 35.0)
+        let titleTextAttributes: [String:NSObject] = [
+            NSFontAttributeName: textFont!,
+            NSForegroundColorAttributeName: textColor,
+            ]
+        self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
+        self.collectionView?.allowsSelection = true
+        self.collectionView?.allowsMultipleSelection = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
     
     }

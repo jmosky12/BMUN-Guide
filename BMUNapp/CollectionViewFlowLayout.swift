@@ -16,7 +16,6 @@ class CollectionViewFlowLayout: UICollectionViewFlowLayout {
     override var itemSize: CGSize {
         set {}
         get {
-            print("item size")
             return CGSize(width: self.height, height: self.height)
         }
     }
@@ -24,7 +23,6 @@ class CollectionViewFlowLayout: UICollectionViewFlowLayout {
     override var minimumLineSpacing: CGFloat {
         set {}
         get {
-            print("here")
             return 20
         }
     }

@@ -10,6 +10,7 @@ import UIKit
 import Moltin
 
 class StoreDetailViewController: UIViewController {
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -17,10 +18,11 @@ class StoreDetailViewController: UIViewController {
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var plusOneButton: UIButton!
     @IBOutlet weak var minusOneButton: UIButton!
+    @IBOutlet weak var productImageView: UIImageView!
     
-    @IBOutlet weak var deleteItemButton: UIButton!
     var object: AnyObject!
     let defaults = UserDefaults.standard
+    var inCart: Bool!
     
     init(object: AnyObject) {
         self.object = object
@@ -36,17 +38,7 @@ class StoreDetailViewController: UIViewController {
         super.viewDidLoad()
         let productName = object["title"] as? String
         self.quantityLabel.text = String(defaults.integer(forKey: productName!))
-        if (defaults.bool(forKey: productName! + "InCart")) {
-            deleteItemButton.isHidden = false
-            addToCartButton.isHidden = true
-            plusOneButton.isHidden = true
-            minusOneButton.isHidden = true
-        } else {
-            deleteItemButton.isHidden = true
-            addToCartButton.isHidden = false
-            plusOneButton.isHidden = false
-            minusOneButton.isHidden = false
-        }
+        self.inCart =  defaults.bool(forKey: productName! + "InCart")
         
         if let detail = self.object {
             //Set Title Label
@@ -63,8 +55,21 @@ class StoreDetailViewController: UIViewController {
             if let price = detail.value(forKeyPath: "price.data.formatted.without_tax") as? String {
                 self.priceLabel?.text = price
             }
-
         }
+        
+        if self.inCart == true {
+            print("in cart")
+            self.addToCartButton.setTitle("Remove Item from Cart", for: .normal)
+        } else {
+            print("not in cart")
+            self.addToCartButton.setTitle("Add Item to Cart", for: .normal)
+        }
+        
+        self.addToCartButton.layer.borderWidth = 1
+        self.addToCartButton.layer.cornerRadius = 5
+        self.addToCartButton.layer.borderColor = UIColor.white.cgColor
+        self.productImageView.clipsToBounds = true
+        self.productImageView.layer.cornerRadius = 5
         
         self.navigationController?.navigationBar.tintColor = UIColor.white
     }
@@ -89,46 +94,43 @@ class StoreDetailViewController: UIViewController {
     
     @IBAction func addToCart(_ sender: AnyObject) {
         // add product to cart
-        if (Int(quantityLabel.text!)! > 0) {
-            let productName = object["title"] as? String
-            let productid = self.object?["id"] as? String
-            Moltin.sharedInstance().cart.insertItem(withId: productid, quantity: Int(quantityLabel.text!)!, andModifiersOrNil: nil, success: {(response) -> Void in
-                //Display message to user
-                let alert = UIAlertController(title: "Added to cart!", message: "Added Item to cart!", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }, failure: {(response, error) -> Void in
-                //couldn't add product to cart
-                print("couldn't add item")
-        })
-            defaults.set(true, forKey: productName! + "InCart")
-            addToCartButton.isHidden = true
-            deleteItemButton.isHidden = false
-            minusOneButton.isHidden = true
-            plusOneButton.isHidden = true
-        }
-    }
-    
-    @IBAction func deleteFromCart(_ sender: AnyObject) {
-    // remove product from cart
         let productName = object["title"] as? String
         let productid = self.object?["id"] as? String
-        Moltin.sharedInstance().cart.removeItem(withId: productid, success: {(response) -> Void in
-            //Display message to user
-            let alert = UIAlertController(title: "Removed from Cart!", message: "Removed Item from cart!", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-    
+        if self.inCart == true {
+            print("do add")
+            Moltin.sharedInstance().cart.removeItem(withId: productid, success: {(response) -> Void in
+                //Display message to user
+                let alert = UIAlertController(title: "Removed from Cart!", message: "Removed Item from cart!", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
             }, failure: {(response, error) -> Void in
                 //couldn't add product to cart
                 print("couldn't add item")
-        })
-        defaults.set(false, forKey: productName! + "InCart")
-        deleteItemButton.isHidden = true
-        addToCartButton.isHidden = false
-        minusOneButton.isHidden = false
-        plusOneButton.isHidden = false
+            })
+            defaults.set(false, forKey: productName! + "InCart")
+            minusOneButton.isHidden = false
+            plusOneButton.isHidden = false
+            self.addToCartButton.setTitle("Add Item to Cart", for: .normal)
+        } else {
+            print("do not add")
+            if (Int(quantityLabel.text!)! > 0) {
+                Moltin.sharedInstance().cart.insertItem(withId: productid, quantity: Int(quantityLabel.text!)!, andModifiersOrNil: nil, success: {(response) -> Void in
+                    //Display message to user
+                    let alert = UIAlertController(title: "Added to cart!", message: "Added Item to cart!", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }, failure: {(response, error) -> Void in
+                    //couldn't add product to cart
+                    print("couldn't add item")
+                })
+                defaults.set(true, forKey: productName! + "InCart")
+                minusOneButton.isHidden = true
+                plusOneButton.isHidden = true
+                self.addToCartButton.setTitle("Remove Item from Cart", for: .normal)
+            }
+        }
+        
     }
-    
 
 }
