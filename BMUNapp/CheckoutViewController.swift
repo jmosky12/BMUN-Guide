@@ -12,14 +12,8 @@ import Moltin
 class CheckoutViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
-    @IBOutlet weak var country: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
-    @IBOutlet weak var billingAddress: UITextField!
-    @IBOutlet weak var city: UITextField!
-    @IBOutlet weak var state: UITextField!
-    @IBOutlet weak var postcode: UITextField!
     @IBOutlet weak var totalLabel: UILabel!
-
     @IBOutlet weak var email: UITextField!
     
     init(total: String) {
@@ -59,12 +53,12 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
                 "gateway": "dummy",
                 "bill_to": ["first_name": firstName.text!,
                             "last_name":  lastName.text!,
-                            "address_1":  billingAddress.text!,
+                            "address_1":  "",
                             "address_2":  "Sunnycreek",
-                            "city":       city.text!,
-                            "county":     state.text!,
-                            "country":    country.text!,
-                            "postcode":   postcode.text!,
+                            "city":       "",
+                            "county":     "",
+                            "country":    "",
+                            "postcode":   "",
                             "phone":     phoneNumber.text!],
                 "ship_to": "bill_to"
             ] as [String : Any]
@@ -97,12 +91,9 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
         let empty = ""
         if firstName.text == empty
         || lastName.text == empty
-        || country.text == empty
         || phoneNumber.text == empty
-        || billingAddress.text == empty
-        || city.text == empty
-        || state.text == empty
-        || postcode.text == empty {
+        || email.text == empty
+        {
             return true
         } else {
             return false
