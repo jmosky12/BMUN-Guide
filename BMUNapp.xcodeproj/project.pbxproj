@@ -24,6 +24,10 @@
 		DF20B1BC1BCAE380007705BA /* DelegateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF20B1BA1BCAE380007705BA /* DelegateTableViewCell.xib */; };
 		DF2702A41C14D8A200A4889D /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2702A21C14D8A200A4889D /* QuestionsViewController.swift */; };
 		DF2702A51C14D8A200A4889D /* QuestionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2702A31C14D8A200A4889D /* QuestionsViewController.xib */; };
+		DF2FB62D1E46971800F858AC /* TimelineEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2FB62B1E46971800F858AC /* TimelineEventTableViewController.swift */; };
+		DF2FB62E1E46971800F858AC /* TimelineEventTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2FB62C1E46971800F858AC /* TimelineEventTableViewController.xib */; };
+		DF2FB6311E46973500F858AC /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2FB62F1E46973500F858AC /* TimelineTableViewCell.swift */; };
+		DF2FB6321E46973500F858AC /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2FB6301E46973500F858AC /* TimelineTableViewCell.xib */; };
 		DF4CDBAC1DE5371600CDEB09 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4CDBAA1DE5371600CDEB09 /* InfoViewController.swift */; };
 		DF4CDBAD1DE5371600CDEB09 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF4CDBAB1DE5371600CDEB09 /* InfoViewController.xib */; };
 		DF4CDBAF1DE646E500CDEB09 /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4CDBAE1DE646E500CDEB09 /* CollectionViewFlowLayout.swift */; };
@@ -105,6 +109,10 @@
 		DF20B1BA1BCAE380007705BA /* DelegateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DelegateTableViewCell.xib; sourceTree = "<group>"; };
 		DF2702A21C14D8A200A4889D /* QuestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		DF2702A31C14D8A200A4889D /* QuestionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionsViewController.xib; sourceTree = "<group>"; };
+		DF2FB62B1E46971800F858AC /* TimelineEventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineEventTableViewController.swift; sourceTree = "<group>"; };
+		DF2FB62C1E46971800F858AC /* TimelineEventTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineEventTableViewController.xib; sourceTree = "<group>"; };
+		DF2FB62F1E46973500F858AC /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
+		DF2FB6301E46973500F858AC /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
 		DF4CDBAA1DE5371600CDEB09 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		DF4CDBAB1DE5371600CDEB09 /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		DF4CDBAE1DE646E500CDEB09 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
@@ -233,6 +241,10 @@
 				DFD8145B1DD804C800CA027E /* TimelineEventsCollectionViewController.xib */,
 				DFD814561DD7F76900CA027E /* TimelineCollectionViewCell.swift */,
 				DFD814571DD7F76900CA027E /* TimelineCollectionViewCell.xib */,
+				DF2FB62B1E46971800F858AC /* TimelineEventTableViewController.swift */,
+				DF2FB62C1E46971800F858AC /* TimelineEventTableViewController.xib */,
+				DF2FB62F1E46973500F858AC /* TimelineTableViewCell.swift */,
+				DF2FB6301E46973500F858AC /* TimelineTableViewCell.xib */,
 			);
 			name = Timeline;
 			sourceTree = "<group>";
@@ -487,6 +499,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF2FB6321E46973500F858AC /* TimelineTableViewCell.xib in Resources */,
 				DFDCCE0A1DAAF38900269E9E /* CommitteeFundamentals.pdf in Resources */,
 				DFDCCE131DAAF38900269E9E /* twitterAvatar.png in Resources */,
 				DFDCCE0D1DAAF38900269E9E /* Packing.pdf in Resources */,
@@ -508,6 +521,7 @@
 				DFDCCE121DAAF38900269E9E /* SpeechPreparation.pdf in Resources */,
 				D71508AC1DD7AAAF0026773F /* CartTableViewCell.xib in Resources */,
 				D7370FE91DB33E6B008A4AF3 /* GoogleService-Info.plist in Resources */,
+				DF2FB62E1E46971800F858AC /* TimelineEventTableViewController.xib in Resources */,
 				DFD8142E1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.xib in Resources */,
 				DFDCCDE71DAAEAC400269E9E /* StoreCollectionViewCell.xib in Resources */,
 				DFDCCE111DAAF38900269E9E /* SpeechDelivery.pdf in Resources */,
@@ -591,6 +605,7 @@
 				DFD8144E1DD7DAD500CA027E /* InstaDescTableViewCell.swift in Sources */,
 				DFD8144A1DD7DAB800CA027E /* InstaPicTableViewCell.swift in Sources */,
 				DFDC32661BE565D100729449 /* LiveUpdatesTableViewCell.swift in Sources */,
+				DF2FB6311E46973500F858AC /* TimelineTableViewCell.swift in Sources */,
 				DFDCCDE21DAAEAAE00269E9E /* StoreCollectionViewController.swift in Sources */,
 				DFD8142D1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.swift in Sources */,
 				DFD814251DD7167700CA027E /* CommitteesCollectionViewCell.swift in Sources */,
@@ -615,6 +630,7 @@
 				DFD814311DD739C500CA027E /* SpecificCommitteeCollectionViewController.swift in Sources */,
 				DF2702A41C14D8A200A4889D /* QuestionsViewController.swift in Sources */,
 				DFDF6EA61BE544CD009244FE /* TwitterManager.swift in Sources */,
+				DF2FB62D1E46971800F858AC /* TimelineEventTableViewController.swift in Sources */,
 				DF64FDC31C2894480072C463 /* TextViewController.swift in Sources */,
 				DF0DB57A1BCC66C400F7E96F /* LiveUpdatesTableViewController.swift in Sources */,
 			);

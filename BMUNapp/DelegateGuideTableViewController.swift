@@ -30,6 +30,9 @@ class DelegateGuideTableViewController: UITableViewController {
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.preservesSuperviewLayoutMargins = false
         tableView.layoutMargins = UIEdgeInsets.zero
+		
+		tableView.rowHeight = UITableViewAutomaticDimension
+		tableView.estimatedRowHeight = 100
         
         // Sets characteristics for top bar text
         let textColor = UIColor.white

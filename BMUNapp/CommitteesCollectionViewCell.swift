@@ -11,7 +11,6 @@ import UIKit
 class CommitteesCollectionViewCell: UICollectionViewCell {
    
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var typeLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -66,18 +66,18 @@ class CommitteesCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        let label = cell.viewWithTag(1) as? UILabel
+        let imageView = cell.viewWithTag(1) as? UIImageView
         switch(indexPath.row) {
         case 0:
-            label!.text = "Bloc A"
+            imageView?.image = UIImage(named: "blocA")
         case 1:
-            label!.text = "Bloc B"
+            imageView?.image = UIImage(named: "blocB")
         case 2:
-            label!.text = "Specialized"
+            imageView?.image = UIImage(named: "specialized")
         case 3:
-            label!.text = "Crisis"
+            imageView?.image = UIImage(named: "crisis")
         default:
-            label!.text = "nil"
+            imageView?.image = UIImage(named: "blocA")
         }
         return cell
     }
