@@ -16,12 +16,12 @@ import Alamofire
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private let apiCommitteesURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/BMUN?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
-    private let apiTimelineURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/Timeline?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
+    fileprivate let apiCommitteesURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/BMUN?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
+    fileprivate let apiTimelineURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/Timeline?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        Storage.getRequest(url: NSURL(string: apiCommitteesURL)!) {
+        Storage.getRequest(URL(string: apiCommitteesURL)!) {
             (data, response, error) in
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        Storage.getRequest(url: NSURL(string: apiTimelineURL)!) {
+        Storage.getRequest(URL(string: apiTimelineURL)!) {
             (data, response, error) in
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
