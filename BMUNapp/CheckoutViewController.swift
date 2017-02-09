@@ -15,7 +15,8 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var email: UITextField!
-    
+    @IBOutlet weak var committee: UITextField!
+    @IBOutlet weak var school: UITextField!
     init(total: String) {
         super.init(nibName: "CheckoutViewController", bundle: nil)
     }
@@ -53,11 +54,11 @@ class CheckoutViewController: UIViewController, UITextFieldDelegate {
                 "gateway": "dummy",
                 "bill_to": ["first_name": firstName.text!,
                             "last_name":  lastName.text!,
-                            "address_1":  "",
-                            "address_2":  "Sunnycreek",
+                            "address_1":  school.text!,
+                            "address_2":  committee.text!,
                             "city":       "",
                             "county":     "",
-                            "country":    "",
+                            "country":    "USA",
                             "postcode":   "",
                             "phone":     phoneNumber.text!],
                 "ship_to": "bill_to"

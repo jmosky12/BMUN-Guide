@@ -26,7 +26,7 @@ class CartTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Place Order", style: .plain, target: self,action: #selector(placeOrder))
+       
         
         edgesForExtendedLayout = UIRectEdge()
         let nib: UINib = UINib(nibName: "CartTableViewCell", bundle: nil)
@@ -106,6 +106,9 @@ class CartTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if (itemArray.count > 0 && itemArray[0][0] != "No Items in Cart") {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Place Order", style: .plain, target: self,action: #selector(placeOrder))
+        }
         return itemArray.count
     }
 

@@ -48,6 +48,7 @@ class StoreCollectionViewController: UICollectionViewController {
         Moltin.sharedInstance().setPublicId("lT03XQXXnjSKcqWTR77B7oBc6ZTHXvCW6Qh9TfVdlT")
         Moltin.sharedInstance().product.listing(withParameters: ["limit": 100], success: { (response) -> Void in
             // products is an array of all of the products that match the parameters...
+            print(response!)
             self.products = response?["result"] as! [AnyObject]
             
             self.collectionView?.reloadData()
@@ -76,7 +77,7 @@ class StoreCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath:IndexPath) {
-        let vc = StoreDetailViewController(object: products[indexPath.row])
+        let vc = StoreDetailViewController(object: products[indexPath.row], image: products[indexPath.row]["sku"] as! String)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -97,7 +98,10 @@ class StoreCollectionViewController: UICollectionViewController {
         let label = cell.viewWithTag(1) as? UILabel
         let imageView = cell.viewWithTag(2) as? UIImageView
         label!.text = product["title"] as? String
-        imageView?.image = UIImage(named: "bmun_hat.jpg")
+        label?.backgroundColor = UIColor.black
+        let image = product["sku"]
+        let imageText = "\(image!).jpg"
+        imageView?.image = UIImage(named: imageText)
     
         return cell
     }

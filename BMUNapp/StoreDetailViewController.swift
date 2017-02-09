@@ -24,8 +24,10 @@ class StoreDetailViewController: UIViewController {
     let defaults = UserDefaults.standard
     var inCart: Bool!
     
-    init(object: AnyObject) {
+    init(object: AnyObject, image: String) {
         self.object = object
+        let imageText = "\(image).jpg"
+        productImageView?.image = UIImage(named: imageText)
         super.init(nibName: "StoreDetailViewController", bundle: nil)
     }
     
