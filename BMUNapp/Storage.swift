@@ -105,6 +105,8 @@ struct Storage {
     static var dayThreeTimeline: [String: Any]?
     
     static var instaList: [InstagramInfo]!
+	
+	static var instaHeights: [CGFloat] = []
     
     //static var committees: Array<AnyObject>?
 }

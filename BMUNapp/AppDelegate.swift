@@ -76,10 +76,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let urlString = standardPic["url"] as! String
                     let description = descriptionData["text"] as! String
                     Storage.instaList.append(InstagramInfo(urlString: urlString, description: description))
+					self.addToHeights(urlString: urlString)
                 }
             }
-        }
-        
+		}
+		
         //Parse.setApplicationId("INbyDC9BcrJRZiBzuPT2p2oquTMZq9tuTiAqRNOf", clientKey: "FoOfryHoH7L6L6VMH0qltbZuAzE37D4e2PZDgoc3")
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
@@ -156,6 +157,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+	
+	func addToHeights(urlString: String) {
+		let url = URL(string: urlString)
+		var picData: Data!
+		do {
+			picData = try Data(contentsOf: url!)
+		} catch {
+			print(error)
+		}
+		let image = UIImage(data: picData)
+		let height = image?.size.height
+		let width = image?.size.width
+		let ratio = height!/width!
+		let screenWidth = UIScreen.main.bounds.width
+		let newHeight = ratio*screenWidth
+		if newHeight == 0 {
+			Storage.instaHeights.append(screenWidth)
+		} else {
+			Storage.instaHeights.append(newHeight)
+		}
+	}
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
