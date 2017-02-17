@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,11 +31,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="leadingMargin" secondItem="EsE-0B-gZ1" secondAttribute="leading" constant="8" id="1ph-aR-ICP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="EsE-0B-gZ1" secondAttribute="trailing" constant="-8" id="1tH-s4-qxf"/>
                     <constraint firstItem="EsE-0B-gZ1" firstAttribute="centerX" secondItem="ZYI-Zu-XMH" secondAttribute="centerX" id="3C0-0U-hNq"/>
-                    <constraint firstAttribute="topMargin" secondItem="EsE-0B-gZ1" secondAttribute="top" constant="8" id="6L9-o6-v1F"/>
                     <constraint firstItem="Ejy-xS-bOh" firstAttribute="centerY" secondItem="ZYI-Zu-XMH" secondAttribute="centerY" id="9Pb-aw-eRt"/>
                     <constraint firstItem="EsE-0B-gZ1" firstAttribute="centerY" secondItem="ZYI-Zu-XMH" secondAttribute="centerY" id="EmQ-to-yPd"/>
                     <constraint firstItem="Ejy-xS-bOh" firstAttribute="centerX" secondItem="ZYI-Zu-XMH" secondAttribute="centerX" id="d7Z-ri-RyP"/>
+                    <constraint firstItem="EsE-0B-gZ1" firstAttribute="top" secondItem="ZYI-Zu-XMH" secondAttribute="topMargin" constant="-8" id="vrh-p3-5de"/>
                 </constraints>
             </tableViewCellContentView>
             <constraints>

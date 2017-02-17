@@ -17,12 +17,12 @@ import Alamofire
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    private let apiCommitteesURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/BMUN?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
-    private let apiTimelineURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/Timeline?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
+    fileprivate let apiCommitteesURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/BMUN?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
+    fileprivate let apiTimelineURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/Timeline?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        Storage.getRequest(url: NSURL(string: apiCommitteesURL)!) {
+        Storage.getRequest(URL(string: apiCommitteesURL)!) {
             (data, response, error) in
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        Storage.getRequest(url: NSURL(string: apiTimelineURL)!) {
+        Storage.getRequest(URL(string: apiTimelineURL)!) {
             (data, response, error) in
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
@@ -77,10 +77,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let urlString = standardPic["url"] as! String
                     let description = descriptionData["text"] as! String
                     Storage.instaList.append(InstagramInfo(urlString: urlString, description: description))
+					self.addToHeights(urlString: urlString)
                 }
             }
-        }
-        
+		}
+		
         //Parse.setApplicationId("INbyDC9BcrJRZiBzuPT2p2oquTMZq9tuTiAqRNOf", clientKey: "FoOfryHoH7L6L6VMH0qltbZuAzE37D4e2PZDgoc3")
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
@@ -157,6 +158,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+	
+	func addToHeights(urlString: String) {
+		let url = URL(string: urlString)
+		var picData: Data!
+		do {
+			picData = try Data(contentsOf: url!)
+		} catch {
+			print(error)
+		}
+		let image = UIImage(data: picData)
+		let height = image?.size.height
+		let width = image?.size.width
+		let ratio = height!/width!
+		let screenWidth = UIScreen.main.bounds.width
+		let newHeight = ratio*screenWidth
+		if newHeight == 0 {
+			Storage.instaHeights.append(screenWidth)
+		} else {
+			Storage.instaHeights.append(newHeight)
+		}
+	}
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

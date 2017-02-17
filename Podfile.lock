@@ -14,17 +14,18 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Alamofire (4.0.1)
-  - AlamofireImage (3.1.0):
-    - Alamofire (~> 4.0)
-  - DateTools (1.7.0)
+  - Alamofire (4.3.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - DateTools (2.0.0)
   - Moltin (1.1.5):
     - AFNetworking
-  - STTwitter (0.2.5)
-  - SwiftyJSON (3.1.1)
+  - STTwitter (0.2.6)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
+  - AFNetworking
+  - Alamofire
   - AlamofireImage
   - DateTools
   - Moltin
@@ -33,13 +34,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  AlamofireImage: bb8c8351c51cb1633bb6be69b6dbbaff37ce65b7
-  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   Moltin: 80fe95499216cf783c183bc56352b6b92a3e4836
-  STTwitter: 5c157e8dcb4f0e4cf5b4374393021b7d7b7fd497
-  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+  STTwitter: 30ee2f79eff78c3d633a1edc869e97db9c9ead59
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: fc0034714b2b22187b3730d8ee03c0ee1fa2e44b
+PODFILE CHECKSUM: 6130810569881271164110b38b8d8ab95cfbbec3
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0

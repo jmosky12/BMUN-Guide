@@ -56,23 +56,23 @@ class TimelineCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        let label = cell.viewWithTag(1) as? UILabel
+        let imageView = cell.viewWithTag(1) as? UIImageView
         switch(indexPath.row) {
         case 0:
-            label!.text = Storage.dayOneTimeline?["date"] as? String
+            imageView?.image = UIImage(named: "march3")
         case 1:
-            label!.text = Storage.dayTwoTimeline?["date"] as? String
+            imageView?.image = UIImage(named: "march4")
         case 2:
-            label!.text = Storage.dayThreeTimeline?["date"] as? String
+            imageView?.image = UIImage(named: "march5")
         default:
-            label!.text = "nil"
+            imageView?.image = UIImage(named: "march3")
         }
         return cell
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = TimelineEventsCollectionViewController(section: indexPath.row)
+        let vc = TimelineEventTableViewController(section: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

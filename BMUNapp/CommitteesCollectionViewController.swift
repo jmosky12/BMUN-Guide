@@ -28,6 +28,8 @@ class CommitteesCollectionViewController: UICollectionViewController {
         
         let nib: UINib = UINib(nibName: "CommitteesCollectionViewCell", bundle: nil)
         self.collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
+		
+		self.view.backgroundColor = UIColor.init(red: 5, green: 90, blue: 131, alpha: 1)
         
         let width = self.view.bounds.width
         let flowLayout = CollectionViewFlowLayout()
@@ -66,18 +68,18 @@ class CommitteesCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        let label = cell.viewWithTag(1) as? UILabel
+        let imageView = cell.viewWithTag(1) as? UIImageView
         switch(indexPath.row) {
         case 0:
-            label!.text = "Bloc A"
+            imageView?.image = UIImage(named: "blocA")
         case 1:
-            label!.text = "Bloc B"
+            imageView?.image = UIImage(named: "blocB")
         case 2:
-            label!.text = "Specialized"
+            imageView?.image = UIImage(named: "specialized")
         case 3:
-            label!.text = "Crisis"
+            imageView?.image = UIImage(named: "crisis")
         default:
-            label!.text = "nil"
+            imageView?.image = UIImage(named: "blocA")
         }
         return cell
     }
