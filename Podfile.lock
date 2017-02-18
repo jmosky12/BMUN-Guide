@@ -20,6 +20,9 @@ PODS:
   - DateTools (2.0.0)
   - Moltin (1.1.5):
     - AFNetworking
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - STTwitter (0.2.6)
   - SwiftyJSON (3.1.4)
 
@@ -29,6 +32,7 @@ DEPENDENCIES:
   - AlamofireImage
   - DateTools
   - Moltin
+  - SDWebImage
   - STTwitter
   - SwiftyJSON
 
@@ -38,9 +42,10 @@ SPEC CHECKSUMS:
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   Moltin: 80fe95499216cf783c183bc56352b6b92a3e4836
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   STTwitter: 30ee2f79eff78c3d633a1edc869e97db9c9ead59
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6130810569881271164110b38b8d8ab95cfbbec3
+PODFILE CHECKSUM: 8c97b606a191da78264bfb24eaf91963a41cf2a4
 
 COCOAPODS: 1.2.0

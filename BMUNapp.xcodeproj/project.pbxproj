@@ -61,8 +61,6 @@
 		DFD814511DD7E16E00CA027E /* InstaDescTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD814501DD7E16E00CA027E /* InstaDescTableViewCell.xib */; };
 		DFD814541DD7F74B00CA027E /* TimelineCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD814521DD7F74B00CA027E /* TimelineCollectionViewController.swift */; };
 		DFD814551DD7F74B00CA027E /* TimelineCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD814531DD7F74B00CA027E /* TimelineCollectionViewController.xib */; };
-		DFD8145C1DD804C800CA027E /* TimelineEventsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD8145A1DD804C800CA027E /* TimelineEventsCollectionViewController.swift */; };
-		DFD8145D1DD804C800CA027E /* TimelineEventsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD8145B1DD804C800CA027E /* TimelineEventsCollectionViewController.xib */; };
 		DFDC32661BE565D100729449 /* LiveUpdatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC32641BE565D100729449 /* LiveUpdatesTableViewCell.swift */; };
 		DFDC32691BE56CA400729449 /* LiveUpdatesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFDC32681BE56CA400729449 /* LiveUpdatesTableViewController.xib */; };
 		DFDCCDE21DAAEAAE00269E9E /* StoreCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCCDE01DAAEAAE00269E9E /* StoreCollectionViewController.swift */; };
@@ -152,8 +150,6 @@
 		DFD814501DD7E16E00CA027E /* InstaDescTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstaDescTableViewCell.xib; sourceTree = "<group>"; };
 		DFD814521DD7F74B00CA027E /* TimelineCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCollectionViewController.swift; sourceTree = "<group>"; };
 		DFD814531DD7F74B00CA027E /* TimelineCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCollectionViewController.xib; sourceTree = "<group>"; };
-		DFD8145A1DD804C800CA027E /* TimelineEventsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineEventsCollectionViewController.swift; sourceTree = "<group>"; };
-		DFD8145B1DD804C800CA027E /* TimelineEventsCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineEventsCollectionViewController.xib; sourceTree = "<group>"; };
 		DFDC32641BE565D100729449 /* LiveUpdatesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUpdatesTableViewCell.swift; sourceTree = "<group>"; };
 		DFDC32681BE56CA400729449 /* LiveUpdatesTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveUpdatesTableViewController.xib; sourceTree = "<group>"; };
 		DFDCCDE01DAAEAAE00269E9E /* StoreCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewController.swift; sourceTree = "<group>"; };
@@ -257,8 +253,6 @@
 			children = (
 				DFD814521DD7F74B00CA027E /* TimelineCollectionViewController.swift */,
 				DFD814531DD7F74B00CA027E /* TimelineCollectionViewController.xib */,
-				DFD8145A1DD804C800CA027E /* TimelineEventsCollectionViewController.swift */,
-				DFD8145B1DD804C800CA027E /* TimelineEventsCollectionViewController.xib */,
 				DF2FB62B1E46971800F858AC /* TimelineEventTableViewController.swift */,
 				DF2FB62C1E46971800F858AC /* TimelineEventTableViewController.xib */,
 				DF2FB62F1E46973500F858AC /* TimelineTableViewCell.swift */,
@@ -552,7 +546,6 @@
 				DFAC30481DE5076000872364 /* SocialMediaViewController.xib in Resources */,
 				DFE372AB1BCB0DC500490A34 /* WebViewController.xib in Resources */,
 				DFDC32691BE56CA400729449 /* LiveUpdatesTableViewController.xib in Resources */,
-				DFD8145D1DD804C800CA027E /* TimelineEventsCollectionViewController.xib in Resources */,
 				DFF6137C1C1801A2003C810C /* CommitteeDetailViewController.xib in Resources */,
 				DFDCCE0F1DAAF38900269E9E /* Research.pdf in Resources */,
 				DFD8144B1DD7DAB800CA027E /* InstaPicTableViewCell.xib in Resources */,
@@ -637,7 +630,6 @@
 				DF4CDBAF1DE646E500CDEB09 /* CollectionViewFlowLayout.swift in Sources */,
 				DFD814391DD7B26100CA027E /* InstaTableViewController.swift in Sources */,
 				D715089A1DD73F600026773F /* StoreDetailViewController.swift in Sources */,
-				DFD8145C1DD804C800CA027E /* TimelineEventsCollectionViewController.swift in Sources */,
 				D71508AF1DD803D40026773F /* CheckoutViewController.swift in Sources */,
 				D715089E1DD755530026773F /* CartTableViewController.swift in Sources */,
 				DFAC30471DE5076000872364 /* SocialMediaViewController.swift in Sources */,
@@ -764,13 +756,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 89G3G578BR;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Release-iphoneos/Alamofire",
-					"$(PROJECT_DIR)/build/Release-iphoneos/AlamofireImage",
-					"$(PROJECT_DIR)/build/Release-iphoneos/Moltin",
-					"$(PROJECT_DIR)/build/Release-iphoneos/STTwitter",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BMUNapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -796,13 +782,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 89G3G578BR;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Release-iphoneos/Alamofire",
-					"$(PROJECT_DIR)/build/Release-iphoneos/AlamofireImage",
-					"$(PROJECT_DIR)/build/Release-iphoneos/Moltin",
-					"$(PROJECT_DIR)/build/Release-iphoneos/STTwitter",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BMUNapp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

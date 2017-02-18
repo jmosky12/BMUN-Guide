@@ -28,8 +28,6 @@ class CommitteesCollectionViewController: UICollectionViewController {
         
         let nib: UINib = UINib(nibName: "CommitteesCollectionViewCell", bundle: nil)
         self.collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
-		
-		self.view.backgroundColor = UIColor.init(red: 5, green: 90, blue: 131, alpha: 1)
         
         let width = self.view.bounds.width
         let flowLayout = CollectionViewFlowLayout()

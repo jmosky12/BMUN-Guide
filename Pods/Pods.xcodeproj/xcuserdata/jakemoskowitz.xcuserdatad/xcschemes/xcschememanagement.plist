@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>STTwitter.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,12 +57,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2BE8104953308D6EF563D47136A2BCF7</key>
+		<key>05C56C1176B7EA0AD3BB5B6AB190A6DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>379B439489C1932133DAACC306CD4B1E</key>
+		<key>1E88B5BFA66A7E375F16C10DEAB44512</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7282802010A8B07E534B60135A9C69F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,7 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E0E8239F93AF1582F552F5B7D6B2A23E</key>
+		<key>D03FAD2A62E4EB192AB185CFB5DD8DD8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

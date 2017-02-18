@@ -14,6 +14,7 @@ class InstaPicTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+		self.selectionStyle = .none
         //self.instaImageView.contentMode = .scaleAspectFit
     }
 

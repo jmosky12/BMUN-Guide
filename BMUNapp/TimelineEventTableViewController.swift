@@ -57,6 +57,15 @@ class TimelineEventTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		if Storage.noData {
+			let alert = UIAlertController(title: "Network Connection Error", message: "Please resolve any connection errors before using the app.", preferredStyle: .alert)
+			let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+			})
+			alert.addAction(action)
+			present(alert, animated: true, completion: {
+			})
+			return 0
+		}
 		let num: Int!
 		switch(self.section!) {
 		case 0:
