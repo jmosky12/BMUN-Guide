@@ -73,14 +73,10 @@ class InstaTableViewController: UITableViewController {
             cell.instaImageView.image = nil
             DispatchQueue.global().async {
                 () -> Void in
-                do {
                     // Background thread
-                    let urlPic = Storage.instaList[indexPath.row/2].urlString
-                    let url = URL(string: urlPic)
-					cell.instaImageView.sd_setImage(with: url)
-                } catch {
-                    print("error!")
-                }
+				let urlPic = Storage.instaList[indexPath.row/2].urlString
+				let url = URL(string: urlPic)
+				cell.instaImageView.sd_setImage(with: url)
             }
             return cell
         } else {

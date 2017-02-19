@@ -10,8 +10,6 @@
 		D71508A61DD793400026773F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71508A51DD793400026773F /* SwiftyJSON.framework */; };
 		D71508A81DD793C70026773F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71508A71DD793C70026773F /* Storage.swift */; };
 		D7370FE91DB33E6B008A4AF3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7370FE81DB33E6B008A4AF3 /* GoogleService-Info.plist */; };
-		D76EFA671E56CC990015DDC0 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76EFA651E56CC990015DDC0 /* HeaderCell.swift */; };
-		D76EFA681E56CC990015DDC0 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76EFA661E56CC990015DDC0 /* HeaderCell.xib */; };
 		D76EFA7C1E5946560015DDC0 /* SleekStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76EFA7A1E5946560015DDC0 /* SleekStoreViewController.swift */; };
 		D76EFA7D1E5946560015DDC0 /* SleekStoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76EFA7B1E5946560015DDC0 /* SleekStoreViewController.xib */; };
 		DF0DB57A1BCC66C400F7E96F /* LiveUpdatesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0DB5791BCC66C400F7E96F /* LiveUpdatesTableViewController.swift */; };
@@ -89,8 +87,6 @@
 		D71508A51DD793400026773F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../Library/Developer/Xcode/DerivedData/BMUNapp-epobmyjipxnwrifvjumgcxazxohk/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		D71508A71DD793C70026773F /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		D7370FE81DB33E6B008A4AF3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D76EFA651E56CC990015DDC0 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
-		D76EFA661E56CC990015DDC0 /* HeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		D76EFA7A1E5946560015DDC0 /* SleekStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleekStoreViewController.swift; sourceTree = "<group>"; };
 		D76EFA7B1E5946560015DDC0 /* SleekStoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SleekStoreViewController.xib; sourceTree = "<group>"; };
 		DF0DB5791BCC66C400F7E96F /* LiveUpdatesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUpdatesTableViewController.swift; sourceTree = "<group>"; };
@@ -353,11 +349,11 @@
 		DF6071C01BC8B62F007B35CC /* BMUNapp */ = {
 			isa = PBXGroup;
 			children = (
-				D76EFA791E5946200015DDC0 /* SleekStore */,
 				DF6071C11BC8B62F007B35CC /* AppDelegate.swift */,
 				DF9A92EB1BC91FE900BA3AE4 /* DelegateGuide */,
 				DF20B1A81BC9B464007705BA /* Committees */,
 				DFAC30441DE506B300872364 /* Social Media */,
+				D76EFA791E5946200015DDC0 /* SleekStore */,
 				DF4CDBA81DE5367B00CDEB09 /* Information */,
 				DF4CDBA91DE536D600CDEB09 /* WebView */,
 				DFDF6EA41BE544B3009244FE /* Models */,
@@ -367,8 +363,6 @@
 				DF6071D01BC8B62F007B35CC /* Info.plist */,
 				DF6071C81BC8B62F007B35CC /* BMUNapp.xcdatamodeld */,
 				DF29E9931BDDA188006EAAC0 /* Files */,
-				D76EFA651E56CC990015DDC0 /* HeaderCell.swift */,
-				D76EFA661E56CC990015DDC0 /* HeaderCell.xib */,
 			);
 			path = BMUNapp;
 			sourceTree = "<group>";
@@ -450,7 +444,7 @@
 				TargetAttributes = {
 					DF6071BD1BC8B62F007B35CC = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = A5H8T3WM8X;
+						DevelopmentTeam = 89G3G578BR;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -512,7 +506,6 @@
 				DFF6137C1C1801A2003C810C /* CommitteeDetailViewController.xib in Resources */,
 				DFDCCE0F1DAAF38900269E9E /* Research.pdf in Resources */,
 				DFD8144B1DD7DAB800CA027E /* InstaPicTableViewCell.xib in Resources */,
-				D76EFA681E56CC990015DDC0 /* HeaderCell.xib in Resources */,
 				DFDCCE091DAAF38900269E9E /* Caucus.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,7 +570,6 @@
 				DF6071CA1BC8B62F007B35CC /* BMUNapp.xcdatamodeld in Sources */,
 				DFD8144E1DD7DAD500CA027E /* InstaDescTableViewCell.swift in Sources */,
 				DFD8144A1DD7DAB800CA027E /* InstaPicTableViewCell.swift in Sources */,
-				D76EFA671E56CC990015DDC0 /* HeaderCell.swift in Sources */,
 				DFDC32661BE565D100729449 /* LiveUpdatesTableViewCell.swift in Sources */,
 				DF2FB6311E46973500F858AC /* TimelineTableViewCell.swift in Sources */,
 				DFD8142D1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.swift in Sources */,
@@ -592,7 +584,6 @@
 				DF6071C21BC8B62F007B35CC /* AppDelegate.swift in Sources */,
 				DF4CDBAF1DE646E500CDEB09 /* CollectionViewFlowLayout.swift in Sources */,
 				DFD814391DD7B26100CA027E /* InstaTableViewController.swift in Sources */,
-				DFD8145C1DD804C800CA027E /* TimelineEventsCollectionViewController.swift in Sources */,
 				DFAC30471DE5076000872364 /* SocialMediaViewController.swift in Sources */,
 				DFE372AA1BCB0DC500490A34 /* WebViewController.swift in Sources */,
 				DFD814541DD7F74B00CA027E /* TimelineCollectionViewController.swift in Sources */,
