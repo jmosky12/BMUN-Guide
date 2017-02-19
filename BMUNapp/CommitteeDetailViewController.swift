@@ -92,7 +92,7 @@ class CommitteeDetailViewController: UIViewController {
     @IBAction func synopsisSelected(_ sender: UIButton) {
         let stringURL = committee?["Synopsis"] as? String
         let url = URL(string: stringURL!)
-        UIApplication.shared.openURL(url!)
+		UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
 
 }

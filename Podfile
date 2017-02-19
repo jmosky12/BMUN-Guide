@@ -12,6 +12,7 @@ target "BMUNapp" do
     pod 'Alamofire'
     pod 'AlamofireImage'
 	pod 'AFNetworking'
+	pod 'SDWebImage'
 end
 
 post_install do |installer|

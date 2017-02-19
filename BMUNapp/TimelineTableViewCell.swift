@@ -19,6 +19,7 @@ class TimelineTableViewCell: UITableViewCell {
 		self.eventTitle.backgroundColor = Storage.lightBlue
 		self.eventTitle.clipsToBounds = true
 		self.eventTitle.layer.cornerRadius = 7
+		self.selectionStyle = .none
         // Initialization code
     }
 

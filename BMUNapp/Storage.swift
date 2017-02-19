@@ -107,6 +107,8 @@ struct Storage {
     static var instaList: [InstagramInfo]!
 	
 	static var instaHeights: [CGFloat] = []
+	
+	static var noData: Bool = true
     
     //static var committees: Array<AnyObject>?
 }

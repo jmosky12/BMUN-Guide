@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SDWebImage
 
 class InstaTableViewController: UITableViewController {
 	
 	var imageHeights: [CGFloat] = []
+	var noDataLabel: UILabel!
     
     init() {
         super.init(nibName: "InstaTableViewController", bundle: nil);
@@ -22,6 +24,14 @@ class InstaTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		self.noDataLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 100))
+		self.noDataLabel.center = self.tableView.center
+		self.noDataLabel.textAlignment = .center
+		self.noDataLabel.text = "Network Connection Error"
+		self.view.bringSubview(toFront: self.noDataLabel)
+		self.noDataLabel.isHidden = true
+		self.view.addSubview(self.noDataLabel)
 
         let nib1: UINib = UINib(nibName: "InstaPicTableViewCell", bundle: nil)
         self.tableView.register(nib1, forCellReuseIdentifier: "instaPic")
@@ -49,7 +59,11 @@ class InstaTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2*Storage.instaList.count
+		let count = 2*Storage.instaList.count
+		if count == 0 {
+			self.noDataLabel.isHidden = false
+		}
+        return count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,18 +77,7 @@ class InstaTableViewController: UITableViewController {
                     // Background thread
                     let urlPic = Storage.instaList[indexPath.row/2].urlString
                     let url = URL(string: urlPic)
-                    let picData = try Data(contentsOf: url!)
-                    DispatchQueue.main.async(execute: {
-                        if cell.tag == indexPath.row/2 {
-                        // UI Updates
-                            let image = UIImage(data: picData)
-                            cell.instaImageView.image = image
-							cell.layoutIfNeeded()
-							cell.layoutSubviews()
-							
-                        }
-                        
-                    })
+					cell.instaImageView.sd_setImage(with: url)
                 } catch {
                     print("error!")
                 }

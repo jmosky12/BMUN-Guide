@@ -21,10 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate let apiTimelineURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/Timeline?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+		
         Storage.getRequest(URL(string: apiCommitteesURL)!) {
             (data, response, error) in
             do {
+				if data == nil {
+					Storage.noData = true
+					return
+				}
+				Storage.noData = false
                 let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
                 let dict = json?[0] as? [String: Any]
                 let committees = dict?["Committee"] as? [String: Any]
@@ -39,14 +44,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         Storage.crisisCommittees = committees?[key] as? [String: Any]
                     }
                 }
-            } catch let error {
-                print("error: \(error)")
+            } catch _ {
+                Storage.noData = true
             }
         }
         
         Storage.getRequest(URL(string: apiTimelineURL)!) {
             (data, response, error) in
             do {
+				if data == nil {
+					Storage.noData = true
+					return
+				}
+				Storage.noData = false
                 let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
                 let dict = json?[0] as? [String: Any]
                 let timeline = dict?["Timeline"] as? [String: Any]

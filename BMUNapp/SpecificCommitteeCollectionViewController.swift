@@ -43,12 +43,6 @@ class SpecificCommitteeCollectionViewController: UICollectionViewController {
         self.view.clipsToBounds = true
         
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        
-        /*self.collectionView?.backgroundView = UIImageView(frame: (self.collectionView?.frame)!)
-        let imageView = self.collectionView?.backgroundView as! UIImageView
-        imageView.image = UIImage(named: "sky")
-        imageView.contentMode = .scaleAspectFill
-        imageView.alpha = 0.85*/
 
     }
     
@@ -61,6 +55,15 @@ class SpecificCommitteeCollectionViewController: UICollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		if Storage.noData {
+			let alert = UIAlertController(title: "Network Connection Error", message: "Please resolve any connection errors before using the app.", preferredStyle: .alert)
+			let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+			})
+			alert.addAction(action)
+			present(alert, animated: true, completion: { 
+			})
+			return 0
+		}
         let num: Int!
         switch(self.section!) {
         case 0:
@@ -108,13 +111,4 @@ class SpecificCommitteeCollectionViewController: UICollectionViewController {
         let vc = CommitteeDetailViewController(section: self.section!, row: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    /*override func viewWillDisappear(_ animated: Bool) {
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.view.alpha = 1.0
-    }*/
-    
 }
