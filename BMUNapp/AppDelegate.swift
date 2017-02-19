@@ -133,7 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let info = InfoViewController()
         let infoNC = UINavigationController(rootViewController: info)
-        let item4 = UITabBarItem(title: "Information", image: nil, tag: 4)
+        let item4 = UITabBarItem(title: "Info", image: nil, tag: 4)
         item4.setTitleTextAttributes(titleTextAttributes, for: UIControlState())
         item4.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
         infoNC.tabBarItem = item4
