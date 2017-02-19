@@ -1,4 +1,5 @@
-//
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       //
 //  AppDelegate.swift
 //  BMUNapp
 //
@@ -141,7 +142,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         infoNC.navigationBar.isTranslucent = false
         infoNC.navigationBar.topItem?.title = "Information"
     
-        let store = StoreCollectionViewController()
+        let store = SleekStoreViewController()
         let storeNC = UINavigationController(rootViewController: store)
         let item5 = UITabBarItem(title: "Store", image: nil, tag: 5)
         item5.setTitleTextAttributes(titleTextAttributes, for: .normal)
