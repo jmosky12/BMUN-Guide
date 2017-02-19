@@ -1,4 +1,5 @@
-//
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       //
 //  AppDelegate.swift
 //  BMUNapp
 //
@@ -133,7 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let info = InfoViewController()
         let infoNC = UINavigationController(rootViewController: info)
-        let item4 = UITabBarItem(title: "Information", image: nil, tag: 4)
+        let item4 = UITabBarItem(title: "Info", image: nil, tag: 4)
         item4.setTitleTextAttributes(titleTextAttributes, for: UIControlState())
         item4.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
         infoNC.tabBarItem = item4
@@ -141,7 +142,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         infoNC.navigationBar.isTranslucent = false
         infoNC.navigationBar.topItem?.title = "Information"
     
-        let store = StoreCollectionViewController()
+        let store = SleekStoreViewController()
         let storeNC = UINavigationController(rootViewController: store)
         let item5 = UITabBarItem(title: "Store", image: nil, tag: 5)
         item5.setTitleTextAttributes(titleTextAttributes, for: .normal)

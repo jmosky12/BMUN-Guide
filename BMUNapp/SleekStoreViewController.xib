@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SleekStoreViewController" customModule="BMUNapp" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Cai-pH-F93" id="l2T-4a-GNu"/>
+            </connections>
+        </placeholder>
+        <view contentMode="scaleToFill" id="Cai-pH-F93">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMa-x2-8K8">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mg8-eD-fBy">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mlk_coolpic" translatesAutoresizingMaskIntoConstraints="NO" id="K74-b5-2fj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAT-ej-xSN">
+                                    <rect key="frame" x="8" y="292" width="367" height="90"/>
+                                    <string key="text">All items can be found on the third floor of the MLK building, located next to sproul plaza. Entering off of upper sproul plaza, one should see a coffee shop to the right and a staircase to the left. Simply walk up the stairs, and turn to your right!</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdP-88-qAM">
+                                    <rect key="frame" x="8" y="265" width="224" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="habitat-for-humanity-fox-valley" translatesAutoresizingMaskIntoConstraints="NO" id="DzE-7s-ahx">
+                                    <rect key="frame" x="8" y="395" width="224" height="194"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shirt" translatesAutoresizingMaskIntoConstraints="NO" id="3Z1-ig-c5k">
+                                    <rect key="frame" x="8" y="597" width="224" height="193"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shirt" translatesAutoresizingMaskIntoConstraints="NO" id="sLL-g7-Oui">
+                                    <rect key="frame" x="8" y="798" width="224" height="193"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BMUN 65 T-Shirt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ2-3O-A8M">
+                                    <rect key="frame" x="242" y="644" width="133" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BMUN Classic T-shirt" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfr-Xk-1Ho">
+                                    <rect key="frame" x="240" y="822" width="127" height="47"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Habitat For Humanity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvo-7l-6cv">
+                                    <rect key="frame" x="240" y="425" width="135" height="66"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please Donate as much as you like to our onference cause!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbk-t9-fB6">
+                                    <rect key="frame" x="240" y="477" width="127" height="79"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGJ-rJ-lXb">
+                                    <rect key="frame" x="242" y="673" width="42" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Raw-mn-6qw">
+                                    <rect key="frame" x="240" y="877" width="42" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="K74-b5-2fj" secondAttribute="trailing" id="6Wg-yk-gqA"/>
+                                <constraint firstItem="K74-b5-2fj" firstAttribute="leading" secondItem="Mg8-eD-fBy" secondAttribute="leading" id="A4N-LT-Cil"/>
+                                <constraint firstItem="mdP-88-qAM" firstAttribute="leading" secondItem="Mg8-eD-fBy" secondAttribute="leading" constant="8" id="FKv-OX-pLH"/>
+                                <constraint firstItem="mdP-88-qAM" firstAttribute="top" secondItem="K74-b5-2fj" secondAttribute="bottom" constant="15" id="R19-uE-zLw"/>
+                                <constraint firstItem="oAT-ej-xSN" firstAttribute="top" secondItem="mdP-88-qAM" secondAttribute="bottom" constant="6" id="RcU-MW-x1v"/>
+                                <constraint firstAttribute="trailing" secondItem="oAT-ej-xSN" secondAttribute="trailing" id="Trf-FM-FBz"/>
+                                <constraint firstAttribute="trailing" secondItem="mdP-88-qAM" secondAttribute="trailing" constant="143" id="UZC-fJ-fWR"/>
+                                <constraint firstItem="K74-b5-2fj" firstAttribute="top" secondItem="Mg8-eD-fBy" secondAttribute="top" id="Upn-l0-7jC"/>
+                                <constraint firstItem="K74-b5-2fj" firstAttribute="width" secondItem="Mg8-eD-fBy" secondAttribute="width" id="VJS-Bc-VcU"/>
+                                <constraint firstItem="oAT-ej-xSN" firstAttribute="leading" secondItem="Mg8-eD-fBy" secondAttribute="leading" constant="8" id="Zet-U6-Kfc"/>
+                                <constraint firstAttribute="height" constant="1000" id="npb-rl-cOj"/>
+                                <constraint firstItem="K74-b5-2fj" firstAttribute="height" secondItem="Mg8-eD-fBy" secondAttribute="height" multiplier="0.25" id="qYD-LC-Q8a"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Mg8-eD-fBy" secondAttribute="bottom" id="21O-UI-zft"/>
+                        <constraint firstItem="Mg8-eD-fBy" firstAttribute="leading" secondItem="nMa-x2-8K8" secondAttribute="leading" id="BRf-1G-HNJ"/>
+                        <constraint firstAttribute="trailing" secondItem="Mg8-eD-fBy" secondAttribute="trailing" id="GSj-AY-Gne"/>
+                        <constraint firstItem="Mg8-eD-fBy" firstAttribute="top" secondItem="nMa-x2-8K8" secondAttribute="top" id="b5M-PE-68u"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="nMa-x2-8K8" secondAttribute="trailing" id="0bG-vR-Qkk"/>
+                <constraint firstItem="Mg8-eD-fBy" firstAttribute="width" secondItem="Cai-pH-F93" secondAttribute="width" id="4Fc-gJ-P5i"/>
+                <constraint firstAttribute="bottom" secondItem="nMa-x2-8K8" secondAttribute="bottom" id="7wD-Tp-TTH"/>
+                <constraint firstItem="nMa-x2-8K8" firstAttribute="leading" secondItem="Cai-pH-F93" secondAttribute="leading" id="eof-NZ-usc"/>
+                <constraint firstItem="nMa-x2-8K8" firstAttribute="top" secondItem="Cai-pH-F93" secondAttribute="top" id="fr9-ec-qTT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="103.5" y="26"/>
+        </view>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+    </objects>
+    <resources>
+        <image name="habitat-for-humanity-fox-valley" width="860" height="741"/>
+        <image name="mlk_coolpic" width="1920" height="1125"/>
+        <image name="shirt" width="1806" height="1006"/>
+    </resources>
+</document>

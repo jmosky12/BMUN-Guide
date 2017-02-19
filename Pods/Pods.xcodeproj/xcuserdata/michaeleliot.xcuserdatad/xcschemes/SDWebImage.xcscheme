@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DF6071BD1BC8B62F007B35CC"
-               BuildableName = "BMUNapp.app"
-               BlueprintName = "BMUNapp"
-               ReferencedContainer = "container:BMUNapp.xcodeproj">
+               BlueprintIdentifier = "7282802010A8B07E534B60135A9C69F3"
+               BuildableName = "SDWebImage.framework"
+               BlueprintName = "SDWebImage"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,20 +29,11 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DF6071BD1BC8B62F007B35CC"
-            BuildableName = "BMUNapp.app"
-            BlueprintName = "BMUNapp"
-            ReferencedContainer = "container:BMUNapp.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -51,23 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DF6071BD1BC8B62F007B35CC"
-            BuildableName = "BMUNapp.app"
-            BlueprintName = "BMUNapp"
-            ReferencedContainer = "container:BMUNapp.xcodeproj">
+            BlueprintIdentifier = "7282802010A8B07E534B60135A9C69F3"
+            BuildableName = "SDWebImage.framework"
+            BlueprintName = "SDWebImage"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disable"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -77,23 +60,21 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DF6071BD1BC8B62F007B35CC"
-            BuildableName = "BMUNapp.app"
-            BlueprintName = "BMUNapp"
-            ReferencedContainer = "container:BMUNapp.xcodeproj">
+            BlueprintIdentifier = "7282802010A8B07E534B60135A9C69F3"
+            BuildableName = "SDWebImage.framework"
+            BlueprintName = "SDWebImage"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "BMUN Guide"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
