@@ -11,86 +11,13 @@ import UIKit
 import CoreData
 import SwiftyJSON
 import Foundation
-import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    fileprivate let apiCommitteesURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/BMUN?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
-    fileprivate let apiTimelineURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/Timeline?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		
-        Storage.getRequest(URL(string: apiCommitteesURL)!) {
-            (data, response, error) in
-            do {
-				if data == nil {
-					Storage.noData = true
-					return
-				}
-				Storage.noData = false
-                let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
-                let dict = json?[0] as? [String: Any]
-                let committees = dict?["Committee"] as? [String: Any]
-                for (key, _) in committees! {
-                    if key == "0" {
-                        Storage.blocACommittees = committees?[key] as? [String: Any]
-                    } else if key == "1" {
-                        Storage.blocBCommittees = committees?[key] as? [String: Any]
-                    } else if key == "2" {
-                        Storage.specializedCommittees = committees?[key] as? [String: Any]
-                    } else {
-                        Storage.crisisCommittees = committees?[key] as? [String: Any]
-                    }
-                }
-            } catch _ {
-                Storage.noData = true
-            }
-        }
-        
-        Storage.getRequest(URL(string: apiTimelineURL)!) {
-            (data, response, error) in
-            do {
-				if data == nil {
-					Storage.noData = true
-					return
-				}
-				Storage.noData = false
-                let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
-                let dict = json?[0] as? [String: Any]
-                let timeline = dict?["Timeline"] as? [String: Any]
-                for (key, _) in timeline! {
-                    if key == "0" {
-                        Storage.dayOneTimeline = timeline?[key] as? [String: Any]
-                    } else if key == "1" {
-                        Storage.dayTwoTimeline = timeline?[key] as? [String: Any]
-                    } else {
-                        Storage.dayThreeTimeline = timeline?[key] as? [String: Any]
-                    }
-                }
-            } catch let error {
-                print("error: \(error)")
-            }
-        }
-        
-        Storage.instaList = []
-//      Michael Eliot's Instagram: 191003028.24fe27c.f110d6acfe85455ca11ef9394ef9e691
-        Alamofire.request("https://api.instagram.com/v1/users/self/media/recent/?access_token=311144164.24fe27c.20ea6e944339468b827b1512c5039a65").responseJSON { response in
-            if let JSON = response.result.value as? [String: AnyObject] {
-                let mediaData = (JSON["data"] as! [AnyObject])
-                for pic in mediaData {
-                    let post = pic as! [String: Any]
-                    let pictureData = post["images"] as! [String: Any]
-                    let descriptionData = post["caption"] as! [String: Any]
-                    let standardPic = pictureData["standard_resolution"] as! [String: Any]
-                    let urlString = standardPic["url"] as! String
-                    let description = descriptionData["text"] as! String
-                    Storage.instaList.append(InstagramInfo(urlString: urlString, description: description))
-					self.addToHeights(urlString: urlString)
-                }
-            }
-		}
 		
         //Parse.setApplicationId("INbyDC9BcrJRZiBzuPT2p2oquTMZq9tuTiAqRNOf", clientKey: "FoOfryHoH7L6L6VMH0qltbZuAzE37D4e2PZDgoc3")
         
@@ -165,30 +92,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor.white
         UITabBar.appearance().barTintColor = UIColor.black
         UITabBar.appearance().isTranslucent = false
-        
+
         return true
     }
-	
-	func addToHeights(urlString: String) {
-		let url = URL(string: urlString)
-		var picData: Data!
-		do {
-			picData = try Data(contentsOf: url!)
-		} catch {
-			print(error)
-		}
-		let image = UIImage(data: picData)
-		let height = image?.size.height
-		let width = image?.size.width
-		let ratio = height!/width!
-		let screenWidth = UIScreen.main.bounds.width
-		let newHeight = ratio*screenWidth
-		if newHeight == 0 {
-			Storage.instaHeights.append(screenWidth)
-		} else {
-			Storage.instaHeights.append(newHeight)
-		}
-	}
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

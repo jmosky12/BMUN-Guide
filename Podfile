@@ -1,16 +1,13 @@
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git'
 
 target "BMUNapp" do
-    pod 'STTwitter'
-    pod 'DateTools'
-    pod 'Moltin'
-    pod 'SwiftyJSON'
-    pod 'Alamofire'
-    pod 'AlamofireImage'
+	pod 'STTwitter'
+	pod 'DateTools'
+	pod 'SwiftyJSON'
 	pod 'AFNetworking'
 	pod 'SDWebImage'
 end

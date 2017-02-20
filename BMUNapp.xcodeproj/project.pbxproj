@@ -23,10 +23,7 @@
 		DF2FB6311E46973500F858AC /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2FB62F1E46973500F858AC /* TimelineTableViewCell.swift */; };
 		DF2FB6321E46973500F858AC /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2FB6301E46973500F858AC /* TimelineTableViewCell.xib */; };
 		DF2FB6391E4C3E2500F858AC /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2FB6331E4C3E2500F858AC /* AFNetworking.framework */; };
-		DF2FB63A1E4C3E2500F858AC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2FB6341E4C3E2500F858AC /* Alamofire.framework */; };
-		DF2FB63B1E4C3E2500F858AC /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2FB6351E4C3E2500F858AC /* AlamofireImage.framework */; };
 		DF2FB63C1E4C3E2500F858AC /* DateTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2FB6361E4C3E2500F858AC /* DateTools.framework */; };
-		DF2FB63D1E4C3E2500F858AC /* Moltin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2FB6371E4C3E2500F858AC /* Moltin.framework */; };
 		DF2FB63E1E4C3E2500F858AC /* STTwitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2FB6381E4C3E2500F858AC /* STTwitter.framework */; };
 		DF4CDBAC1DE5371600CDEB09 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4CDBAA1DE5371600CDEB09 /* InfoViewController.swift */; };
 		DF4CDBAD1DE5371600CDEB09 /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF4CDBAB1DE5371600CDEB09 /* InfoViewController.xib */; };
@@ -47,12 +44,6 @@
 		DFD8142E1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD8142C1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.xib */; };
 		DFD814311DD739C500CA027E /* SpecificCommitteeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD8142F1DD739C500CA027E /* SpecificCommitteeCollectionViewController.swift */; };
 		DFD814321DD739C500CA027E /* SpecificCommitteeCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD814301DD739C500CA027E /* SpecificCommitteeCollectionViewController.xib */; };
-		DFD814391DD7B26100CA027E /* InstaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD814371DD7B26100CA027E /* InstaTableViewController.swift */; };
-		DFD8143A1DD7B26100CA027E /* InstaTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD814381DD7B26100CA027E /* InstaTableViewController.xib */; };
-		DFD8144A1DD7DAB800CA027E /* InstaPicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD814481DD7DAB800CA027E /* InstaPicTableViewCell.swift */; };
-		DFD8144B1DD7DAB800CA027E /* InstaPicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD814491DD7DAB800CA027E /* InstaPicTableViewCell.xib */; };
-		DFD8144E1DD7DAD500CA027E /* InstaDescTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD8144C1DD7DAD500CA027E /* InstaDescTableViewCell.swift */; };
-		DFD814511DD7E16E00CA027E /* InstaDescTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD814501DD7E16E00CA027E /* InstaDescTableViewCell.xib */; };
 		DFD814541DD7F74B00CA027E /* TimelineCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD814521DD7F74B00CA027E /* TimelineCollectionViewController.swift */; };
 		DFD814551DD7F74B00CA027E /* TimelineCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD814531DD7F74B00CA027E /* TimelineCollectionViewController.xib */; };
 		DFDC32661BE565D100729449 /* LiveUpdatesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC32641BE565D100729449 /* LiveUpdatesTableViewCell.swift */; };
@@ -73,6 +64,10 @@
 		DFDF6EAA1BE55760009244FE /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDF6EA91BE55760009244FE /* DateFormatterManager.swift */; };
 		DFE372AA1BCB0DC500490A34 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE372A81BCB0DC500490A34 /* WebViewController.swift */; };
 		DFE372AB1BCB0DC500490A34 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFE372A91BCB0DC500490A34 /* WebViewController.xib */; };
+		DFF0B8A41E5A600E002F1E5C /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0B8A21E5A600E002F1E5C /* ProductViewController.swift */; };
+		DFF0B8A51E5A600E002F1E5C /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF0B8A31E5A600E002F1E5C /* ProductViewController.xib */; };
+		DFF0B8A81E5A8240002F1E5C /* InstagramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0B8A61E5A8240002F1E5C /* InstagramViewController.swift */; };
+		DFF0B8A91E5A8240002F1E5C /* InstagramViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF0B8A71E5A8240002F1E5C /* InstagramViewController.xib */; };
 		DFF33C191BE9D1A500D7228D /* LiveUpdatesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF33C171BE9D1A500D7228D /* LiveUpdatesTableViewCell.xib */; };
 		DFF6137B1C1801A2003C810C /* CommitteeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF613791C1801A2003C810C /* CommitteeDetailViewController.swift */; };
 		DFF6137C1C1801A2003C810C /* CommitteeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF6137A1C1801A2003C810C /* CommitteeDetailViewController.xib */; };
@@ -100,10 +95,7 @@
 		DF2FB62F1E46973500F858AC /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 		DF2FB6301E46973500F858AC /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
 		DF2FB6331E4C3E2500F858AC /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "../../../Library/Developer/Xcode/DerivedData/BMUNapp-dgtemznigqxarochqeyvfecyhsjy/Build/Products/Release-iphonesimulator/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
-		DF2FB6341E4C3E2500F858AC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
-		DF2FB6351E4C3E2500F858AC /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = "Pods/../build/Release-iphoneos/AlamofireImage/AlamofireImage.framework"; sourceTree = "<group>"; };
 		DF2FB6361E4C3E2500F858AC /* DateTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DateTools.framework; path = "../../../Library/Developer/Xcode/DerivedData/BMUNapp-dgtemznigqxarochqeyvfecyhsjy/Build/Products/Release-iphonesimulator/DateTools/DateTools.framework"; sourceTree = "<group>"; };
-		DF2FB6371E4C3E2500F858AC /* Moltin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moltin.framework; path = "Pods/../build/Release-iphoneos/Moltin/Moltin.framework"; sourceTree = "<group>"; };
 		DF2FB6381E4C3E2500F858AC /* STTwitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STTwitter.framework; path = "Pods/../build/Release-iphoneos/STTwitter/STTwitter.framework"; sourceTree = "<group>"; };
 		DF4CDBAA1DE5371600CDEB09 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		DF4CDBAB1DE5371600CDEB09 /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
@@ -126,12 +118,6 @@
 		DFD8142C1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificCommitteeCollectionViewCell.xib; sourceTree = "<group>"; };
 		DFD8142F1DD739C500CA027E /* SpecificCommitteeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificCommitteeCollectionViewController.swift; sourceTree = "<group>"; };
 		DFD814301DD739C500CA027E /* SpecificCommitteeCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpecificCommitteeCollectionViewController.xib; sourceTree = "<group>"; };
-		DFD814371DD7B26100CA027E /* InstaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaTableViewController.swift; sourceTree = "<group>"; };
-		DFD814381DD7B26100CA027E /* InstaTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstaTableViewController.xib; sourceTree = "<group>"; };
-		DFD814481DD7DAB800CA027E /* InstaPicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaPicTableViewCell.swift; sourceTree = "<group>"; };
-		DFD814491DD7DAB800CA027E /* InstaPicTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstaPicTableViewCell.xib; sourceTree = "<group>"; };
-		DFD8144C1DD7DAD500CA027E /* InstaDescTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaDescTableViewCell.swift; sourceTree = "<group>"; };
-		DFD814501DD7E16E00CA027E /* InstaDescTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstaDescTableViewCell.xib; sourceTree = "<group>"; };
 		DFD814521DD7F74B00CA027E /* TimelineCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineCollectionViewController.swift; sourceTree = "<group>"; };
 		DFD814531DD7F74B00CA027E /* TimelineCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineCollectionViewController.xib; sourceTree = "<group>"; };
 		DFDC32641BE565D100729449 /* LiveUpdatesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveUpdatesTableViewCell.swift; sourceTree = "<group>"; };
@@ -152,6 +138,10 @@
 		DFDF6EA91BE55760009244FE /* DateFormatterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
 		DFE372A81BCB0DC500490A34 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		DFE372A91BCB0DC500490A34 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		DFF0B8A21E5A600E002F1E5C /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		DFF0B8A31E5A600E002F1E5C /* ProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
+		DFF0B8A61E5A8240002F1E5C /* InstagramViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramViewController.swift; sourceTree = "<group>"; };
+		DFF0B8A71E5A8240002F1E5C /* InstagramViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramViewController.xib; sourceTree = "<group>"; };
 		DFF33C171BE9D1A500D7228D /* LiveUpdatesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveUpdatesTableViewCell.xib; sourceTree = "<group>"; };
 		DFF613791C1801A2003C810C /* CommitteeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteeDetailViewController.swift; sourceTree = "<group>"; };
 		DFF6137A1C1801A2003C810C /* CommitteeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitteeDetailViewController.xib; sourceTree = "<group>"; };
@@ -163,10 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF2FB6391E4C3E2500F858AC /* AFNetworking.framework in Frameworks */,
-				DF2FB63A1E4C3E2500F858AC /* Alamofire.framework in Frameworks */,
-				DF2FB63B1E4C3E2500F858AC /* AlamofireImage.framework in Frameworks */,
 				DF2FB63C1E4C3E2500F858AC /* DateTools.framework in Frameworks */,
-				DF2FB63D1E4C3E2500F858AC /* Moltin.framework in Frameworks */,
 				DF2FB63E1E4C3E2500F858AC /* STTwitter.framework in Frameworks */,
 				D71508A61DD793400026773F /* SwiftyJSON.framework in Frameworks */,
 				FCA1D06CDAC3E4EEE5712623 /* Pods_BMUNapp.framework in Frameworks */,
@@ -180,10 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				DF2FB6331E4C3E2500F858AC /* AFNetworking.framework */,
-				DF2FB6341E4C3E2500F858AC /* Alamofire.framework */,
-				DF2FB6351E4C3E2500F858AC /* AlamofireImage.framework */,
 				DF2FB6361E4C3E2500F858AC /* DateTools.framework */,
-				DF2FB6371E4C3E2500F858AC /* Moltin.framework */,
 				DF2FB6381E4C3E2500F858AC /* STTwitter.framework */,
 				D71508A51DD793400026773F /* SwiftyJSON.framework */,
 				18A63B60C131A465D6F95EC2 /* Pods.framework */,
@@ -195,12 +179,8 @@
 		D71508891DD57BF40026773F /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
-				DFD814371DD7B26100CA027E /* InstaTableViewController.swift */,
-				DFD814381DD7B26100CA027E /* InstaTableViewController.xib */,
-				DFD814481DD7DAB800CA027E /* InstaPicTableViewCell.swift */,
-				DFD814491DD7DAB800CA027E /* InstaPicTableViewCell.xib */,
-				DFD8144C1DD7DAD500CA027E /* InstaDescTableViewCell.swift */,
-				DFD814501DD7E16E00CA027E /* InstaDescTableViewCell.xib */,
+				DFF0B8A61E5A8240002F1E5C /* InstagramViewController.swift */,
+				DFF0B8A71E5A8240002F1E5C /* InstagramViewController.xib */,
 			);
 			name = Instagram;
 			sourceTree = "<group>";
@@ -210,6 +190,8 @@
 			children = (
 				D76EFA7A1E5946560015DDC0 /* SleekStoreViewController.swift */,
 				D76EFA7B1E5946560015DDC0 /* SleekStoreViewController.xib */,
+				DFF0B8A21E5A600E002F1E5C /* ProductViewController.swift */,
+				DFF0B8A31E5A600E002F1E5C /* ProductViewController.xib */,
 			);
 			name = SleekStore;
 			sourceTree = "<group>";
@@ -478,17 +460,17 @@
 				DFDCCE131DAAF38900269E9E /* twitterAvatar.png in Resources */,
 				DFDCCE0D1DAAF38900269E9E /* Packing.pdf in Resources */,
 				DFDCCE101DAAF38900269E9E /* Resolutions.pdf in Resources */,
-				DFD8143A1DD7B26100CA027E /* InstaTableViewController.xib in Resources */,
 				DF6071CF1BC8B62F007B35CC /* LaunchScreen.storyboard in Resources */,
 				DF6071DB1BC8C871007B35CC /* Assets.xcassets in Resources */,
 				DFDCCE0C1DAAF38900269E9E /* map.pdf in Resources */,
+				DFF0B8A51E5A600E002F1E5C /* ProductViewController.xib in Resources */,
 				DFD814321DD739C500CA027E /* SpecificCommitteeCollectionViewController.xib in Resources */,
-				DFD814511DD7E16E00CA027E /* InstaDescTableViewCell.xib in Resources */,
 				DFD814221DD7165B00CA027E /* CommitteesCollectionViewController.xib in Resources */,
 				DFF33C191BE9D1A500D7228D /* LiveUpdatesTableViewCell.xib in Resources */,
 				DF2702A51C14D8A200A4889D /* QuestionsViewController.xib in Resources */,
 				DFDCCE0B1DAAF38900269E9E /* CommitteeStructure.pdf in Resources */,
 				DFD814261DD7167700CA027E /* CommitteesCollectionViewCell.xib in Resources */,
+				DFF0B8A91E5A8240002F1E5C /* InstagramViewController.xib in Resources */,
 				DFDCCE121DAAF38900269E9E /* SpeechPreparation.pdf in Resources */,
 				D7370FE91DB33E6B008A4AF3 /* GoogleService-Info.plist in Resources */,
 				DF2FB62E1E46971800F858AC /* TimelineEventTableViewController.xib in Resources */,
@@ -505,7 +487,6 @@
 				DFDC32691BE56CA400729449 /* LiveUpdatesTableViewController.xib in Resources */,
 				DFF6137C1C1801A2003C810C /* CommitteeDetailViewController.xib in Resources */,
 				DFDCCE0F1DAAF38900269E9E /* Research.pdf in Resources */,
-				DFD8144B1DD7DAB800CA027E /* InstaPicTableViewCell.xib in Resources */,
 				DFDCCE091DAAF38900269E9E /* Caucus.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,11 +549,11 @@
 				D71508A81DD793C70026773F /* Storage.swift in Sources */,
 				DF4CDBAC1DE5371600CDEB09 /* InfoViewController.swift in Sources */,
 				DF6071CA1BC8B62F007B35CC /* BMUNapp.xcdatamodeld in Sources */,
-				DFD8144E1DD7DAD500CA027E /* InstaDescTableViewCell.swift in Sources */,
-				DFD8144A1DD7DAB800CA027E /* InstaPicTableViewCell.swift in Sources */,
+				DFF0B8A41E5A600E002F1E5C /* ProductViewController.swift in Sources */,
 				DFDC32661BE565D100729449 /* LiveUpdatesTableViewCell.swift in Sources */,
 				DF2FB6311E46973500F858AC /* TimelineTableViewCell.swift in Sources */,
 				DFD8142D1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.swift in Sources */,
+				DFF0B8A81E5A8240002F1E5C /* InstagramViewController.swift in Sources */,
 				DFD814251DD7167700CA027E /* CommitteesCollectionViewCell.swift in Sources */,
 				DFF6137B1C1801A2003C810C /* CommitteeDetailViewController.swift in Sources */,
 				D76EFA7C1E5946560015DDC0 /* SleekStoreViewController.swift in Sources */,
@@ -583,7 +564,6 @@
 				DFDF6EAA1BE55760009244FE /* DateFormatterManager.swift in Sources */,
 				DF6071C21BC8B62F007B35CC /* AppDelegate.swift in Sources */,
 				DF4CDBAF1DE646E500CDEB09 /* CollectionViewFlowLayout.swift in Sources */,
-				DFD814391DD7B26100CA027E /* InstaTableViewController.swift in Sources */,
 				DFAC30471DE5076000872364 /* SocialMediaViewController.swift in Sources */,
 				DFE372AA1BCB0DC500490A34 /* WebViewController.swift in Sources */,
 				DFD814541DD7F74B00CA027E /* TimelineCollectionViewController.swift in Sources */,

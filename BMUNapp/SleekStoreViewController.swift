@@ -9,12 +9,23 @@
 import UIKit
 
 class SleekStoreViewController: UIViewController {
+	
+	@IBOutlet var item1: UIView!
+	@IBOutlet var item2: UIView!
+	@IBOutlet var item3: UIView!
+	
+	
+	init() {
+		super.init(nibName: "SleekStoreViewController", bundle: nil)
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.init(red: 5, green: 90, blue: 131, alpha: 1)
-        
-        
+		
         let textColor = UIColor.white
         let textFont = UIFont(name: "Avenir", size: 35.0)
         let titleTextAttributes: [String:NSObject] = [
@@ -22,24 +33,24 @@ class SleekStoreViewController: UIViewController {
             NSForegroundColorAttributeName: textColor,
             ]
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
-
-        // Do any additional setup after loading the view.
+		
+		let habitat = ProductViewController(image: #imageLiteral(resourceName: "habitat_for_humanity"), itemTitle: "Habitat for Humanity", price: "Any donations accepted!")
+		let newShirt = ProductViewController(image: #imageLiteral(resourceName: "shirt"), itemTitle: "BMUN LXV Shirt", price: "$10")
+		let oldShirt = ProductViewController(image: #imageLiteral(resourceName: "old_shirts"), itemTitle: "Past BMUN Shirts", price: "$3")
+		self.constrainInView(content: habitat, parentView: self.item1)
+		self.constrainInView(content: newShirt, parentView: self.item2)
+		self.constrainInView(content: oldShirt, parentView: self.item3)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+	
+	func constrainInView(content: UIViewController, parentView: UIView) {
+		self.addChildViewController(content)
+		parentView.addSubview(content.view)
+		content.didMove(toParentViewController: self)
+		let horzConstraints: [NSLayoutConstraint] = NSLayoutConstraint.constraints(withVisualFormat: "H:|[content]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["content": content.view])
+		let vertConstraints: [NSLayoutConstraint] = NSLayoutConstraint.constraints(withVisualFormat: "V:|[content]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["content": content.view])
+		self.view!.addConstraints(horzConstraints)
+		self.view!.addConstraints(vertConstraints)
+		content.view.translatesAutoresizingMaskIntoConstraints = false
+	}
 
 }

@@ -14,7 +14,7 @@ class SocialMediaViewController: UIViewController {
     @IBOutlet weak var instaIV: UIImageView!
     
     init() {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "SocialMediaViewController", bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -55,7 +55,7 @@ class SocialMediaViewController: UIViewController {
     }
     
     func instaSelected() {
-        let vc = InstaTableViewController()
+        let vc = InstagramViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

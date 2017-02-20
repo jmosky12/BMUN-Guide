@@ -9,22 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>AlamofireImage.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>DateTools.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Moltin.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,27 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>05C56C1176B7EA0AD3BB5B6AB190A6DB</key>
+		<key>771E9EEA0568FEF43EABA1A8299B56C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1E88B5BFA66A7E375F16C10DEAB44512</key>
+		<key>83FF9A94A521E447E51B4D091EE353C1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7282802010A8B07E534B60135A9C69F3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
+		<key>8ADF96C4C5A4470F0C05FE35F62D05FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +62,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D03FAD2A62E4EB192AB185CFB5DD8DD8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F9A6FC8238C6B8A68667F9B704826CFC</key>
+		<key>F984D7B38750548E6D0E20C3FCC0D84F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

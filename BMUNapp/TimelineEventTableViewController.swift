@@ -32,12 +32,13 @@ class TimelineEventTableViewController: UITableViewController {
 		self.tableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
 		
 		// Ensures table cell separators are set up correctly
-		tableView.separatorInset = UIEdgeInsets.zero
-		tableView.preservesSuperviewLayoutMargins = false
-		tableView.layoutMargins = UIEdgeInsets.zero
+		self.tableView.separatorInset = UIEdgeInsets.zero
+		self.tableView.preservesSuperviewLayoutMargins = false
+		self.tableView.layoutMargins = UIEdgeInsets.zero
+		self.tableView.alwaysBounceVertical = true
 		
-		tableView.estimatedRowHeight = 100
-		tableView.rowHeight = UITableViewAutomaticDimension
+		self.tableView.estimatedRowHeight = 100
+		self.tableView.rowHeight = UITableViewAutomaticDimension
 
 
 		let textColor = UIColor.white

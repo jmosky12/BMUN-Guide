@@ -43,18 +43,8 @@ class DelegateGuideTableViewController: UITableViewController {
         ]
         
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
-        
+		
     }
-    
-    // These two functions below prevent landscape mode
-    override var shouldAutorotate : Bool {
-        return false
-    }
-    
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.portrait]
-    }
-
 
     // MARK: - Table view data source
 

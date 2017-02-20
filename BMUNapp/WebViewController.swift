@@ -50,14 +50,5 @@ class WebViewController: UIViewController {
             self.navigationController!.navigationBar.tintColor = UIColor.white
         }
     }
-    
-    // These two functions below prevent landscape mode
-    override var shouldAutorotate : Bool {
-        return false
-    }
-    
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.portrait]
-    }
 
 }

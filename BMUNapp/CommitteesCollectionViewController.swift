@@ -9,6 +9,7 @@
 import UIKit
 
 private let reuseIdentifier = "committeeCollectionCell"
+private let apiCommitteesURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/BMUN?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
 
 class CommitteesCollectionViewController: UICollectionViewController {
     
@@ -44,7 +45,35 @@ class CommitteesCollectionViewController: UICollectionViewController {
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
         self.collectionView?.allowsSelection = true
         self.collectionView?.allowsMultipleSelection = false
-        
+		
+		Storage.getRequest(URL(string: apiCommitteesURL)!) {
+			(data, response, error) in
+			do {
+				if data == nil {
+					Storage.noData = true
+					return
+				}
+				Storage.noData = false
+				let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
+				let dict = json?[0] as? [String: Any]
+				let committees = dict?["Committee"] as? [String: Any]
+				for (key, _) in committees! {
+					if key == "0" {
+						Storage.blocACommittees = committees?[key] as? [String: Any]
+					} else if key == "1" {
+						Storage.blocBCommittees = committees?[key] as? [String: Any]
+					} else if key == "2" {
+						Storage.specializedCommittees = committees?[key] as? [String: Any]
+					} else {
+						Storage.crisisCommittees = committees?[key] as? [String: Any]
+					}
+				}
+			} catch _ {
+				Storage.noData = true
+			}
+		}
+
+		
         /*self.collectionView?.backgroundView = UIImageView(frame: (self.collectionView?.frame)!)
         let imageView = self.collectionView?.backgroundView as! UIImageView
         imageView.image = UIImage(named: "blah")

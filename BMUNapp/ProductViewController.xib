@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductViewController" customModule="BMUNapp" customModuleProvider="target">
+            <connections>
+                <outlet property="productImageView" destination="FgN-T3-6cH" id="LFP-XW-NO3"/>
+                <outlet property="productLabel" destination="PMC-TI-yeX" id="Cwe-QQ-1Of"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="221"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Qp-5F-6hH">
+                    <rect key="frame" x="0.0" y="0.0" width="244" height="221"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FgN-T3-6cH">
+                            <rect key="frame" x="8" y="32.5" width="228" height="155"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="FgN-T3-6cH" secondAttribute="trailing" constant="8" id="BpI-cx-OkJ"/>
+                        <constraint firstItem="FgN-T3-6cH" firstAttribute="height" secondItem="6Qp-5F-6hH" secondAttribute="height" multiplier="0.7" id="DJk-jD-k6l"/>
+                        <constraint firstItem="FgN-T3-6cH" firstAttribute="centerY" secondItem="6Qp-5F-6hH" secondAttribute="centerY" id="Fgo-ig-3CF"/>
+                        <constraint firstItem="FgN-T3-6cH" firstAttribute="leading" secondItem="6Qp-5F-6hH" secondAttribute="leading" constant="8" id="TZV-TC-YCQ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLd-hA-VFn">
+                    <rect key="frame" x="244" y="0.0" width="131" height="221"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMC-TI-yeX">
+                            <rect key="frame" x="8" y="102.5" width="115" height="16"/>
+                            <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="PMC-TI-yeX" firstAttribute="centerY" secondItem="cLd-hA-VFn" secondAttribute="centerY" id="Wr4-if-at5"/>
+                        <constraint firstItem="PMC-TI-yeX" firstAttribute="leading" secondItem="cLd-hA-VFn" secondAttribute="leading" constant="8" id="bZY-eH-YI7"/>
+                        <constraint firstAttribute="trailing" secondItem="PMC-TI-yeX" secondAttribute="trailing" constant="8" id="fiW-J4-B77"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="6Qp-5F-6hH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="90K-Uk-dcS"/>
+                <constraint firstAttribute="trailing" secondItem="cLd-hA-VFn" secondAttribute="trailing" id="JGS-JX-Sej"/>
+                <constraint firstAttribute="bottom" secondItem="6Qp-5F-6hH" secondAttribute="bottom" id="PMu-ys-07G"/>
+                <constraint firstAttribute="bottom" secondItem="cLd-hA-VFn" secondAttribute="bottom" id="VGB-z2-cz8"/>
+                <constraint firstItem="6Qp-5F-6hH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="br8-sA-V9Z"/>
+                <constraint firstItem="6Qp-5F-6hH" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.65" id="frT-Qh-5QH"/>
+                <constraint firstItem="cLd-hA-VFn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mLo-Bs-jIt"/>
+                <constraint firstItem="cLd-hA-VFn" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.35" id="taM-NO-HKK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="34.5" y="-140.5"/>
+        </view>
+    </objects>
+</document>
