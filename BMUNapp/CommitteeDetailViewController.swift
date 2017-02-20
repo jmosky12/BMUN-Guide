@@ -40,22 +40,22 @@ class CommitteeDetailViewController: UIViewController {
         // Sets the labels' info based on the committee info in storage
         switch(self.indexPathSection) {
         case 0:
-            committee = Storage.blocACommittees?[String(self.indexPathRow)] as! [String : Any]?
+            committee = Storage.blocACommittees[String(self.indexPathRow)] as! [String : Any]?
             self.topicsLabel.text = committee?["Topics"] as? String
             self.headChairLabel.text = committee?["Head Chair"] as? String
             self.viceChairsLabel.text = committee?["Vice Chairs"] as? String
         case 1:
-            committee = Storage.blocBCommittees?[String(self.indexPathRow)] as! [String : Any]?
+            committee = Storage.blocBCommittees[String(self.indexPathRow)] as! [String : Any]?
             self.topicsLabel.text = committee?["Topics"] as? String
             self.headChairLabel.text = committee?["Head Chair"] as? String
             self.viceChairsLabel.text = committee?["Vice Chairs"] as? String
         case 2:
-            committee = Storage.specializedCommittees?[String(self.indexPathRow)] as! [String : Any]?
+            committee = Storage.specializedCommittees[String(self.indexPathRow)] as! [String : Any]?
             self.topicsLabel.text = committee?["Topics"] as? String
             self.headChairLabel.text = committee?["Head Chair"] as? String
             self.viceChairsLabel.text = committee?["Vice Chairs"] as? String
         case 3:
-            committee = Storage.crisisCommittees?[String(self.indexPathRow)] as! [String : Any]?
+            committee = Storage.crisisCommittees[String(self.indexPathRow)] as! [String : Any]?
             self.topicsLabel.text = committee?["Topics"] as? String
             self.headChairLabel.text = committee?["Head Chair"] as? String
             self.viceChairsLabel.text = committee?["Vice Chairs"] as? String

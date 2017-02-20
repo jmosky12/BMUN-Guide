@@ -9,8 +9,13 @@
 import UIKit
 
 private let reuseIdentifier = "committeeCollectionCell"
+private let apiTimelineURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/Timeline?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
 
 class TimelineCollectionViewController: UICollectionViewController {
+	
+	var timelineSet = false
+	var spinner: UIActivityIndicatorView!
+	var noDataLabel: UILabel!
     
     init() {
         super.init(nibName: "TimelineCollectionViewController", bundle: nil)
@@ -41,6 +46,56 @@ class TimelineCollectionViewController: UICollectionViewController {
         self.collectionView?.allowsSelection = true
         self.collectionView?.allowsMultipleSelection = false
 		
+		let view = UIView(frame: CGRect(x: (self.view.frame.width/2), y: 0, width: 100, height: 100))
+		view.center.y = (self.collectionView?.center.y)!
+		
+		self.noDataLabel = UILabel()
+		self.noDataLabel.frame = CGRect(x: 0, y: 0, width: (self.collectionView?.frame.width)!, height: 40)
+		self.noDataLabel.center = (self.collectionView?.center)!
+		self.noDataLabel.numberOfLines = 0
+		self.noDataLabel.text = "Please resolve the network connection."
+		self.noDataLabel.isHidden = true
+		self.noDataLabel.textColor = UIColor.white
+		self.noDataLabel.textAlignment = .center
+		self.view.addSubview(self.noDataLabel)
+		
+		self.spinner = UIActivityIndicatorView()
+		view.addSubview(self.spinner)
+		self.spinner.activityIndicatorViewStyle = .whiteLarge
+		self.collectionView?.addSubview(view)
+		self.spinner.startAnimating()
+		
+		if Storage.noTimelineData {
+			Storage.getRequest(URL(string: apiTimelineURL)!) {
+				(data, response, error) in
+				do {
+					if data == nil {
+						self.timelineSet = true
+						self.view.bringSubview(toFront: self.noDataLabel)
+						self.collectionView?.reloadData()
+					} else {
+						let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
+						let dict = json?[0] as? [String: Any]
+						let timeline = dict?["Timeline"] as? [String: Any]
+						for (key, _) in timeline! {
+							if key == "0" {
+								Storage.dayOneTimeline = (timeline?[key] as? [String: Any])!
+							} else if key == "1" {
+								Storage.dayTwoTimeline = (timeline?[key] as? [String: Any])!
+							} else {
+								Storage.dayThreeTimeline = (timeline?[key] as? [String: Any])!
+							}
+						}
+						self.timelineSet = true
+						Storage.noTimelineData = false
+						self.collectionView?.reloadData()
+					}
+				} catch _ {
+					self.timelineSet = false
+					self.collectionView?.reloadData()
+				}
+			}
+		}
     }
 		
 		
@@ -52,7 +107,16 @@ class TimelineCollectionViewController: UICollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+		if Storage.noTimelineData && !self.timelineSet {
+			return 0
+		} else if Storage.noTimelineData && self.timelineSet {
+			self.spinner.stopAnimating()
+			self.noDataLabel.isHidden = false
+			return 0
+		} else {
+			self.spinner.stopAnimating()
+			return 3
+		}
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

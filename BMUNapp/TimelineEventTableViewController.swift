@@ -58,7 +58,7 @@ class TimelineEventTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if Storage.noData {
+		/*if Storage.noData {
 			let alert = UIAlertController(title: "Network Connection Error", message: "Please resolve any connection errors before using the app.", preferredStyle: .alert)
 			let action = UIAlertAction(title: "OK", style: .default, handler: { (action) in
 			})
@@ -66,15 +66,15 @@ class TimelineEventTableViewController: UITableViewController {
 			present(alert, animated: true, completion: {
 			})
 			return 0
-		}
+		}*/
 		let num: Int!
 		switch(self.section!) {
 		case 0:
-			num = Storage.dayOneTimeline!.count - 1
+			num = Storage.dayOneTimeline.count - 1
 		case 1:
-			num = Storage.dayTwoTimeline!.count - 1
+			num = Storage.dayTwoTimeline.count - 1
 		case 2:
-			num = Storage.dayThreeTimeline!.count - 1
+			num = Storage.dayThreeTimeline.count - 1
 		default:
 			num = 0
 		}
@@ -89,15 +89,15 @@ class TimelineEventTableViewController: UITableViewController {
 		
 		switch(self.section!) {
 		case 0:
-			timeline = Storage.dayOneTimeline?[String(indexPath.row)] as? [String: Any]
+			timeline = Storage.dayOneTimeline[String(indexPath.row)] as? [String: Any]
 			event.text = timeline?["title"] as? String
 			time.text = timeline?["time"] as? String
 		case 1:
-			timeline = Storage.dayTwoTimeline?[String(indexPath.row)] as? [String: Any]
+			timeline = Storage.dayTwoTimeline[String(indexPath.row)] as? [String: Any]
 			event.text = timeline?["title"] as? String
 			time.text = timeline?["time"] as? String
 		case 2:
-			timeline = Storage.dayThreeTimeline?[String(indexPath.row)] as? [String: Any]
+			timeline = Storage.dayThreeTimeline[String(indexPath.row)] as? [String: Any]
 			event.text = timeline?["title"] as? String
 			time.text = timeline?["time"] as? String
 		default:

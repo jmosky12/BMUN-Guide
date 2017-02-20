@@ -82,29 +82,31 @@ struct Storage {
 	
 	static var lightBlue = UIColor.init(red: 33/256, green: 145/256, blue: 197/256, alpha: 1)
 	
-    static var blocACommittees: [String: Any]?
+	static var blocACommittees: [String: Any] = [:]
 	
-    static var blocBCommittees: [String: Any]?
+    static var blocBCommittees: [String: Any] = [:]
 	
-    static var specializedCommittees: [String: Any]?
+    static var specializedCommittees: [String: Any] = [:]
 	
-    static var crisisCommittees: [String: Any]?
+    static var crisisCommittees: [String: Any] = [:]
 	
-    static var blocACount: Int?
+    static var blocACount: Int = 0
 	
-    static var blocBCount: Int?
+    static var blocBCount: Int = 0
 	
-    static var specializedCount: Int?
+    static var specializedCount: Int = 0
 	
-    static var crisisCount: Int?
+    static var crisisCount: Int = 0
 	
-    static var dayOneTimeline: [String: Any]?
+    static var dayOneTimeline: [String: Any] = [:]
 	
-    static var dayTwoTimeline: [String: Any]?
+    static var dayTwoTimeline: [String: Any] = [:]
 	
-    static var dayThreeTimeline: [String: Any]?
+    static var dayThreeTimeline: [String: Any] = [:]
 	
-	static var noData: Bool = true
+	static var noCommitteeData = true
+	
+	static var noTimelineData = true
 }
 
 struct InstagramInfo {

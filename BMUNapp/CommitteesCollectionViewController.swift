@@ -44,13 +44,6 @@ class CommitteesCollectionViewController: UICollectionViewController {
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
         self.collectionView?.allowsSelection = true
         self.collectionView?.allowsMultipleSelection = false
-
-		
-        /*self.collectionView?.backgroundView = UIImageView(frame: (self.collectionView?.frame)!)
-        let imageView = self.collectionView?.backgroundView as! UIImageView
-        imageView.image = UIImage(named: "blah")
-        imageView.contentMode = .scaleAspectFill
-        imageView.alpha = 0.85*/
     }
 
 
@@ -62,7 +55,7 @@ class CommitteesCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+		return 4
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,22 +81,5 @@ class CommitteesCollectionViewController: UICollectionViewController {
         let vc = SpecificCommitteeCollectionViewController(section: indexPath.row)
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
     
 }
