@@ -16,6 +16,9 @@ import Foundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+	
+	fileprivate let apiCommitteesURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/BMUN?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
+	fileprivate let apiTimelineURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/Timeline?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
@@ -92,6 +95,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor.white
         UITabBar.appearance().barTintColor = UIColor.black
         UITabBar.appearance().isTranslucent = false
+		
+		Storage.getRequest(URL(string: apiCommitteesURL)!) {
+			(data, response, error) in
+			do {
+				if data == nil {
+					Storage.noData = true
+					return
+				}
+				Storage.noData = false
+				let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
+				let dict = json?[0] as? [String: Any]
+				let committees = dict?["Committee"] as? [String: Any]
+				for (key, _) in committees! {
+					if key == "0" {
+						Storage.blocACommittees = committees?[key] as? [String: Any]
+					} else if key == "1" {
+						Storage.blocBCommittees = committees?[key] as? [String: Any]
+					} else if key == "2" {
+						Storage.specializedCommittees = committees?[key] as? [String: Any]
+					} else {
+						Storage.crisisCommittees = committees?[key] as? [String: Any]
+					}
+				}
+			} catch _ {
+				Storage.noData = true
+			}
+		}
+		
+		Storage.getRequest(URL(string: apiTimelineURL)!) {
+			(data, response, error) in
+			do {
+				if data == nil {
+					Storage.noData = true
+					return
+				}
+				Storage.noData = false
+				let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
+				let dict = json?[0] as? [String: Any]
+				let timeline = dict?["Timeline"] as? [String: Any]
+				for (key, _) in timeline! {
+					if key == "0" {
+						Storage.dayOneTimeline = timeline?[key] as? [String: Any]
+					} else if key == "1" {
+						Storage.dayTwoTimeline = timeline?[key] as? [String: Any]
+					} else {
+						Storage.dayThreeTimeline = timeline?[key] as? [String: Any]
+					}
+				}
+			} catch let error {
+				print("error: \(error)")
+			}
+		}
 
         return true
     }

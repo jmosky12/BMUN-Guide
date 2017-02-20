@@ -9,7 +9,6 @@
 import UIKit
 
 private let reuseIdentifier = "committeeCollectionCell"
-private let apiTimelineURL = "https://api.mlab.com/api/1/databases/bmunguide/collections/Timeline?apiKey=JI0kCishO2bE688ivZhIUl-bv-UJ3bKg"
 
 class TimelineCollectionViewController: UICollectionViewController {
     
@@ -42,30 +41,6 @@ class TimelineCollectionViewController: UICollectionViewController {
         self.collectionView?.allowsSelection = true
         self.collectionView?.allowsMultipleSelection = false
 		
-		Storage.getRequest(URL(string: apiTimelineURL)!) {
-			(data, response, error) in
-			do {
-				if data == nil {
-					Storage.noData = true
-					return
-				}
-				Storage.noData = false
-				let json = try JSONSerialization.jsonObject(with: data!, options: []) as? NSArray
-				let dict = json?[0] as? [String: Any]
-				let timeline = dict?["Timeline"] as? [String: Any]
-				for (key, _) in timeline! {
-					if key == "0" {
-						Storage.dayOneTimeline = timeline?[key] as? [String: Any]
-					} else if key == "1" {
-						Storage.dayTwoTimeline = timeline?[key] as? [String: Any]
-					} else {
-						Storage.dayThreeTimeline = timeline?[key] as? [String: Any]
-					}
-				}
-			} catch let error {
-				print("error: \(error)")
-			}
-		}
     }
 		
 		
