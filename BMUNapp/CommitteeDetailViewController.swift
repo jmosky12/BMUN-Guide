@@ -38,6 +38,7 @@ class CommitteeDetailViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
         
+        
         // Sets the labels' info based on the committee info in storage
         switch(self.indexPathSection) {
         case 0:
