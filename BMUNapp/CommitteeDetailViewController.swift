@@ -10,6 +10,7 @@ import UIKit
 
 class CommitteeDetailViewController: UIViewController {
     
+    @IBOutlet weak var roomLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var headChairLabel: UILabel!
     @IBOutlet weak var viceChairsLabel: UILabel!
@@ -44,25 +45,30 @@ class CommitteeDetailViewController: UIViewController {
             self.topicsLabel.text = committee?["Topics"] as? String
             self.headChairLabel.text = committee?["Head Chair"] as? String
             self.viceChairsLabel.text = committee?["Vice Chairs"] as? String
+            self.roomLabel.text = committee?["RoomAssignment"] as? String
         case 1:
             committee = Storage.blocBCommittees[String(self.indexPathRow)] as! [String : Any]?
             self.topicsLabel.text = committee?["Topics"] as? String
             self.headChairLabel.text = committee?["Head Chair"] as? String
             self.viceChairsLabel.text = committee?["Vice Chairs"] as? String
+             self.roomLabel.text = committee?["RoomAssignment"] as? String
         case 2:
             committee = Storage.specializedCommittees[String(self.indexPathRow)] as! [String : Any]?
             self.topicsLabel.text = committee?["Topics"] as? String
             self.headChairLabel.text = committee?["Head Chair"] as? String
             self.viceChairsLabel.text = committee?["Vice Chairs"] as? String
+             self.roomLabel.text = committee?["RoomAssignment"] as? String
         case 3:
             committee = Storage.crisisCommittees[String(self.indexPathRow)] as! [String : Any]?
             self.topicsLabel.text = committee?["Topics"] as? String
             self.headChairLabel.text = committee?["Head Chair"] as? String
             self.viceChairsLabel.text = committee?["Vice Chairs"] as? String
+             self.roomLabel.text = committee?["RoomAssignment"] as? String
         default:
             self.topicsLabel.text = "Hit Default"
             self.headChairLabel.text = "Hit Default"
             self.viceChairsLabel.text = "Hit Default"
+            self.roomLabel.text = "Hit Default"
         }
 
         self.topicsLabel.sizeToFit()
