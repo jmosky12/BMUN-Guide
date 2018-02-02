@@ -49,7 +49,7 @@ class TextViewController: UIViewController {
     }
 
     // Detects whether or not to bring up or release the keyboard
-    func textTap() {
+    @objc func textTap() {
         if keyboard == true {
             self.textView.resignFirstResponder()
             self.keyboard = false

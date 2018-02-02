@@ -28,7 +28,7 @@ class TwitterManager: NSObject {
         twitter.verifyCredentials(userSuccessBlock: { (token: String?, userID: String?) -> Void in
             cb()
             }) { (error: Error?) -> Void in
-                print("here's the error: \(error)")
+				print("here's the error: \(String(describing: error))")
         }
     }
     

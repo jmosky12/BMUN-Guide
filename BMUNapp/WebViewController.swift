@@ -41,9 +41,9 @@ class WebViewController: UIViewController {
         
         // Sets characteristics for top bar text
         if fileName == "map" {
-            let titleTextAttributes: [String:NSObject] = [
-                NSFontAttributeName: textFont!,
-                NSForegroundColorAttributeName: textColor,
+            let titleTextAttributes: [NSAttributedStringKey:Any] = [
+				NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): textFont!,
+				NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): textColor,
             ]
             self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
         } else {

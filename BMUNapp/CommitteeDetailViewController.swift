@@ -14,7 +14,7 @@ class CommitteeDetailViewController: UIViewController {
     @IBOutlet weak var headChairLabel: UILabel!
     @IBOutlet weak var viceChairsLabel: UILabel!
     @IBOutlet weak var topicsLabel: UILabel!
-    @IBOutlet weak var topicSynopsisButton: UIButton!
+    @IBOutlet weak var websiteButton: UIButton!
     var indexPathRow: Int!
     var indexPathSection: Int!
     var committee: [String: Any]?
@@ -73,10 +73,10 @@ class CommitteeDetailViewController: UIViewController {
         self.backgroundImageView.contentMode = .scaleAspectFill
         self.backgroundImageView.alpha = 0.85
         
-        self.topicSynopsisButton.clipsToBounds = true
-        self.topicSynopsisButton.layer.cornerRadius = 5
-        self.topicSynopsisButton.layer.borderWidth = 1
-        self.topicSynopsisButton.layer.borderColor = UIColor.white.cgColor
+        self.websiteButton.clipsToBounds = true
+        self.websiteButton.layer.cornerRadius = 5
+        self.websiteButton.layer.borderWidth = 1
+        self.websiteButton.layer.borderColor = UIColor.white.cgColor
       
     }
     
@@ -90,7 +90,7 @@ class CommitteeDetailViewController: UIViewController {
     }
 
     @IBAction func synopsisSelected(_ sender: UIButton) {
-        let stringURL = committee?["Synopsis"] as? String
+        let stringURL = committee?["Website"] as? String
         let url = URL(string: stringURL!)
 		UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }

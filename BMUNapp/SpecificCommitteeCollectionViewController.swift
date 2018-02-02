@@ -92,7 +92,9 @@ class SpecificCommitteeCollectionViewController: UICollectionViewController {
 						}
 						self.committeesSet = true
 						Storage.noCommitteeData = false
-						self.collectionView?.reloadData()
+						DispatchQueue.main.async {
+							self.collectionView?.reloadData()
+						}
 					}
 				} catch _ {
 					self.committeesSet = false

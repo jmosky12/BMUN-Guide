@@ -88,7 +88,9 @@ class TimelineCollectionViewController: UICollectionViewController {
 						}
 						self.timelineSet = true
 						Storage.noTimelineData = false
-						self.collectionView?.reloadData()
+						DispatchQueue.main.async {
+							self.collectionView?.reloadData()
+						}
 					}
 				} catch _ {
 					self.timelineSet = false

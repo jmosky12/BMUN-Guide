@@ -16,7 +16,7 @@ class TimelineTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 		
-		self.eventTitle.backgroundColor = Storage.lightBlue
+		self.eventTitle.backgroundColor = Storage.lightGray
 		self.eventTitle.clipsToBounds = true
 		self.eventTitle.layer.cornerRadius = 7
 		self.selectionStyle = .none

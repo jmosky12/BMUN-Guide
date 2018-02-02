@@ -41,20 +41,20 @@ class SocialMediaViewController: UIViewController {
         
         let textColor = UIColor.white
         let textFont = UIFont(name: "Avenir", size: 35.0)
-        let titleTextAttributes: [String:NSObject] = [
-            NSFontAttributeName: textFont!,
-            NSForegroundColorAttributeName: textColor,
+        let titleTextAttributes: [NSAttributedStringKey:Any] = [
+			NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): textFont!,
+			NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): textColor,
             ]
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
 
     }
 
-    func twitterSelected() {
+    @objc func twitterSelected() {
         let vc = LiveUpdatesTableViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func instaSelected() {
+    @objc func instaSelected() {
         let vc = InstagramViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

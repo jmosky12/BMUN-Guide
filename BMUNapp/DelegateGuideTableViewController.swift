@@ -37,9 +37,9 @@ class DelegateGuideTableViewController: UITableViewController {
         // Sets characteristics for top bar text
         let textColor = UIColor.white
         let textFont = UIFont(name: "Avenir", size: 35.0)
-        let titleTextAttributes: [String:NSObject] = [
-            NSFontAttributeName: textFont!,
-            NSForegroundColorAttributeName: textColor,
+        let titleTextAttributes: [NSAttributedStringKey:Any] = [
+			NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): textFont!,
+			NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): textColor,
         ]
         
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes

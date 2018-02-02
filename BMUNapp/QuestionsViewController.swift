@@ -103,14 +103,14 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
     }
     
     // Linked to the gesture recognizer for the text view; opens up TextViewController.swift
-    func textTapped() {
+    @objc func textTapped() {
         let vc = TextViewController()
         vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // Calls the BmunCloudCode main.js file that formats the info in the text view and text fields into an email and uses Parse & Mailgun to send it to feeback@bmun.org
-    func didPressSend() {
+    @objc func didPressSend() {
         let incomplete = UIAlertController(title: "Missing Information", message: "Please fill out all fields.", preferredStyle: .alert)
         incomplete.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         let error = UIAlertController(title: "Error", message: "Your email can't be sent. Please try again.", preferredStyle: .alert)

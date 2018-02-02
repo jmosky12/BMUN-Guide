@@ -70,7 +70,7 @@ class LiveUpdatesTableViewController: UIViewController, UITableViewDataSource {
     }
 
     // Creates a shared instance of the Twitter Manager (A class that will only ever be called once) and uses getTweets to get an array of tweets and set it to the tweets variable at the top
-    func getTweets(_ sender: AnyObject!) {
+    @objc func getTweets(_ sender: AnyObject!) {
         if sender != nil {
             refreshControl.beginRefreshing()
         }

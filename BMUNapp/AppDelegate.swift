@@ -27,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         
         let textFont = UIFont(name: "Avenir", size: 13.0)
-        let titleTextAttributes: [String:NSObject] = [
-            NSFontAttributeName: textFont!
+        let titleTextAttributes: [NSAttributedStringKey:Any] = [
+			NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): textFont!
         ]
         
         // Sets tab bar's view controllers and their properties on the tab bar
