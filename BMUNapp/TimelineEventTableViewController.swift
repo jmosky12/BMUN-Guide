@@ -33,6 +33,7 @@ class TimelineEventTableViewController: UITableViewController {
 		
 		// Ensures table cell separators are set up correctly
 		self.tableView.separatorInset = UIEdgeInsets.zero
+		self.tableView.separatorColor = Storage.lightGray
 		self.tableView.preservesSuperviewLayoutMargins = false
 		self.tableView.layoutMargins = UIEdgeInsets.zero
 		self.tableView.alwaysBounceVertical = true

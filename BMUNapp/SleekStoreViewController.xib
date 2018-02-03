@@ -30,7 +30,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMa-x2-8K8">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Below is information about the merchandise you can purchase at BMUN LXV." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rqx-ay-Ewt">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Below is information about the merchandise you can purchase at BMUN LXVI." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rqx-ay-Ewt">
                             <rect key="frame" x="8" y="8" width="359" height="39.5"/>
                             <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
                             <nil key="textColor"/>
@@ -50,7 +50,7 @@
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hIA-jO-cSJ">
                             <rect key="frame" x="8" y="321.5" width="359" height="112.5"/>
-                            <string key="text">All merchandise can be found on the third floor of the MLK building, located next to Sproul Plaza. Enter MLK from the Upper Sproul Plaza entrance, and the store will be up the stairs and to the right!</string>
+                            <string key="text">Up until Friday at 4pm, all merchandise will be sold outside of MLK on Upper Sproul Plaza. From then on, it can be found on the third floor of the MLK building, located next to Sproul Plaza. Enter MLK from the Upper Sproul Plaza entrance, and the store will be up the stairs and to the right in OPI (Stephens Lounge).</string>
                             <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>

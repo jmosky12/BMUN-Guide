@@ -12,13 +12,12 @@ class TimelineTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var eventTitle: UILabel!
 	@IBOutlet weak var eventTime: UILabel!
+	@IBOutlet var innerView: UIView!
 	
     override func awakeFromNib() {
         super.awakeFromNib()
 		
-		self.eventTitle.backgroundColor = Storage.lightGray
-		self.eventTitle.clipsToBounds = true
-		self.eventTitle.layer.cornerRadius = 7
+		self.innerView.layer.cornerRadius = 5
 		self.selectionStyle = .none
         // Initialization code
     }

@@ -61,7 +61,7 @@ class TimelineCollectionViewController: UICollectionViewController {
 		
 		self.spinner = UIActivityIndicatorView()
 		view.addSubview(self.spinner)
-		self.spinner.activityIndicatorViewStyle = .whiteLarge
+		self.spinner.activityIndicatorViewStyle = .gray
 		self.collectionView?.addSubview(view)
 		self.spinner.startAnimating()
 		
@@ -126,13 +126,13 @@ class TimelineCollectionViewController: UICollectionViewController {
         let imageView = cell.viewWithTag(1) as? UIImageView
         switch(indexPath.row) {
         case 0:
-            imageView?.image = UIImage(named: "march3")
+            imageView?.image = UIImage(named: "march2")
         case 1:
-            imageView?.image = UIImage(named: "march4")
-        case 2:
-            imageView?.image = UIImage(named: "march5")
-        default:
             imageView?.image = UIImage(named: "march3")
+        case 2:
+            imageView?.image = UIImage(named: "march4")
+        default:
+            imageView?.image = UIImage(named: "march2")
         }
         return cell
     }

@@ -63,7 +63,7 @@ class SpecificCommitteeCollectionViewController: UICollectionViewController {
 		
 		self.spinner = UIActivityIndicatorView()
 		view.addSubview(self.spinner)
-		self.spinner.activityIndicatorViewStyle = .whiteLarge
+		self.spinner.activityIndicatorViewStyle = .gray
 		self.collectionView?.addSubview(view)
 		self.spinner.startAnimating()
 		
