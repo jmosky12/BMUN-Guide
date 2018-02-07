@@ -39,7 +39,6 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.barTintColor = UIColor.black
         
-
         self.detailTextView.layer.cornerRadius = 5.0
         self.detailTextView.isEditable = false
         self.topicTextField.delegate = self
@@ -54,34 +53,6 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
         self.backgroundImageView.alpha = 0.7
         
     }
-    
-    // Resizes the text view's height if the screen height is less than 480p
-   /* override func viewDidLayoutSubviews() {
-        var sysInfo = utsname()
-        uname(&sysInfo)
-        let machine = Mirror(reflecting: sysInfo.machine)
-        let identifier = machine.children.reduce("") { identifier, element in
-            guard let value = element.value as? Int8 , value != 0 else { return identifier }
-            return identifier + String(UnicodeScalar(UInt8(value)))
-        }
-        let shouldModify = platformType(identifier as NSString)
-        
-        if shouldModify {
-            self.detailHeightConstraint.constant = 50
-        }
-    }
-    
-    // Checks if the type of device being used is one with a screen height less than 480p
-    func platformType(_ platform : NSString) -> Bool {
-        if platform.hasPrefix("iPhone4") {
-            return true
-        } else if platform.hasPrefix("iPad") {
-            return true
-        } else if UIScreen.main.bounds.height <= 480.0 {
-            return true
-        }
-        return false
-    }*/
     
     // These two functions below prevent landscape mode
     override var shouldAutorotate : Bool {

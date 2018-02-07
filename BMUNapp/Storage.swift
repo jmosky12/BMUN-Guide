@@ -81,7 +81,7 @@ struct Storage {
 		
 	}
 	
-    static var bmunBlue = UIColor.init(red: 24/256, green: 73/256, blue: 140/256, alpha: 1)
+    static var bmunBlue = UIColor.init(red: 29/256, green: 146/256, blue: 198/256, alpha: 1)
 	
 	static var lightGray = UIColor.init(red: 239/256, green: 239/256, blue: 244/256, alpha: 1)
 	
@@ -113,16 +113,16 @@ struct Storage {
 	
 	static var noFlashcardsData = true
 	
-	static var customFlashcards: NSMutableArray? {
+	static var customFlashcards: [[String]]? {
 		set {
 			defaults.setValue(newValue, forKey: "customFlashcards")
 		}
 		get {
-			return defaults.array(forKey: "customFlashcards") as! NSMutableArray?
+			return defaults.array(forKey: "customFlashcards") as? [[String]]
 		}
 	}
 	
-	static var bmunFlashcards: Array<Array<String>> = []
+	static var bmunFlashcards: [[String]]? = []
 	
 	static var currentCustomIndex: Int? {
 		set {

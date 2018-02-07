@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +20,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlashcardsViewController" customModule="BMUNapp" customModuleProvider="target">
             <connections>
                 <outlet property="cardLabel" destination="JVA-ka-DMG" id="uct-gw-P7Z"/>
+                <outlet property="leftArrow" destination="RQK-rd-lGa" id="C1g-Uw-cix"/>
                 <outlet property="leftButton" destination="NjI-hn-Be3" id="Wfq-VZ-LL3"/>
+                <outlet property="rightArrow" destination="CYe-f3-TYD" id="2Wg-iv-kk5"/>
                 <outlet property="rightButton" destination="sS4-N2-Stc" id="RNl-ZQ-fuk"/>
                 <outlet property="segmentedControl" destination="GL8-DM-TTy" id="Ss6-FT-59d"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -65,17 +68,26 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1f9-ne-pjW" userLabel="LeftView">
                             <rect key="frame" x="0.0" y="0.0" width="171.5" height="88"/>
                             <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftArrow" translatesAutoresizingMaskIntoConstraints="NO" id="RQK-rd-lGa">
+                                    <rect key="frame" x="68.5" y="26.5" width="35" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="RQK-rd-lGa" secondAttribute="height" multiplier="1:1" id="9lW-zQ-GJR"/>
+                                    </constraints>
+                                </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjI-hn-Be3">
                                     <rect key="frame" x="8" y="8" width="163" height="72"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                    <state key="normal" title="&lt;">
+                                    <state key="normal">
                                         <color key="titleColor" red="0.1137254902" green="0.57254901960000004" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                 </button>
                             </subviews>
                             <constraints>
+                                <constraint firstItem="RQK-rd-lGa" firstAttribute="height" secondItem="1f9-ne-pjW" secondAttribute="height" multiplier="0.4" id="2mX-Ln-53m"/>
                                 <constraint firstAttribute="bottom" secondItem="NjI-hn-Be3" secondAttribute="bottom" constant="8" id="6mW-93-GL0"/>
+                                <constraint firstItem="RQK-rd-lGa" firstAttribute="centerY" secondItem="1f9-ne-pjW" secondAttribute="centerY" id="SPa-fd-Nsq"/>
                                 <constraint firstItem="NjI-hn-Be3" firstAttribute="leading" secondItem="1f9-ne-pjW" secondAttribute="leading" constant="8" id="g7C-ql-Pna"/>
+                                <constraint firstItem="RQK-rd-lGa" firstAttribute="centerX" secondItem="1f9-ne-pjW" secondAttribute="centerX" id="iSG-9z-oi7"/>
                                 <constraint firstItem="NjI-hn-Be3" firstAttribute="top" secondItem="1f9-ne-pjW" secondAttribute="top" constant="8" id="rKS-06-JWI"/>
                                 <constraint firstAttribute="trailing" secondItem="NjI-hn-Be3" secondAttribute="trailing" constant="0.5" id="vzs-BP-BdF"/>
                             </constraints>
@@ -83,15 +95,29 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnM-gU-skO" userLabel="RightView">
                             <rect key="frame" x="171.5" y="0.0" width="171.5" height="88"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS4-N2-Stc">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="CYe-f3-TYD">
+                                    <rect key="frame" x="68.5" y="26.5" width="35" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="CYe-f3-TYD" secondAttribute="height" multiplier="1:1" id="ROg-8r-ZgO"/>
+                                    </constraints>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sS4-N2-Stc">
                                     <rect key="frame" x="8" y="8" width="164" height="74"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                    <state key="normal" title="&gt;">
+                                    <state key="normal">
                                         <color key="titleColor" red="0.1137254902" green="0.57254901960000004" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                 </button>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="sS4-N2-Stc" secondAttribute="trailing" constant="-0.5" id="0ZQ-9J-f7j"/>
+                                <constraint firstItem="CYe-f3-TYD" firstAttribute="centerX" secondItem="SnM-gU-skO" secondAttribute="centerX" id="AEq-MA-SfF"/>
+                                <constraint firstItem="sS4-N2-Stc" firstAttribute="leading" secondItem="SnM-gU-skO" secondAttribute="leading" constant="8" id="ZbT-LK-3Ee"/>
+                                <constraint firstItem="CYe-f3-TYD" firstAttribute="centerY" secondItem="SnM-gU-skO" secondAttribute="centerY" id="f5j-Ox-cae"/>
+                                <constraint firstAttribute="bottom" secondItem="sS4-N2-Stc" secondAttribute="bottom" constant="6" id="gA2-pt-TXf"/>
+                                <constraint firstItem="sS4-N2-Stc" firstAttribute="top" secondItem="SnM-gU-skO" secondAttribute="top" constant="8" id="oz0-YL-rGt"/>
+                                <constraint firstItem="CYe-f3-TYD" firstAttribute="height" secondItem="SnM-gU-skO" secondAttribute="height" multiplier="0.4" id="qbc-uH-F2b"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <constraints>
@@ -126,4 +152,8 @@
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="leftArrow" width="477" height="477"/>
+        <image name="rightArrow" width="477" height="477"/>
+    </resources>
 </document>

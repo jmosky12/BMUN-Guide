@@ -39,18 +39,14 @@ class ConnectViewController: UIViewController {
 			NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): textColor,
 			]
 		self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
-		
-		print("hereeee")
     }
 
 	@objc func socialMediaSelected() {
-		print("here")
 		let vc = SocialMediaViewController()
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 	
 	@objc func questionsSelected() {
-		print("here")
 		let vc = QuestionsViewController()
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
