@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CardViewController" customModule="BMUNapp" customModuleProvider="target">
+            <connections>
+                <outlet property="backTextView" destination="IAr-A0-Qfx" id="5jk-66-9gu"/>
+                <outlet property="createButton" destination="Qvm-Iw-Gmd" id="srb-ml-psf"/>
+                <outlet property="frontTextView" destination="Ddx-NJ-pMY" id="Bn9-IN-a6F"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZEA-Op-1aQ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5w-0c-6O2">
+                            <rect key="frame" x="16" y="30" width="90" height="28"/>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ddx-NJ-pMY">
+                            <rect key="frame" x="16" y="65" width="343" height="120"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="yid-03-FgN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lx-LN-Mul">
+                            <rect key="frame" x="16" y="235" width="90" height="28"/>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IAr-A0-Qfx">
+                            <rect key="frame" x="16" y="269" width="343" height="160"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="sEh-CF-tBr"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvm-Iw-Gmd">
+                            <rect key="frame" x="94" y="479" width="187.5" height="40"/>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                            <state key="normal" title="Create">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="createCard:" destination="-1" eventType="touchUpInside" id="lDl-01-rlQ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Ddx-NJ-pMY" secondAttribute="trailing" constant="16" id="06Q-zH-OAe"/>
+                        <constraint firstItem="Ddx-NJ-pMY" firstAttribute="top" secondItem="m5w-0c-6O2" secondAttribute="bottom" constant="7.5" id="84g-MH-NOt"/>
+                        <constraint firstItem="Qvm-Iw-Gmd" firstAttribute="top" secondItem="IAr-A0-Qfx" secondAttribute="bottom" constant="50" id="Ab0-zy-Fbj"/>
+                        <constraint firstItem="3lx-LN-Mul" firstAttribute="top" secondItem="Ddx-NJ-pMY" secondAttribute="bottom" constant="50" id="HQE-Hu-llw"/>
+                        <constraint firstItem="IAr-A0-Qfx" firstAttribute="leading" secondItem="3lx-LN-Mul" secondAttribute="leading" id="IZF-PL-WmQ"/>
+                        <constraint firstItem="IAr-A0-Qfx" firstAttribute="trailing" secondItem="Ddx-NJ-pMY" secondAttribute="trailing" id="Q10-gJ-xp4"/>
+                        <constraint firstAttribute="bottom" secondItem="Qvm-Iw-Gmd" secondAttribute="bottom" constant="148" id="QfS-DQ-3vU"/>
+                        <constraint firstItem="IAr-A0-Qfx" firstAttribute="top" secondItem="3lx-LN-Mul" secondAttribute="bottom" constant="6" id="U1N-1e-eVF"/>
+                        <constraint firstItem="m5w-0c-6O2" firstAttribute="top" secondItem="ZEA-Op-1aQ" secondAttribute="top" constant="30" id="WDE-pK-Yjn"/>
+                        <constraint firstItem="Qvm-Iw-Gmd" firstAttribute="width" secondItem="ZEA-Op-1aQ" secondAttribute="width" multiplier="0.5" id="WgR-bL-nj0"/>
+                        <constraint firstItem="Qvm-Iw-Gmd" firstAttribute="centerX" secondItem="ZEA-Op-1aQ" secondAttribute="centerX" id="eiR-i1-fKH"/>
+                        <constraint firstItem="Ddx-NJ-pMY" firstAttribute="centerX" secondItem="ZEA-Op-1aQ" secondAttribute="centerX" id="leA-NQ-hcv"/>
+                        <constraint firstItem="Ddx-NJ-pMY" firstAttribute="leading" secondItem="m5w-0c-6O2" secondAttribute="leading" id="qB1-gg-emX"/>
+                        <constraint firstItem="3lx-LN-Mul" firstAttribute="trailing" secondItem="m5w-0c-6O2" secondAttribute="trailing" id="r0G-0n-cac"/>
+                        <constraint firstItem="m5w-0c-6O2" firstAttribute="leading" secondItem="ZEA-Op-1aQ" secondAttribute="leading" constant="16" id="whL-bm-jOi"/>
+                        <constraint firstItem="3lx-LN-Mul" firstAttribute="leading" secondItem="Ddx-NJ-pMY" secondAttribute="leading" id="zBK-yc-Bxa"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="0.1137254902" green="0.57254901960000004" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ZEA-Op-1aQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="11B-B9-pGM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="ZEA-Op-1aQ" secondAttribute="top" constant="20" id="Jfw-ue-DFT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZEA-Op-1aQ" secondAttribute="trailing" id="RXM-HF-cu8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZEA-Op-1aQ" secondAttribute="bottom" id="xsd-dO-XUy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="-37.5"/>
+        </view>
+    </objects>
+</document>

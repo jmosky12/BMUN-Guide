@@ -11,37 +11,37 @@ import UIKit
 class InfoViewController: UIViewController {
 
     @IBOutlet weak var timelineIV: UIImageView!
-    @IBOutlet weak var questionsIV: UIImageView!
+    @IBOutlet weak var storeIV: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        questionsIV.image = UIImage(named: "questions")
+        storeIV.image = UIImage(named: "logo1024")
         timelineIV.image = UIImage(named: "timeline")
         
-        questionsIV.clipsToBounds = true
+        storeIV.clipsToBounds = true
         timelineIV.clipsToBounds = true
         
-        questionsIV.layer.cornerRadius = 50
+        storeIV.layer.cornerRadius = 50
         timelineIV.layer.cornerRadius = 50
         
-        let questionsGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(InfoViewController.questionsSelected))
+        let storeGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(InfoViewController.storeSelected))
         let timelineGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(InfoViewController.timelineSelected))
         
-        questionsIV.addGestureRecognizer(questionsGestureRecognizer)
+        storeIV.addGestureRecognizer(storeGestureRecognizer)
         timelineIV.addGestureRecognizer(timelineGestureRecognizer)
         
-        let textColor = UIColor.white
-        let textFont = UIFont(name: "Avenir", size: 35.0)
-        let titleTextAttributes: [NSAttributedStringKey:Any] = [
+		let textColor = UIColor.white
+		let textFont = UIFont(name: "Avenir", size: 35.0)
+		let titleTextAttributes: [NSAttributedStringKey:Any] = [
 			NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): textFont!,
 			NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): textColor,
-            ]
-        self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
+			]
+		self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
     }
 
-    @objc func questionsSelected() {
-        let vc = QuestionsViewController()
+    @objc func storeSelected() {
+        let vc = SleekStoreViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

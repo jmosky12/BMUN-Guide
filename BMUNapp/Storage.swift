@@ -9,6 +9,9 @@
 import Foundation
 import SwiftyJSON
 
+
+private let defaults = UserDefaults.standard
+
 struct Storage {
     static func getRequest(_ url: URL, onResponse: @escaping (Data?, URLResponse?, Error?) -> Void) {
         URLSession.shared.dataTask(with: url as URL, completionHandler: onResponse).resume()
@@ -107,6 +110,37 @@ struct Storage {
 	static var noCommitteeData = true
 	
 	static var noTimelineData = true
+	
+	static var noFlashcardsData = true
+	
+	static var customFlashcards: NSMutableArray? {
+		set {
+			defaults.setValue(newValue, forKey: "customFlashcards")
+		}
+		get {
+			return defaults.array(forKey: "customFlashcards") as! NSMutableArray?
+		}
+	}
+	
+	static var bmunFlashcards: Array<Array<String>> = []
+	
+	static var currentCustomIndex: Int? {
+		set {
+			defaults.setValue(newValue, forKey: "currentCustomIndex")
+		}
+		get {
+			return defaults.integer(forKey: "currentCustomIndex") as Int?
+		}
+	}
+	
+	static var currentBmunIndex: Int? {
+		set {
+			defaults.setValue(newValue, forKey: "currentBmunIndex")
+		}
+		get {
+			return defaults.integer(forKey: "currentBmunIndex") as Int?
+		}
+	}
 }
 
 struct InstagramInfo {

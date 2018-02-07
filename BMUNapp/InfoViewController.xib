@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InfoViewController" customModule="BMUNapp" customModuleProvider="target">
             <connections>
-                <outlet property="questionsIV" destination="dZg-SP-lcK" id="srh-DN-dPy"/>
+                <outlet property="storeIV" destination="dZg-SP-lcK" id="J7C-OC-fR2"/>
                 <outlet property="timelineIV" destination="oZv-ss-m4c" id="5Iw-3U-dnd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

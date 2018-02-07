@@ -71,6 +71,12 @@
 		DFF33C191BE9D1A500D7228D /* LiveUpdatesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF33C171BE9D1A500D7228D /* LiveUpdatesTableViewCell.xib */; };
 		DFF6137B1C1801A2003C810C /* CommitteeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF613791C1801A2003C810C /* CommitteeDetailViewController.swift */; };
 		DFF6137C1C1801A2003C810C /* CommitteeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF6137A1C1801A2003C810C /* CommitteeDetailViewController.xib */; };
+		DFFE63BF202A4B7C00F40EB4 /* FlashcardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE63BD202A4B7C00F40EB4 /* FlashcardsViewController.swift */; };
+		DFFE63C0202A4B7C00F40EB4 /* FlashcardsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFFE63BE202A4B7C00F40EB4 /* FlashcardsViewController.xib */; };
+		DFFE63C3202A4BC300F40EB4 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE63C1202A4BC300F40EB4 /* CardViewController.swift */; };
+		DFFE63C4202A4BC300F40EB4 /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFFE63C2202A4BC300F40EB4 /* CardViewController.xib */; };
+		DFFE63C8202A77DD00F40EB4 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFE63C6202A77DD00F40EB4 /* ConnectViewController.swift */; };
+		DFFE63C9202A77DD00F40EB4 /* ConnectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFFE63C7202A77DD00F40EB4 /* ConnectViewController.xib */; };
 		FCA1D06CDAC3E4EEE5712623 /* Pods_BMUNapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD14AD5BD3FBE63287235EC2 /* Pods_BMUNapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +151,12 @@
 		DFF33C171BE9D1A500D7228D /* LiveUpdatesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveUpdatesTableViewCell.xib; sourceTree = "<group>"; };
 		DFF613791C1801A2003C810C /* CommitteeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteeDetailViewController.swift; sourceTree = "<group>"; };
 		DFF6137A1C1801A2003C810C /* CommitteeDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitteeDetailViewController.xib; sourceTree = "<group>"; };
+		DFFE63BD202A4B7C00F40EB4 /* FlashcardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewController.swift; sourceTree = "<group>"; };
+		DFFE63BE202A4B7C00F40EB4 /* FlashcardsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlashcardsViewController.xib; sourceTree = "<group>"; };
+		DFFE63C1202A4BC300F40EB4 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		DFFE63C2202A4BC300F40EB4 /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
+		DFFE63C6202A77DD00F40EB4 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		DFFE63C7202A77DD00F40EB4 /* ConnectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,8 +307,8 @@
 			children = (
 				DF4CDBAA1DE5371600CDEB09 /* InfoViewController.swift */,
 				DF4CDBAB1DE5371600CDEB09 /* InfoViewController.xib */,
+				D76EFA791E5946200015DDC0 /* SleekStore */,
 				DF20B1A91BC9B47E007705BA /* Timeline */,
-				DF27029C1C14D86F00A4889D /* Questions */,
 			);
 			name = Information;
 			sourceTree = "<group>";
@@ -332,10 +344,10 @@
 			isa = PBXGroup;
 			children = (
 				DF6071C11BC8B62F007B35CC /* AppDelegate.swift */,
+				DFFE63BC202A4B4C00F40EB4 /* Flashcards */,
 				DF9A92EB1BC91FE900BA3AE4 /* DelegateGuide */,
 				DF20B1A81BC9B464007705BA /* Committees */,
-				DFAC30441DE506B300872364 /* Social Media */,
-				D76EFA791E5946200015DDC0 /* SleekStore */,
+				DFFE63C5202A77B600F40EB4 /* Connect */,
 				DF4CDBA81DE5367B00CDEB09 /* Information */,
 				DF4CDBA91DE536D600CDEB09 /* WebView */,
 				DFDF6EA41BE544B3009244FE /* Models */,
@@ -380,6 +392,28 @@
 				DF4CDBAE1DE646E500CDEB09 /* CollectionViewFlowLayout.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		DFFE63BC202A4B4C00F40EB4 /* Flashcards */ = {
+			isa = PBXGroup;
+			children = (
+				DFFE63BD202A4B7C00F40EB4 /* FlashcardsViewController.swift */,
+				DFFE63BE202A4B7C00F40EB4 /* FlashcardsViewController.xib */,
+				DFFE63C1202A4BC300F40EB4 /* CardViewController.swift */,
+				DFFE63C2202A4BC300F40EB4 /* CardViewController.xib */,
+			);
+			name = Flashcards;
+			sourceTree = "<group>";
+		};
+		DFFE63C5202A77B600F40EB4 /* Connect */ = {
+			isa = PBXGroup;
+			children = (
+				DFFE63C6202A77DD00F40EB4 /* ConnectViewController.swift */,
+				DFFE63C7202A77DD00F40EB4 /* ConnectViewController.xib */,
+				DFAC30441DE506B300872364 /* Social Media */,
+				DF27029C1C14D86F00A4889D /* Questions */,
+			);
+			name = Connect;
 			sourceTree = "<group>";
 		};
 		EB91E91DF83DDDB28E28393D /* Pods */ = {
@@ -458,6 +492,7 @@
 				DF2FB6321E46973500F858AC /* TimelineTableViewCell.xib in Resources */,
 				DFDCCE0A1DAAF38900269E9E /* CommitteeFundamentals.pdf in Resources */,
 				DFDCCE131DAAF38900269E9E /* twitterAvatar.png in Resources */,
+				DFFE63C0202A4B7C00F40EB4 /* FlashcardsViewController.xib in Resources */,
 				DFDCCE0D1DAAF38900269E9E /* Packing.pdf in Resources */,
 				DFDCCE101DAAF38900269E9E /* Resolutions.pdf in Resources */,
 				DF6071CF1BC8B62F007B35CC /* LaunchScreen.storyboard in Resources */,
@@ -472,6 +507,7 @@
 				DFD814261DD7167700CA027E /* CommitteesCollectionViewCell.xib in Resources */,
 				DFF0B8A91E5A8240002F1E5C /* InstagramViewController.xib in Resources */,
 				DFDCCE121DAAF38900269E9E /* SpeechPreparation.pdf in Resources */,
+				DFFE63C4202A4BC300F40EB4 /* CardViewController.xib in Resources */,
 				D7370FE91DB33E6B008A4AF3 /* GoogleService-Info.plist in Resources */,
 				DF2FB62E1E46971800F858AC /* TimelineEventTableViewController.xib in Resources */,
 				DFD8142E1DD7368000CA027E /* SpecificCommitteeCollectionViewCell.xib in Resources */,
@@ -480,6 +516,7 @@
 				DFD814551DD7F74B00CA027E /* TimelineCollectionViewController.xib in Resources */,
 				DFDCCE0E1DAAF38900269E9E /* PositionPaper.pdf in Resources */,
 				DF20B1BC1BCAE380007705BA /* DelegateTableViewCell.xib in Resources */,
+				DFFE63C9202A77DD00F40EB4 /* ConnectViewController.xib in Resources */,
 				DF4CDBAD1DE5371600CDEB09 /* InfoViewController.xib in Resources */,
 				DF64FDC41C2894480072C463 /* TextViewController.xib in Resources */,
 				DFAC30481DE5076000872364 /* SocialMediaViewController.xib in Resources */,
@@ -573,8 +610,11 @@
 				D76EFA7C1E5946560015DDC0 /* SleekStoreViewController.swift in Sources */,
 				DF20B1B81BCAE34A007705BA /* DelegateGuideTableViewController.swift in Sources */,
 				DFDF6EA81BE5530C009244FE /* Tweet.swift in Sources */,
+				DFFE63C3202A4BC300F40EB4 /* CardViewController.swift in Sources */,
 				DFD814211DD7165B00CA027E /* CommitteesCollectionViewController.swift in Sources */,
+				DFFE63C8202A77DD00F40EB4 /* ConnectViewController.swift in Sources */,
 				DF20B1BB1BCAE380007705BA /* DelegateTableViewCell.swift in Sources */,
+				DFFE63BF202A4B7C00F40EB4 /* FlashcardsViewController.swift in Sources */,
 				DFDF6EAA1BE55760009244FE /* DateFormatterManager.swift in Sources */,
 				DF6071C21BC8B62F007B35CC /* AppDelegate.swift in Sources */,
 				DF4CDBAF1DE646E500CDEB09 /* CollectionViewFlowLayout.swift in Sources */,

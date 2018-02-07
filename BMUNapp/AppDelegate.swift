@@ -51,17 +51,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         committeesNC.navigationBar.barTintColor = UIColor.black
         committeesNC.navigationBar.isTranslucent = false
         committeesNC.navigationBar.topItem?.title = "Committees"
-        
-        let socialMedia = SocialMediaViewController()
-        let socialMediaNC = UINavigationController(rootViewController: socialMedia)
-        let item3 = UITabBarItem(title: "Social Media", image: nil, tag: 3)
-        item3.setTitleTextAttributes(titleTextAttributes, for: UIControlState())
-        item3.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
-        socialMediaNC.tabBarItem = item3
-        socialMediaNC.navigationBar.barTintColor = UIColor.black
-        socialMediaNC.navigationBar.isTranslucent = false
-        socialMediaNC.navigationBar.topItem?.title = "Social Media"
-
+		
+		let flashcards = FlashcardsViewController()
+		let flashcardsNC = UINavigationController(rootViewController: flashcards)
+		let item3 = UITabBarItem(title: "Flashcards", image: nil, tag: 3)
+		item3.setTitleTextAttributes(titleTextAttributes, for: UIControlState())
+		item3.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
+		flashcardsNC.tabBarItem = item3
+		flashcardsNC.navigationBar.barTintColor = UIColor.black
+		flashcardsNC.navigationBar.isTranslucent = false
+		flashcardsNC.navigationBar.topItem?.title = "Flashcards"
+	
         let info = InfoViewController()
         let infoNC = UINavigationController(rootViewController: info)
         let item4 = UITabBarItem(title: "Info", image: nil, tag: 4)
@@ -72,17 +72,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         infoNC.navigationBar.isTranslucent = false
         infoNC.navigationBar.topItem?.title = "Information"
     
-        let store = SleekStoreViewController()
-        let storeNC = UINavigationController(rootViewController: store)
-        let item5 = UITabBarItem(title: "Store", image: nil, tag: 5)
+        let connect = ConnectViewController()
+        let connectNC = UINavigationController(rootViewController: connect)
+        let item5 = UITabBarItem(title: "Connect", image: nil, tag: 5)
         item5.setTitleTextAttributes(titleTextAttributes, for: .normal)
         item5.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
-        storeNC.tabBarItem = item5
-        storeNC.navigationBar.barTintColor = UIColor.black
-        storeNC.navigationBar.isTranslucent = false
-        storeNC.navigationBar.topItem?.title = "Store"
+        connectNC.tabBarItem = item5
+        connectNC.navigationBar.barTintColor = UIColor.black
+        connectNC.navigationBar.isTranslucent = false
+        connectNC.navigationBar.topItem?.title = "Connect"
+
         
-        let controllers = [delegateGuideNC, committeesNC, infoNC, socialMediaNC, storeNC]
+        let controllers = [delegateGuideNC, committeesNC, infoNC, flashcardsNC, connectNC]
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = controllers
