@@ -85,6 +85,8 @@ struct Storage {
 	
 	static var lightGray = UIColor.init(red: 239/256, green: 239/256, blue: 244/256, alpha: 1)
 	
+	static var lightBlue = UIColor.init(red: 42/256, green: 165/256, blue: 209/256, alpha: 1)
+	
 	static var blocACommittees: [String: Any] = [:]
 	
     static var blocBCommittees: [String: Any] = [:]

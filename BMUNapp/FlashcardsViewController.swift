@@ -23,6 +23,8 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 	@IBOutlet var rightButton: UIButton!
 	@IBOutlet var leftArrow: UIImageView!
 	@IBOutlet var rightArrow: UIImageView!
+	@IBOutlet var deleteButton: UIImageView!
+	@IBOutlet var deleteLayer: UIView!
 	
 	
 	var currentCard: Array<String>?
@@ -82,6 +84,12 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 			Storage.customFlashcards = [[String]]()
 		}
 		self.customCardCount = Storage.customFlashcards?.count
+		
+		self.deleteLayer.layer.cornerRadius = self.deleteLayer.frame.width/2
+		self.deleteButton.isUserInteractionEnabled = true
+		let deleteTap = UITapGestureRecognizer(target: self, action: #selector(self.deleteCard))
+		self.deleteButton.addGestureRecognizer(deleteTap)
+		self.showDelete(yes: false)
 		
 		let tapLeft = UITapGestureRecognizer(target: self, action: #selector(self.leftTapped(_:)))
 		let tapRight = UITapGestureRecognizer(target: self, action: #selector(self.rightTapped(_:)))
@@ -165,29 +173,48 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 		}
 	}
 	
+	func showDelete(yes: Bool) {
+		if yes {
+			self.deleteButton.isHidden = false
+			self.deleteLayer.isHidden = false
+		} else {
+			self.deleteButton.isHidden = true
+			self.deleteLayer.isHidden = true
+		}
+	}
+	
 	@IBAction func segmentClicked(_ sender: UISegmentedControl) {
 		self.isBMUN = sender.selectedSegmentIndex == 0 ? true : false
 		if !self.isBMUN {
 			if self.customCardCount == 0 {
 				self.cardLabel.text = "Click to Create Flashcards"
+				self.showDelete(yes: false)
 			} else {
 				self.currentCard = Storage.customFlashcards?[Storage.currentCustomIndex!]
 				self.cardLabel.text = self.currentCard?[0]
+				self.showDelete(yes: true)
 			}
 		} else {
 			if self.bmunFlashcardsSet {
 				self.currentCard = Storage.bmunFlashcards?[Storage.currentBmunIndex!]
 				self.cardLabel.text = self.currentCard?[0]
 			}
+			self.showDelete(yes: false)
 		}
+		self.cardLabel.backgroundColor = Storage.bmunBlue
+		self.cardLabel.textColor = UIColor.white
 		self.adjustArrowColors()
 	}
 	
 	@objc func togglePhrase(_ sender: UITapGestureRecognizer) {
 		if self.isBMUN || self.customCardCount! > 0 {
 			self.isFront = !self.isFront
+			self.cardLabel.backgroundColor = self.isFront ? Storage.bmunBlue : UIColor.white
+			self.cardLabel.textColor = self.isFront ? UIColor.white : Storage.bmunBlue
 			self.cardLabel.text = self.isFront ? self.currentCard![0] : self.currentCard![1]
 		} else {
+			self.cardLabel.backgroundColor = Storage.bmunBlue
+			self.cardLabel.textColor = UIColor.white
 			self.createNewFlashcard()
 		}
 	}
@@ -208,6 +235,8 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 				self.isFront = true
 			}
 		}
+		self.cardLabel.backgroundColor = Storage.bmunBlue
+		self.cardLabel.textColor = UIColor.white
 		self.adjustArrowColors()
 	}
 	
@@ -218,6 +247,8 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 				self.currentCard = Storage.bmunFlashcards?[Storage.currentBmunIndex!]
 				self.cardLabel.text = self.currentCard?[0]
 				self.isFront = true
+				self.cardLabel.backgroundColor = Storage.bmunBlue
+				self.cardLabel.textColor = UIColor.white
 			}
 		} else {
 			if self.customCardCount! > 1 && Storage.currentCustomIndex! < self.customCardCount! - 1 {
@@ -225,6 +256,8 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 				self.currentCard = Storage.customFlashcards?[Storage.currentCustomIndex!]
 				self.cardLabel.text = self.currentCard?[0]
 				self.isFront = true
+				self.cardLabel.backgroundColor = Storage.bmunBlue
+				self.cardLabel.textColor = UIColor.white
 			}
 		}
 		self.adjustArrowColors()
@@ -236,6 +269,27 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 		self.navigationController!.pushViewController(vc, animated: true)
 	}
 	
+	@objc func deleteCard() {
+		Storage.customFlashcards?.remove(at: Storage.currentCustomIndex!)
+		if self.customCardCount! == 1 {
+			self.showDelete(yes: false)
+			self.cardLabel.text = "Click to Create Flashcards"
+			Storage.currentCustomIndex = 0
+		} else if Storage.currentCustomIndex! == self.customCardCount! - 1 {
+			Storage.currentCustomIndex! -= 1
+			self.currentCard = Storage.customFlashcards?[Storage.currentCustomIndex!]
+			self.cardLabel.text = self.currentCard?[0]
+		} else {
+			self.currentCard = Storage.customFlashcards?[Storage.currentCustomIndex!]
+			self.cardLabel.text = self.currentCard?[0]
+		}
+		self.isFront = true
+		self.customCardCount! -= 1
+		self.cardLabel.backgroundColor = Storage.bmunBlue
+		self.cardLabel.textColor = UIColor.white
+		self.adjustArrowColors()
+	}
+	
 	//MARK: Delegate
 	
 	func newFlashcard(_ card: [String]) {
@@ -243,6 +297,8 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 		if !self.isBMUN && self.customCardCount == 0 {
 			self.currentCard = Storage.customFlashcards![Storage.currentCustomIndex!]
 			self.cardLabel.text = self.currentCard?[0]
+			self.showDelete(yes: true)
+			self.isFront = true
 		}
 		self.customCardCount! += 1
 		self.adjustArrowColors()

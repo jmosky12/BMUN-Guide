@@ -20,6 +20,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlashcardsViewController" customModule="BMUNapp" customModuleProvider="target">
             <connections>
                 <outlet property="cardLabel" destination="JVA-ka-DMG" id="uct-gw-P7Z"/>
+                <outlet property="deleteButton" destination="WNm-Jl-S3C" id="UTa-ZB-9S9"/>
+                <outlet property="deleteLayer" destination="2L8-uG-1BD" id="H3a-Tu-DIV"/>
                 <outlet property="leftArrow" destination="RQK-rd-lGa" id="C1g-Uw-cix"/>
                 <outlet property="leftButton" destination="NjI-hn-Be3" id="Wfq-VZ-LL3"/>
                 <outlet property="rightArrow" destination="CYe-f3-TYD" id="2Wg-iv-kk5"/>
@@ -40,13 +42,23 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2L8-uG-1BD">
+                    <rect key="frame" x="308.5" y="114" width="46.5" height="46.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="2L8-uG-1BD" secondAttribute="height" multiplier="1:1" id="5ak-nl-6Kf"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="WNm-Jl-S3C">
+                    <rect key="frame" x="308.5" y="114" width="46.5" height="46.5"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz1-Cq-UGA" userLabel="TopView">
                     <rect key="frame" x="16" y="20" width="343" height="97"/>
                     <subviews>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GL8-DM-TTy">
                             <rect key="frame" x="8" y="34.5" width="327" height="29"/>
                             <segments>
-                                <segment title="BMUN"/>
+                                <segment title="Recommended"/>
                                 <segment title="Custom"/>
                             </segments>
                             <color key="tintColor" red="0.1137254902" green="0.57254901960000004" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -135,14 +147,21 @@
             </subviews>
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="2L8-uG-1BD" firstAttribute="height" secondItem="JVA-ka-DMG" secondAttribute="height" multiplier="0.1" id="3Be-oc-TlM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="Zz1-Cq-UGA" secondAttribute="top" id="4Ra-y9-I5U"/>
+                <constraint firstItem="WNm-Jl-S3C" firstAttribute="trailing" secondItem="2L8-uG-1BD" secondAttribute="trailing" id="G0W-A6-hNJ"/>
                 <constraint firstItem="JVA-ka-DMG" firstAttribute="trailing" secondItem="Zz1-Cq-UGA" secondAttribute="trailing" id="H2S-Ko-J5H"/>
                 <constraint firstItem="JVA-ka-DMG" firstAttribute="trailing" secondItem="q6e-G6-Q36" secondAttribute="trailing" id="RWP-yS-WuY"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JVA-ka-DMG" secondAttribute="trailing" constant="16" id="Vbu-md-8xf"/>
+                <constraint firstItem="WNm-Jl-S3C" firstAttribute="leading" secondItem="2L8-uG-1BD" secondAttribute="leading" id="W8T-R2-pSA"/>
+                <constraint firstItem="WNm-Jl-S3C" firstAttribute="top" secondItem="2L8-uG-1BD" secondAttribute="top" id="aGM-TQ-fDl"/>
                 <constraint firstItem="q6e-G6-Q36" firstAttribute="top" secondItem="JVA-ka-DMG" secondAttribute="bottom" constant="2" id="asy-Qk-vYW"/>
+                <constraint firstItem="WNm-Jl-S3C" firstAttribute="bottom" secondItem="2L8-uG-1BD" secondAttribute="bottom" id="biu-0W-oK7"/>
                 <constraint firstItem="JVA-ka-DMG" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="gdL-5J-3GL"/>
                 <constraint firstItem="JVA-ka-DMG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="hUA-al-Cpv"/>
                 <constraint firstItem="JVA-ka-DMG" firstAttribute="leading" secondItem="q6e-G6-Q36" secondAttribute="leading" id="kRS-7a-G1a"/>
+                <constraint firstItem="2L8-uG-1BD" firstAttribute="top" secondItem="JVA-ka-DMG" secondAttribute="top" constant="4" id="l0s-xv-49Y"/>
+                <constraint firstItem="2L8-uG-1BD" firstAttribute="trailing" secondItem="JVA-ka-DMG" secondAttribute="trailing" constant="-4" id="oqS-JZ-DCA"/>
                 <constraint firstItem="JVA-ka-DMG" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" id="rus-wP-Pn3"/>
                 <constraint firstItem="JVA-ka-DMG" firstAttribute="leading" secondItem="Zz1-Cq-UGA" secondAttribute="leading" id="ugg-ZO-Te5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="q6e-G6-Q36" secondAttribute="bottom" id="xfK-6a-dQ3"/>
@@ -151,8 +170,17 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
+        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="8EZ-iJ-LEz">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </imageView>
+        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="z9A-e9-ozV">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        </imageView>
     </objects>
     <resources>
+        <image name="cancel" width="128" height="128"/>
         <image name="leftArrow" width="477" height="477"/>
         <image name="rightArrow" width="477" height="477"/>
     </resources>

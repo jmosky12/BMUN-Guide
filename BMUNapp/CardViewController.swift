@@ -34,6 +34,11 @@ class CardViewController: UIViewController {
 		self.createButton.layer.borderColor = UIColor.white.cgColor
 		self.frontTextView.layer.cornerRadius = 5.0
 		self.backTextView.layer.cornerRadius = 5.0
+		
+		let frontTextViewTapped = UITapGestureRecognizer(target: self, action: #selector(CardViewController.textTap(_:)))
+		self.frontTextView.addGestureRecognizer(frontTextViewTapped)
+		let backTextViewTapped = UITapGestureRecognizer(target: self, action: #selector(CardViewController.textTap(_:)))
+		self.backTextView.addGestureRecognizer(backTextViewTapped)
     }
 
 	@IBAction func createCard(_ sender: Any) {
@@ -46,6 +51,15 @@ class CardViewController: UIViewController {
 			self.delegate?.newFlashcard(card)
 			self.navigationController?.popViewController(animated: true)
 		}
+	}
+	
+	@objc func textTap(_ sender: UITextView) {
+		if keyboard == true {
+			sender.resignFirstResponder()
+			self.keyboard = false
+		} else {
+			sender.becomeFirstResponder()
+			self.keyboard = true        }
 	}
 	
 }
