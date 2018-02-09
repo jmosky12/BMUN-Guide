@@ -187,7 +187,7 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 		self.isBMUN = sender.selectedSegmentIndex == 0 ? true : false
 		if !self.isBMUN {
 			if self.customCardCount == 0 {
-				self.cardLabel.text = "Click to Create Flashcards"
+				self.cardLabel.text = "Select to Create Custom Flashcards"
 				self.showDelete(yes: false)
 			} else {
 				self.currentCard = Storage.customFlashcards?[Storage.currentCustomIndex!]

@@ -16,7 +16,7 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        storeIV.image = UIImage(named: "logo1024")
+        storeIV.image = UIImage(named: "merch")
         timelineIV.image = UIImage(named: "timeline")
         
         storeIV.clipsToBounds = true

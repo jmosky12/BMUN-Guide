@@ -17,7 +17,7 @@ class ConnectViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-		socialMediaIV.image = UIImage(named: "logo1024")
+		socialMediaIV.image = UIImage(named: "socialmedia")
 		questionsIV.image = UIImage(named: "questions")
 		
 		socialMediaIV.clipsToBounds = true

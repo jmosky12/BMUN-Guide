@@ -46,6 +46,9 @@ class SocialMediaViewController: UIViewController {
 			NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): textColor,
             ]
         self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
+		
+		self.navigationController?.navigationBar.tintColor = UIColor.white
+		self.navigationController?.navigationBar.barTintColor = UIColor.black
 
     }
 

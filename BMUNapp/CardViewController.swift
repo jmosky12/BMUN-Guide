@@ -8,13 +8,13 @@
 
 import UIKit
 
-class CardViewController: UIViewController {
+class CardViewController: UIViewController, UITextViewDelegate {
 	
 	@IBOutlet var frontTextView: UITextView!
 	@IBOutlet var backTextView: UITextView!
 	@IBOutlet var createButton: UIButton!
 	
-	var keyboard = true
+	var keyboard = false
 	var delegate: FlashcardsViewControllerDelegate?
 	
 	
@@ -34,11 +34,9 @@ class CardViewController: UIViewController {
 		self.createButton.layer.borderColor = UIColor.white.cgColor
 		self.frontTextView.layer.cornerRadius = 5.0
 		self.backTextView.layer.cornerRadius = 5.0
+		self.frontTextView.delegate = self
+		self.backTextView.delegate = self
 		
-		let frontTextViewTapped = UITapGestureRecognizer(target: self, action: #selector(CardViewController.textTap(_:)))
-		self.frontTextView.addGestureRecognizer(frontTextViewTapped)
-		let backTextViewTapped = UITapGestureRecognizer(target: self, action: #selector(CardViewController.textTap(_:)))
-		self.backTextView.addGestureRecognizer(backTextViewTapped)
     }
 
 	@IBAction func createCard(_ sender: Any) {
@@ -53,13 +51,12 @@ class CardViewController: UIViewController {
 		}
 	}
 	
-	@objc func textTap(_ sender: UITextView) {
-		if keyboard == true {
-			sender.resignFirstResponder()
-			self.keyboard = false
-		} else {
-			sender.becomeFirstResponder()
-			self.keyboard = true        }
+	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+		if text == "\n" {
+			textView.resignFirstResponder()
+			return false
+		}
+		return true
 	}
 	
 }
