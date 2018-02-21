@@ -38,7 +38,7 @@ class SleekStoreViewController: UIViewController {
 		self.navigationController?.navigationBar.barTintColor = UIColor.black
 		
 		let habitat = ProductViewController(image: #imageLiteral(resourceName: "givedirectly"), itemTitle: "Conference Cause", price: "Any donations accepted!")
-		let newShirt = ProductViewController(image: #imageLiteral(resourceName: "old_shirts"), itemTitle: "BMUN LXV Shirt", price: "$10")
+		let newShirt = ProductViewController(image: #imageLiteral(resourceName: "old_shirts"), itemTitle: "BMUN LXVI Shirt", price: "$10")
 		let oldShirt = ProductViewController(image: #imageLiteral(resourceName: "old_shirts"), itemTitle: "Past BMUN Shirts", price: "$3")
 		self.constrainInView(content: habitat, parentView: self.item1)
 		self.constrainInView(content: newShirt, parentView: self.item2)
