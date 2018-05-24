@@ -31,24 +31,12 @@ class TimelineEventTableViewController: UITableViewController {
 		let nib: UINib = UINib(nibName: "TimelineTableViewCell", bundle: nil)
 		self.tableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
 		
-		// Ensures table cell separators are set up correctly
-		self.tableView.separatorInset = UIEdgeInsets.zero
+		// Ensures table cells are set up correctly
+		Utils.setupTableView(tableView: self.tableView, rowHeight: 100)
 		self.tableView.separatorColor = Storage.lightGray
-		self.tableView.preservesSuperviewLayoutMargins = false
-		self.tableView.layoutMargins = UIEdgeInsets.zero
 		self.tableView.alwaysBounceVertical = true
-		
-		self.tableView.estimatedRowHeight = 100
-		self.tableView.rowHeight = UITableViewAutomaticDimension
 
-
-		let textColor = UIColor.white
-		let textFont = UIFont(name: "Avenir", size: 35.0)
-		let titleTextAttributes: [NSAttributedStringKey:Any] = [
-			NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): textFont!,
-			NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): textColor,
-			]
-		self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
+		self.navigationController!.navigationBar.titleTextAttributes = Utils.getTitleTextAttributes(fontName: "Avenir", fontSize: 35.0, textColor: UIColor.white)
 		
     }
 

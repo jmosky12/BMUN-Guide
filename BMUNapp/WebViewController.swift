@@ -36,16 +36,9 @@ class WebViewController: UIViewController {
         self.webView.scalesPageToFit = true
         view.addSubview(webView)
         
-        let textColor = UIColor.white
-        let textFont = UIFont(name: "Avenir", size: 40.0)
-        
         // Sets characteristics for top bar text
         if fileName == "map" {
-            let titleTextAttributes: [NSAttributedStringKey:Any] = [
-				NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): textFont!,
-				NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): textColor,
-            ]
-            self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
+            self.navigationController!.navigationBar.titleTextAttributes = Utils.getTitleTextAttributes(fontName: "Avenir", fontSize: 40.0, textColor: UIColor.white)
         } else {
             self.navigationController!.navigationBar.tintColor = UIColor.white
         }

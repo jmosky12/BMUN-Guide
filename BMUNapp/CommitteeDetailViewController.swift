@@ -79,15 +79,7 @@ class CommitteeDetailViewController: UIViewController {
         self.websiteButton.layer.borderColor = UIColor.white.cgColor
       
     }
-    
-    // These two functions below prevent landscape mode
-    override var shouldAutorotate : Bool {
-        return false
-    }
-    
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.portrait]
-    }
+
 
     @IBAction func synopsisSelected(_ sender: UIButton) {
         let stringURL = committee?["Website"] as? String

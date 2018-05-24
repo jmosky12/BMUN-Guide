@@ -42,15 +42,9 @@ class LiveUpdatesTableViewController: UIViewController, UITableViewDataSource {
         
         edgesForExtendedLayout = UIRectEdge()
         
-        // Ensures table cell separators are set up correctly
-        tableView.separatorInset = UIEdgeInsets.zero
-        tableView.preservesSuperviewLayoutMargins = false
-        tableView.layoutMargins = UIEdgeInsets.zero
-        
-        tableView.dataSource = self
-        
-        tableView.estimatedRowHeight = 140
-        tableView.rowHeight = UITableViewAutomaticDimension
+        // Ensures table cells are set up correctly
+        Utils.setupTableView(tableView: self.tableView, rowHeight: 140)
+        self.tableView.dataSource = self
         
         let nib: UINib = UINib(nibName: "LiveUpdatesTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "liveUpdates")
@@ -59,15 +53,7 @@ class LiveUpdatesTableViewController: UIViewController, UITableViewDataSource {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.barTintColor = UIColor.black
     }
-    
-    // These two functions below prevent landscape mode
-    override var shouldAutorotate : Bool {
-        return false
-    }
-    
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.portrait]
-    }
+
 
     // Creates a shared instance of the Twitter Manager (A class that will only ever be called once) and uses getTweets to get an array of tweets and set it to the tweets variable at the top
     @objc func getTweets(_ sender: AnyObject!) {

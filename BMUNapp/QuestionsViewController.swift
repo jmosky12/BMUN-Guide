@@ -54,15 +54,6 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
         
     }
     
-    // These two functions below prevent landscape mode
-    override var shouldAutorotate : Bool {
-        return false
-    }
-    
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.portrait]
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         self.detailTextView.resignFirstResponder()
     }

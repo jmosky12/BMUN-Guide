@@ -39,13 +39,7 @@ class SocialMediaViewController: UIViewController {
         twitterIV.addGestureRecognizer(twitterGestureRecognizer)
         instaIV.addGestureRecognizer(instaGestureRecognizer)
         
-        let textColor = UIColor.white
-        let textFont = UIFont(name: "Avenir", size: 35.0)
-        let titleTextAttributes: [NSAttributedStringKey:Any] = [
-			NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): textFont!,
-			NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): textColor,
-            ]
-        self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
+        self.navigationController!.navigationBar.titleTextAttributes = Utils.getTitleTextAttributes(fontName: "Avenir", fontSize: 35.0, textColor: UIColor.white)
 		
 		self.navigationController?.navigationBar.tintColor = UIColor.white
 		self.navigationController?.navigationBar.barTintColor = UIColor.black

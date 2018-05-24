@@ -36,6 +36,7 @@
 		DF64FDC41C2894480072C463 /* TextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF64FDC21C2894480072C463 /* TextViewController.xib */; };
 		DFAC30471DE5076000872364 /* SocialMediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAC30451DE5076000872364 /* SocialMediaViewController.swift */; };
 		DFAC30481DE5076000872364 /* SocialMediaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFAC30461DE5076000872364 /* SocialMediaViewController.xib */; };
+		DFBA634720B64DCB00090476 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBA634620B64DCB00090476 /* Utils.swift */; };
 		DFD814211DD7165B00CA027E /* CommitteesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD8141F1DD7165B00CA027E /* CommitteesCollectionViewController.swift */; };
 		DFD814221DD7165B00CA027E /* CommitteesCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFD814201DD7165B00CA027E /* CommitteesCollectionViewController.xib */; };
 		DFD814251DD7167700CA027E /* CommitteesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD814231DD7167700CA027E /* CommitteesCollectionViewCell.swift */; };
@@ -116,6 +117,7 @@
 		DF64FDC21C2894480072C463 /* TextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewController.xib; sourceTree = "<group>"; };
 		DFAC30451DE5076000872364 /* SocialMediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialMediaViewController.swift; sourceTree = "<group>"; };
 		DFAC30461DE5076000872364 /* SocialMediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SocialMediaViewController.xib; sourceTree = "<group>"; };
+		DFBA634620B64DCB00090476 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		DFD8141F1DD7165B00CA027E /* CommitteesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteesCollectionViewController.swift; sourceTree = "<group>"; };
 		DFD814201DD7165B00CA027E /* CommitteesCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommitteesCollectionViewController.xib; sourceTree = "<group>"; };
 		DFD814231DD7167700CA027E /* CommitteesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommitteesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				DF4CDBA81DE5367B00CDEB09 /* Information */,
 				DF4CDBA91DE536D600CDEB09 /* WebView */,
 				DFDF6EA41BE544B3009244FE /* Models */,
+				DFBA634620B64DCB00090476 /* Utils.swift */,
 				DF6071CD1BC8B62F007B35CC /* LaunchScreen.storyboard */,
 				DF6071DA1BC8C871007B35CC /* Assets.xcassets */,
 				D7370FE81DB33E6B008A4AF3 /* GoogleService-Info.plist */,
@@ -618,6 +621,7 @@
 				DFDF6EAA1BE55760009244FE /* DateFormatterManager.swift in Sources */,
 				DF6071C21BC8B62F007B35CC /* AppDelegate.swift in Sources */,
 				DF4CDBAF1DE646E500CDEB09 /* CollectionViewFlowLayout.swift in Sources */,
+				DFBA634720B64DCB00090476 /* Utils.swift in Sources */,
 				DFAC30471DE5076000872364 /* SocialMediaViewController.swift in Sources */,
 				DFE372AA1BCB0DC500490A34 /* WebViewController.swift in Sources */,
 				DFD814541DD7F74B00CA027E /* TimelineCollectionViewController.swift in Sources */,

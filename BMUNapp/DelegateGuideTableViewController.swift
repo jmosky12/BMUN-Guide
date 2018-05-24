@@ -26,23 +26,11 @@ class DelegateGuideTableViewController: UITableViewController {
         let nib: UINib = UINib(nibName: "DelegateTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "DelegateTableViewCell")
         
-        // Ensures table cell separators are set up correctly
-        tableView.separatorInset = UIEdgeInsets.zero
-        tableView.preservesSuperviewLayoutMargins = false
-        tableView.layoutMargins = UIEdgeInsets.zero
-		
-		tableView.rowHeight = UITableViewAutomaticDimension
-		tableView.estimatedRowHeight = 100
+        // Ensures table cells are set up correctly
+        Utils.setupTableView(tableView: self.tableView, rowHeight: 100)
         
         // Sets characteristics for top bar text
-        let textColor = UIColor.white
-        let textFont = UIFont(name: "Avenir", size: 35.0)
-        let titleTextAttributes: [NSAttributedStringKey:Any] = [
-			NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): textFont!,
-			NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): textColor,
-        ]
-        
-        self.navigationController!.navigationBar.titleTextAttributes = titleTextAttributes
+        self.navigationController!.navigationBar.titleTextAttributes = Utils.getTitleTextAttributes(fontName: "Avenir", fontSize: 35.0, textColor: UIColor.white)
 		
     }
 
