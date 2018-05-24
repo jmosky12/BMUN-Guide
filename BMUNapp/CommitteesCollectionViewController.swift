@@ -28,16 +28,9 @@ class CommitteesCollectionViewController: UICollectionViewController {
         
         let nib: UINib = UINib(nibName: "CommitteesCollectionViewCell", bundle: nil)
         self.collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        let width = self.view.bounds.width
-        let flowLayout = CollectionViewFlowLayout()
-        flowLayout.headerReferenceSize = CGSize(width: width, height: 20)
-        flowLayout.footerReferenceSize = CGSize(width: width, height: 20)
-        self.collectionView?.collectionViewLayout = flowLayout
+		Utils.setupCollectionView(colView: self.collectionView!, view: self.view)
         
         self.navigationController!.navigationBar.titleTextAttributes = Utils.getTitleTextAttributes(fontName: "Avenir", fontSize: 35.0, textColor: UIColor.white)
-        self.collectionView?.allowsSelection = true
-        self.collectionView?.allowsMultipleSelection = false
     }
 
 

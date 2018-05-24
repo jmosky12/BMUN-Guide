@@ -35,4 +35,25 @@ struct Utils {
 		navController.navigationBar.topItem?.title = tabName
 	}
 	
+	static func setupCollectionView(colView: UICollectionView, view: UIView) {
+		let width = view.bounds.width
+		let flowLayout = CollectionViewFlowLayout()
+		flowLayout.headerReferenceSize = CGSize(width: width, height: 20)
+		flowLayout.footerReferenceSize = CGSize(width: width, height: 20)
+		colView.collectionViewLayout = flowLayout
+		colView.allowsSelection = true
+		colView.allowsMultipleSelection = false
+	}
+	
+	static func constrainInView(vc: UIViewController, content: UIViewController, parentView: UIView) {
+		vc.addChildViewController(content)
+		parentView.addSubview(content.view)
+		content.didMove(toParentViewController: vc)
+		let horzConstraints: [NSLayoutConstraint] = NSLayoutConstraint.constraints(withVisualFormat: "H:|[content]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["content": content.view])
+		let vertConstraints: [NSLayoutConstraint] = NSLayoutConstraint.constraints(withVisualFormat: "V:|[content]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["content": content.view])
+		vc.view!.addConstraints(horzConstraints)
+		vc.view!.addConstraints(vertConstraints)
+		content.view.translatesAutoresizingMaskIntoConstraints = false
+	}
+	
 }

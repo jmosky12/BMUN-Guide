@@ -35,17 +35,9 @@ class SpecificCommitteeCollectionViewController: UICollectionViewController {
         
         let nib: UINib = UINib(nibName: "SpecificCommitteeCollectionViewCell", bundle: nil)
         self.collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        let width = self.view.bounds.width
-        let flowLayout = CollectionViewFlowLayout()
-        flowLayout.headerReferenceSize = CGSize(width: width, height: 20)
-        flowLayout.footerReferenceSize = CGSize(width: width, height: 20)
-        self.collectionView?.collectionViewLayout = flowLayout
-        
-        self.collectionView?.allowsSelection = true
-        self.collectionView?.allowsMultipleSelection = false
+		Utils.setupCollectionView(colView: self.collectionView!, view: self.view)
+		
         self.view.clipsToBounds = true
-        
         self.navigationController?.navigationBar.tintColor = UIColor.white
 		
 		let view = UIView(frame: CGRect(x: (self.view.frame.width/2), y: 0, width: 100, height: 100))

@@ -33,18 +33,10 @@ class TimelineCollectionViewController: UICollectionViewController {
         
         let nib: UINib = UINib(nibName: "CommitteesCollectionViewCell", bundle: nil)
         self.collectionView!.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        let width = self.view.bounds.width
-        let flowLayout = CollectionViewFlowLayout()
-        flowLayout.headerReferenceSize = CGSize(width: width, height: 20)
-        flowLayout.footerReferenceSize = CGSize(width: width, height: 20)
-        self.collectionView?.collectionViewLayout = flowLayout
+        Utils.setupCollectionView(colView: self.collectionView!, view: self.view)
         
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.barTintColor = UIColor.black
-        
-        self.collectionView?.allowsSelection = true
-        self.collectionView?.allowsMultipleSelection = false
 		
 		let view = UIView(frame: CGRect(x: (self.view.frame.width/2), y: 0, width: 100, height: 100))
 		view.center.y = (self.collectionView?.center.y)!

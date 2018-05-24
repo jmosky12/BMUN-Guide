@@ -34,20 +34,9 @@ class SleekStoreViewController: UIViewController {
 		let habitat = ProductViewController(image: #imageLiteral(resourceName: "givedirectly"), itemTitle: "Conference Cause", price: "Any donations accepted!")
 		let newShirt = ProductViewController(image: #imageLiteral(resourceName: "old_shirts"), itemTitle: "BMUN LXVI Shirt", price: "$10")
 		let oldShirt = ProductViewController(image: #imageLiteral(resourceName: "old_shirts"), itemTitle: "Past BMUN Shirts", price: "$3")
-		self.constrainInView(content: habitat, parentView: self.item1)
-		self.constrainInView(content: newShirt, parentView: self.item2)
-		self.constrainInView(content: oldShirt, parentView: self.item3)
+		Utils.constrainInView(vc: self, content: habitat, parentView: self.item1)
+		Utils.constrainInView(vc: self, content: newShirt, parentView: self.item2)
+		Utils.constrainInView(vc: self, content: oldShirt, parentView: self.item3)
     }
-	
-	func constrainInView(content: UIViewController, parentView: UIView) {
-		self.addChildViewController(content)
-		parentView.addSubview(content.view)
-		content.didMove(toParentViewController: self)
-		let horzConstraints: [NSLayoutConstraint] = NSLayoutConstraint.constraints(withVisualFormat: "H:|[content]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["content": content.view])
-		let vertConstraints: [NSLayoutConstraint] = NSLayoutConstraint.constraints(withVisualFormat: "V:|[content]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["content": content.view])
-		self.view!.addConstraints(horzConstraints)
-		self.view!.addConstraints(vertConstraints)
-		content.view.translatesAutoresizingMaskIntoConstraints = false
-	}
 
 }
