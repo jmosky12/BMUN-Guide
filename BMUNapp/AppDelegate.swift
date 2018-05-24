@@ -9,7 +9,6 @@
 
 import UIKit
 import CoreData
-import SwiftyJSON
 import Foundation
 
 @UIApplicationMain
@@ -26,63 +25,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         
-        let textFont = UIFont(name: "Avenir", size: 13.0)
-        let titleTextAttributes: [NSAttributedStringKey:Any] = [
-			NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): textFont!
-        ]
-        
         // Sets tab bar's view controllers and their properties on the tab bar
         let delegateGuide = DelegateGuideTableViewController()
         let delegateGuideNC = UINavigationController(rootViewController: delegateGuide)
         let item1 = UITabBarItem(title: "Guide", image: nil, tag: 1)
-        item1.setTitleTextAttributes(titleTextAttributes, for: UIControlState())
-        item1.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
-        delegateGuideNC.tabBarItem = item1
-        delegateGuideNC.navigationBar.barTintColor = UIColor.black
-        delegateGuideNC.navigationBar.isTranslucent = false
-        delegateGuideNC.navigationBar.topItem?.title = "Delegate Guide"
+		Utils.setupTabBar(navController: delegateGuideNC, tabItem: item1, tabName: "Delegate Guide")
         
         let committees = CommitteesCollectionViewController()
         let committeesNC = UINavigationController(rootViewController: committees)
         let item2 = UITabBarItem(title: "Committees", image: nil, tag: 2)
-        item2.setTitleTextAttributes(titleTextAttributes, for: UIControlState())
-        item2.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
-        committeesNC.tabBarItem = item2
-        committeesNC.navigationBar.barTintColor = UIColor.black
-        committeesNC.navigationBar.isTranslucent = false
-        committeesNC.navigationBar.topItem?.title = "Committees"
+		Utils.setupTabBar(navController: committeesNC, tabItem: item2, tabName: "Committees")
 		
 		let flashcards = FlashcardsViewController()
 		let flashcardsNC = UINavigationController(rootViewController: flashcards)
 		let item3 = UITabBarItem(title: "Flashcards", image: nil, tag: 3)
-		item3.setTitleTextAttributes(titleTextAttributes, for: UIControlState())
-		item3.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
-		flashcardsNC.tabBarItem = item3
-		flashcardsNC.navigationBar.barTintColor = UIColor.black
-		flashcardsNC.navigationBar.isTranslucent = false
-		flashcardsNC.navigationBar.topItem?.title = "Flashcards"
+		Utils.setupTabBar(navController: flashcardsNC, tabItem: item3, tabName: "Flashcards")
 	
         let info = InfoViewController()
         let infoNC = UINavigationController(rootViewController: info)
         let item4 = UITabBarItem(title: "Information", image: nil, tag: 4)
-        item4.setTitleTextAttributes(titleTextAttributes, for: UIControlState())
-        item4.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
-        infoNC.tabBarItem = item4
-        infoNC.navigationBar.barTintColor = UIColor.black
-        infoNC.navigationBar.isTranslucent = false
-        infoNC.navigationBar.topItem?.title = "Information"
+		Utils.setupTabBar(navController: infoNC, tabItem: item4, tabName: "Information")
     
         let connect = ConnectViewController()
         let connectNC = UINavigationController(rootViewController: connect)
         let item5 = UITabBarItem(title: "Connect", image: nil, tag: 5)
-        item5.setTitleTextAttributes(titleTextAttributes, for: .normal)
-        item5.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
-        connectNC.tabBarItem = item5
-        connectNC.navigationBar.barTintColor = UIColor.black
-        connectNC.navigationBar.isTranslucent = false
-        connectNC.navigationBar.topItem?.title = "Connect"
+		Utils.setupTabBar(navController: connectNC, tabItem: item5, tabName: "Connect")
 
-        
         let controllers = [delegateGuideNC, committeesNC, flashcardsNC, infoNC, connectNC]
         
         let tabBarController = UITabBarController()

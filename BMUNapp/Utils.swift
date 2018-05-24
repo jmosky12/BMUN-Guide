@@ -18,12 +18,21 @@ struct Utils {
 			]
 	}
 	
-	static func setupTableView(tableView: UITableView, rowHeight: Int) -> Void {
+	static func setupTableView(tableView: UITableView, rowHeight: Int) {
 		tableView.separatorInset = UIEdgeInsets.zero
 		tableView.preservesSuperviewLayoutMargins = false
 		tableView.layoutMargins = UIEdgeInsets.zero
 		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.estimatedRowHeight = 100
+	}
+	
+	static func setupTabBar(navController: UINavigationController, tabItem: UITabBarItem, tabName: String) {
+		tabItem.setTitleTextAttributes(Storage.tabTitleTextAttributes, for: UIControlState())
+		tabItem.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
+		navController.tabBarItem = tabItem
+		navController.navigationBar.barTintColor = UIColor.black
+		navController.navigationBar.isTranslucent = false
+		navController.navigationBar.topItem?.title = tabName
 	}
 	
 }

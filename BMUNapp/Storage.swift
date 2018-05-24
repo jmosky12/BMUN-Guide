@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftyJSON
+import UIKit
 
 
 private let defaults = UserDefaults.standard
@@ -143,6 +143,10 @@ struct Storage {
 			return defaults.integer(forKey: "currentBmunIndex") as Int?
 		}
 	}
+	
+	static var tabTitleTextAttributes: [NSAttributedStringKey:Any] = [
+		NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue): UIFont(name: "Avenir", size: 13.0)!
+	]
 }
 
 struct InstagramInfo {

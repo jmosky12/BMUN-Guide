@@ -7,7 +7,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 target "BMUNapp" do
 	pod 'STTwitter'
 	pod 'DateTools'
-	pod 'SwiftyJSON'
 	pod 'AFNetworking'
 	pod 'SDWebImage'
 end
