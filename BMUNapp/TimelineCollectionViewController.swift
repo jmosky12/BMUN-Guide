@@ -57,6 +57,7 @@ class TimelineCollectionViewController: UICollectionViewController {
 		self.collectionView?.addSubview(view)
 		self.spinner.startAnimating()
 		
+		// pulls in timeline data if none set yet
 		if Storage.noTimelineData {
 			Storage.getRequest(URL(string: apiTimelineURL)!) {
 				(data, response, error) in

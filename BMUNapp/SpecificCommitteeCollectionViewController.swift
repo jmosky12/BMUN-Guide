@@ -59,6 +59,7 @@ class SpecificCommitteeCollectionViewController: UICollectionViewController {
 		self.collectionView?.addSubview(view)
 		self.spinner.startAnimating()
 		
+		// pulls in committee data if not set yet
 		if Storage.noCommitteeData {
 			Storage.getRequest(URL(string: apiCommitteesURL)!) {
 				(data, response, error) in

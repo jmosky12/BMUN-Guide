@@ -14,5 +14,6 @@ BMUNapp is an app specifically designed to prepare and enhance the experience of
 * Timeline of events for conference weekend
 * Form for delegates to email BMUN staff questions or feedback
 * Info about BMUN merchandise
+* Flashcards with MUN terminology
 
 

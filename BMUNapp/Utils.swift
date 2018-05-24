@@ -9,7 +9,7 @@
 import UIKit
 
 struct Utils {
-	
+	// gives title at the top navigation bar its preferred attributes
 	static func getTitleTextAttributes(fontName: String, fontSize: CGFloat, textColor: UIColor) -> [NSAttributedStringKey:Any] {
 		let textFont = UIFont(name: fontName, size: fontSize)
 		return [
@@ -18,6 +18,7 @@ struct Utils {
 			]
 	}
 	
+	// gives table views their basic specified attributes
 	static func setupTableView(tableView: UITableView, rowHeight: Int) {
 		tableView.separatorInset = UIEdgeInsets.zero
 		tableView.preservesSuperviewLayoutMargins = false
@@ -26,6 +27,7 @@ struct Utils {
 		tableView.estimatedRowHeight = 100
 	}
 	
+	// adds tab item to tab bar and sets its attributes
 	static func setupTabBar(navController: UINavigationController, tabItem: UITabBarItem, tabName: String) {
 		tabItem.setTitleTextAttributes(Storage.tabTitleTextAttributes, for: UIControlState())
 		tabItem.titlePositionAdjustment = UIOffset(horizontal: 0.0, vertical: -12.0)
@@ -35,6 +37,7 @@ struct Utils {
 		navController.navigationBar.topItem?.title = tabName
 	}
 	
+	// sets up collection view attributes and flow layout
 	static func setupCollectionView(colView: UICollectionView, view: UIView) {
 		let width = view.bounds.width
 		let flowLayout = CollectionViewFlowLayout()
@@ -45,6 +48,7 @@ struct Utils {
 		colView.allowsMultipleSelection = false
 	}
 	
+	// constrains an independent view controller in the frame of a parent view
 	static func constrainInView(vc: UIViewController, content: UIViewController, parentView: UIView) {
 		vc.addChildViewController(content)
 		parentView.addSubview(content.view)

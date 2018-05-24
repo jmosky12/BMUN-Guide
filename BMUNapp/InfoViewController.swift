@@ -33,12 +33,14 @@ class InfoViewController: UIViewController {
         
 		self.navigationController!.navigationBar.titleTextAttributes = Utils.getTitleTextAttributes(fontName: "Avenir", fontSize: 35.0, textColor: UIColor.white)
     }
-
+	
+	// pushes up store page
     @objc func storeSelected() {
         let vc = SleekStoreViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+	
+	// pushes up conference timeline
     @objc func timelineSelected() {
         let vc = TimelineCollectionViewController()
         self.navigationController?.pushViewController(vc, animated: true)

@@ -38,15 +38,6 @@ class TextViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         self.delegate?.textViewFill(textView.text)
     }
-    
-    // These two functions below prevent landscape mode
-    override var shouldAutorotate : Bool {
-        return false
-    }
-    
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.portrait]
-    }
 
     // Detects whether or not to bring up or release the keyboard
     @objc func textTap() {

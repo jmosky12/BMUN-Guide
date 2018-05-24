@@ -91,7 +91,8 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
         }
         
     }
-    
+	
+	// where you specify which email the message is sent to
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self
@@ -100,7 +101,8 @@ class QuestionsViewController: UIViewController, UITextFieldDelegate, UITextView
         mailComposerVC.setMessageBody(detailTextView.text, isHTML: false)
         return mailComposerVC
     }
-    
+	
+	// handle result of sending mail
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
         print(result)

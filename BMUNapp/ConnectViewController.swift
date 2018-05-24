@@ -13,7 +13,6 @@ class ConnectViewController: UIViewController {
 	@IBOutlet var questionsIV: UIImageView!
 	@IBOutlet var socialMediaIV: UIImageView!
 	
-	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,11 +34,13 @@ class ConnectViewController: UIViewController {
 		self.navigationController!.navigationBar.titleTextAttributes = Utils.getTitleTextAttributes(fontName: "Avenir", fontSize: 35.0, textColor: UIColor.white)
     }
 
+	// pushes up social media page
 	@objc func socialMediaSelected() {
 		let vc = SocialMediaViewController()
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 	
+	// pushes up questions/email page
 	@objc func questionsSelected() {
 		let vc = QuestionsViewController()
 		self.navigationController?.pushViewController(vc, animated: true)

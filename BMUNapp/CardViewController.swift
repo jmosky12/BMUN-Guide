@@ -39,6 +39,7 @@ class CardViewController: UIViewController, UITextViewDelegate {
 		
     }
 
+	// ensures front and back cards are filled out, passes back to FlashcardsVC
 	@IBAction func createCard(_ sender: Any) {
 		if self.frontTextView.text == "" || self.backTextView.text == "" {
 			let incomplete = UIAlertController(title: "Missing Information", message: "Please fill out both fields.", preferredStyle: .alert)
@@ -51,6 +52,7 @@ class CardViewController: UIViewController, UITextViewDelegate {
 		}
 	}
 	
+	// resigns keyboard on 'return'
 	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
 		if text == "\n" {
 			textView.resignFirstResponder()

@@ -46,11 +46,13 @@ class SocialMediaViewController: UIViewController {
 
     }
 
+	// pushes up twitter feed
     @objc func twitterSelected() {
         let vc = LiveUpdatesTableViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+	
+	// pushes up instagram feed
     @objc func instaSelected() {
         let vc = InstagramViewController()
         self.navigationController?.pushViewController(vc, animated: true)

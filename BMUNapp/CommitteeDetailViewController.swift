@@ -21,7 +21,6 @@ class CommitteeDetailViewController: UIViewController {
     
     // Intitializes with the tag specified in CommitteeTableViewController.swift's didSelectRowAtIndexPath methof
     init(section: Int, row: Int) {
-        //self.tag = tag
         self.indexPathRow = row
         self.indexPathSection = section
         super.init(nibName: "CommitteeDetailViewController", bundle: nil)

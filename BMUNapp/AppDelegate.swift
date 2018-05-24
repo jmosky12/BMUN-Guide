@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         
         // Sets tab bar's view controllers and their properties on the tab bar
+		
         let delegateGuide = DelegateGuideTableViewController()
         let delegateGuideNC = UINavigationController(rootViewController: delegateGuide)
         let item1 = UITabBarItem(title: "Guide", image: nil, tag: 1)

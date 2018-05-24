@@ -102,7 +102,7 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 		let createButton = UIBarButtonItem(title: "New", style: .plain, target: self, action: #selector(FlashcardsViewController.createNewFlashcard))
 		navigationItem.rightBarButtonItem = createButton
 
-		
+		// pulls in flashcards if not set yet
 		if Storage.noFlashcardsData {
 			Storage.getRequest(URL(string: apiFlashcardsURL)!) {
 				(data, response, error) in
@@ -141,6 +141,7 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 		}
     }
 	
+	// determines whether or not left and right arrows should be disabled color or not
 	func adjustArrowColors() {
 		if self.isBMUN {
 			if !self.bmunFlashcardsSet || self.bmunCardCount == 0 || self.bmunCardCount == 1 {
@@ -173,6 +174,7 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 		}
 	}
 	
+	// hides delete button on flashcards if specified
 	func showDelete(yes: Bool) {
 		if yes {
 			self.deleteButton.isHidden = false
@@ -183,6 +185,7 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 		}
 	}
 	
+	// switched between bmun and custom flashcards, sets appropriate properties
 	@IBAction func segmentClicked(_ sender: UISegmentedControl) {
 		self.isBMUN = sender.selectedSegmentIndex == 0 ? true : false
 		if !self.isBMUN {
@@ -206,6 +209,7 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 		self.adjustArrowColors()
 	}
 	
+	// switches card from front to back
 	@objc func togglePhrase(_ sender: UITapGestureRecognizer) {
 		if self.isBMUN || self.customCardCount! > 0 {
 			self.isFront = !self.isFront
@@ -219,6 +223,7 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 		}
 	}
 	
+	// logic for left arrow click
 	@objc func leftTapped(_ sender: UITapGestureRecognizer) {
 		if self.isBMUN {
 			if self.bmunFlashcardsSet && Storage.currentBmunIndex! > 0 {
@@ -240,6 +245,7 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 		self.adjustArrowColors()
 	}
 	
+	// logic for right arrow click
 	@objc func rightTapped(_ sender: UITapGestureRecognizer) {
 		if self.isBMUN {
 			if self.bmunFlashcardsSet && Storage.currentBmunIndex! < self.bmunCardCount! - 1 {
@@ -263,12 +269,14 @@ class FlashcardsViewController: UIViewController, FlashcardsViewControllerDelega
 		self.adjustArrowColors()
 	}
 	
+	// pushes up new flashcard view
 	@objc func createNewFlashcard() {
 		let vc = CardViewController()
 		vc.delegate = self
 		self.navigationController!.pushViewController(vc, animated: true)
 	}
 	
+	// logic for deleting flashcards
 	@objc func deleteCard() {
 		Storage.customFlashcards?.remove(at: Storage.currentCustomIndex!)
 		if self.customCardCount! == 1 {
