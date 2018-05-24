@@ -1,4 +1,4 @@
-# BMUNapp
+# BMUN Guide
 
 ## Authors
 *  Jake Moskowitz
