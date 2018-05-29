@@ -5,7 +5,7 @@
 *  Michael Eliot
 
 ## Purpose
-BMUNapp is an app specifically designed to prepare and enhance the experience of delegates planning to attend the Berkeley Model United Nations Conference.
+BMUN Guide is an app specifically designed to prepare and enhance the experience of delegates planning to attend the Berkeley Model United Nations Conference.
 
 ## Features
 * User-friendly Delegate Guide
